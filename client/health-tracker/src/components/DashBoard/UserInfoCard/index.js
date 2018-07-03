@@ -14,7 +14,7 @@ const styles = {
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
-    
+
   },
 };
 
@@ -34,6 +34,9 @@ function SimpleMediaCard(props) {
           </Typography>
           <Typography component="p">
             Loves exercising outdoors, hiking, cooking healthy food, and the occasional slice of carrot cake
+          </Typography>
+          <Typography variant="headline" component="h4">
+            Points: 300
           </Typography>
         </CardContent>
       </Card>
