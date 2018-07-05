@@ -15,11 +15,13 @@ import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
   card: {
+    margin: 1,
     display: 'flex',
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
+
   },
   content: {
     flex: '1 0 auto',
@@ -31,8 +33,9 @@ const styles = theme => ({
     display: 'none',
   },
   divStyle: {
-    padding: 14
-  }
+    padding: 14,
+  },
+
 });
 
 function MediaControlCard(props) {
