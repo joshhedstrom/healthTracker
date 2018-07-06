@@ -11,6 +11,7 @@ const App = () => (
       <NavBar />
       <Switch>
        <Route exact path="/dashboard" component={DashBoard} />
+       
       </Switch>
     </div>
   </Router>
