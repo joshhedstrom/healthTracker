@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from './components/NavBar';
-import UserInfoCard from './components/DashBoard/UserInfoCard';
-import DailyProgress from './components/DashBoard/DailyProgress';
+import DashBoard from "./pages/DashBoard"
+
 import './App.css';
 
 const App = () => (
   <Router>
     <div>
       <NavBar />
-      <UserInfoCard />
-      <DailyProgress />
+      <Switch>
+       <Route exact path="/dashboard" component={DashBoard} />
+      </Switch>
     </div>
   </Router>
-)
+);
  
 
 export default App;
