@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuDrawer from '../MenuDrawer'
+import "./index.css";
 
 
 const styles = {
@@ -21,10 +22,11 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+ 
+  
 };
 
 function ButtonAppBar(props) {
-
 
   const { classes } = props;
   return (
@@ -35,7 +37,9 @@ function ButtonAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
+            <a style={{textDecoration: 'none', color:'white' }} href="/">
             HealthTracker
+            </a>
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
@@ -44,21 +48,6 @@ function ButtonAppBar(props) {
 
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ButtonAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
