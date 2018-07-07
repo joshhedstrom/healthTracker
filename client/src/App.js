@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from './components/NavBar';
 import UserInfoCard from './components/DashBoard/UserInfoCard';
 import DailyProgress from './components/DashBoard/DailyProgress';
+import HealthChart from './components/HealthChart';
 import './App.css';
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
       <NavBar />
       <UserInfoCard />
       <DailyProgress />
+      <HealthChart />
     </div>
   </Router>
 )
