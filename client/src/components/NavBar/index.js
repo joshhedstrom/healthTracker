@@ -60,18 +60,29 @@ render () {
     const sideList = (
 
       <div className={classes.list}>
-        <ListItem button>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Dashboard" />
-        </ListItem>
+        <div component="nav">
+          <ListItem button>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Dashboard" />
+          </ListItem>
+          <Divider />
 
-        <Divider />
-        <ListItem>Water</ListItem>
-        <ListItem>Nutrition</ListItem>
-        <ListItem>Exercise</ListItem>
-        <ListItem>Weight</ListItem>
+          <ListItem button>
+            <ListItemText primary="Water" />
+          </ListItem>
+          <ListItem button>
+            <ListItemText primary="Nutrition" />
+          </ListItem>
+          <ListItem button>
+            <ListItemText primary="Exercise" />
+          </ListItem>
+          <ListItem button>
+            <ListItemText primary="Weight" />
+          </ListItem>
+
+        </div>
       </div>
     );
 
