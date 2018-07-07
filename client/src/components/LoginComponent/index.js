@@ -20,7 +20,7 @@ const styles = theme => ({
   margin: {
     margin: theme.spacing.unit,
   },
-});
+})
 
 function PaperSheet(props) {
   const { classes } = props;
@@ -77,7 +77,7 @@ function PaperSheet(props) {
   </div>
 
 
-  );
+  )
 }
 
 
