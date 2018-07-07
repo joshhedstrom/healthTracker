@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import UserInfoCard from './components/DashBoard/UserInfoCard';
 import DailyProgress from './components/DashBoard/DailyProgress';
 import HealthChart from './components/HealthChart';
-=======
 import DashBoard from "./pages/DashBoard"
 import Login from "./pages/Login"
 
@@ -17,7 +16,6 @@ const App = () => (
       <Switch>
        <Route exact path="/dashboard" component={DashBoard} />
        <Route exact path="/login" component={Login} />
-
       </Switch>
     </div>
   </Router>
