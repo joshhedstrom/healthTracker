@@ -30,69 +30,73 @@ function PaperSheet(props) {
         <Typography variant="headline" component="h3">
           Sign up for an Account!
         </Typography>
-        <Typography component="p">
           <Grid container spacing={24}>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="name"
+                id="firstName"
                 label="First Name (required)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
+                onChange={props.firstNameAction}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="name"
+                id="lastName"
                 label="Last Name (required)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
+                onChange={props.lastNameAction}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="name"
+                id="username"
                 label="Username (required)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
+                onChange={props.usernameAction}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
                 <TextField
-                  id="name"
+                  id="weight"
                   label="Weight (optional)"
                   className={classes.textField}
                   margin="normal"
                   fullWidth
+                  onChange={props.weightAction}
                 >
                 </TextField>
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="password-input"
+                id="password"
                 label="Password"
                 className={classes.textField}
                 type="password"
                 autoComplete="current-password"
                 margin="normal"
                 fullWidth
+                onChange={props.passwordAction}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="password-input"
+                id="passwordConfirmation"
                 label="Confirm Password"
                 className={classes.textField}
                 type="password"
                 autoComplete="current-password"
                 margin="normal"
                 fullWidth
+                onChange={props.passwordConfirmAction}
               />
             </Grid>
           </Grid>
-        </Typography>
       </Paper>
     </div>
   );
