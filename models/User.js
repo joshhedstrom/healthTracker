@@ -6,6 +6,7 @@ const userSchema = new Schema({
   lastName: { type: String, required: true },
   username: { type: String, require: true },
   password: { type: String, require: true },
+  weight: { type: Number, required: false },
   day: { type: Schema.Types.ObjectId, ref: "Day" }
 });
 
