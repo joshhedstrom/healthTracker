@@ -10,6 +10,9 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
 
 const styles = theme => ({
   root: {
@@ -34,7 +37,7 @@ function PaperSheet(props) {
         <Typography component="p">
 
          <FormControl className={classes.margin}>
-        <InputLabel htmlFor="input-with-icon-adornment">With a start adornment</InputLabel>
+        <InputLabel htmlFor="input-with-icon-adornment">Email</InputLabel>
         <Input
           id="input-with-icon-adornment"
           startAdornment={
@@ -47,7 +50,7 @@ function PaperSheet(props) {
       <TextField
         className={classes.margin}
         id="input-with-icon-textfield"
-        label="TextField"
+        label="Password"
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -58,17 +61,20 @@ function PaperSheet(props) {
       />
       <div className={classes.margin}>
         <Grid container spacing={8} alignItems="flex-end">
-          <Grid item>
-            <AccountCircle />
-          </Grid>
-          <Grid item>
-            <TextField id="input-with-icon-grid" label="With a grid" />
-          </Grid>
+
+            <Grid item xs={8} sm={4}>
+              <Button variant="contained" color="primary">Log In</Button>
+            </Grid>
+
+          <Divider />
+            <Grid item xs={8} sm={4}>
+              <Button variant="contained">Create New Account</Button>
+            </Grid>
         </Grid>
+
+
+
       </div>
-
-
-      
         </Typography>
       </Paper>
   
