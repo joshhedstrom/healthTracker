@@ -5,10 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
   root: {
@@ -95,6 +92,17 @@ function PaperSheet(props) {
                 fullWidth
                 onChange={props.passwordConfirmAction}
               />
+            </Grid>
+            <Grid item xs={12}>
+                      <Button
+                          size="large"
+                          variant="outlined"
+                          color="primary"
+                          className={classes.button}
+                          onClick={props.submitAction}
+                      >
+                          Submit
+</Button>
             </Grid>
           </Grid>
       </Paper>

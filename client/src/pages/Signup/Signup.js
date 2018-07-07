@@ -17,6 +17,7 @@ class Signup extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log('Form Submitted')
   }
 
   render() {
@@ -29,6 +30,7 @@ class Signup extends Component {
           weightAction={this.handleInputChange.bind()}
           passwordAction={this.handleInputChange.bind()}
           passwordConfirmAction={this.handleInputChange.bind()}
+          submitAction={this.handleSubmit.bind()}
         />
       </div>
     )
