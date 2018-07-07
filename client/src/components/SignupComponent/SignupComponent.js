@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const styles = theme => ({
   root: {
@@ -32,41 +31,67 @@ function PaperSheet(props) {
           Sign up for an Account!
         </Typography>
         <Typography component="p">
-          <FormControl className={classes.margin}>
-            <InputLabel htmlFor="input-with-icon-adornment">
-              With a start adornment
-            </InputLabel>
-            <Input
-              id="input-with-icon-adornment"
-              startAdornment={
-                <InputAdornment position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              }
-            />
-          </FormControl>
-          <TextField
-            className={classes.margin}
-            id="input-with-icon-textfield"
-            label="TextField"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              )
-            }}
-          />
-          <div className={classes.margin}>
-            <Grid container spacing={8} alignItems="flex-end">
-              <Grid item>
-                <AccountCircle />
-              </Grid>
-              <Grid item>
-                <TextField id="input-with-icon-grid" label="With a grid" />
-              </Grid>
+          <Grid container spacing={24}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                id="name"
+                label="First Name (required)"
+                className={classes.textField}
+                margin="normal"
+                fullWidth
+              />
             </Grid>
-          </div>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                id="name"
+                label="Last Name (required)"
+                className={classes.textField}
+                margin="normal"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                id="name"
+                label="Username (required)"
+                className={classes.textField}
+                margin="normal"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+                <TextField
+                  id="name"
+                  label="Weight (optional)"
+                  className={classes.textField}
+                  margin="normal"
+                  fullWidth
+                >
+                </TextField>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                id="password-input"
+                label="Password"
+                className={classes.textField}
+                type="password"
+                autoComplete="current-password"
+                margin="normal"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                id="password-input"
+                label="Confirm Password"
+                className={classes.textField}
+                type="password"
+                autoComplete="current-password"
+                margin="normal"
+                fullWidth
+              />
+            </Grid>
+          </Grid>
         </Typography>
       </Paper>
     </div>
@@ -78,3 +103,72 @@ PaperSheet.propTypes = {
 };
 
 export default withStyles(styles)(PaperSheet);
+
+{
+  /* 
+<FormControl className={classes.margin}>
+    <InputLabel htmlFor="input-with-icon-adornment">
+        First Name (required)
+            </InputLabel>
+    <Input
+        id="input-with-icon-adornment"
+        startAdornment={
+            <InputAdornment position="start">
+                <AccountCircle />
+            </InputAdornment>
+        }
+    />
+</FormControl>
+    <FormControl className={classes.margin}>
+        <InputLabel htmlFor="input-with-icon-adornment">
+            Last Name (required)
+            </InputLabel>
+        <Input
+            id="input-with-icon-adornment"
+            startAdornment={
+                <InputAdornment position="start">
+                    <AccountCircle />
+                </InputAdornment>
+            }
+        />
+    </FormControl>
+    <FormControl className={classes.margin}>
+        <InputLabel htmlFor="input-with-icon-adornment">
+            Username (required)
+            </InputLabel>
+        <Input
+            id="input-with-icon-adornment"
+            startAdornment={
+                <InputAdornment position="start">
+                    <AccountCircle />
+                </InputAdornment>
+            }
+        />
+    </FormControl>
+    <FormControl className={classes.margin}>
+        <InputLabel htmlFor="input-with-icon-adornment">
+            Password (required)
+            </InputLabel>
+        <Input
+            id="input-with-icon-adornment"
+            startAdornment={
+                <InputAdornment position="start">
+                    <AccountCircle />
+                </InputAdornment>
+            }
+        />
+    </FormControl>
+    <FormControl className={classes.margin}>
+        <InputLabel htmlFor="input-with-icon-adornment">
+            Weight (optional)
+            </InputLabel>
+        <Input
+            id="input-with-icon-adornment"
+            startAdornment={
+                <InputAdornment position="start">
+                    <AccountCircle />
+                </InputAdornment>
+            }
+        />
+    </FormControl> */
+}
