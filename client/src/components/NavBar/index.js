@@ -7,11 +7,14 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import MenuDrawer from '../MenuDrawer'
 import "./index.css";
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
+import HomeIcon from '@material-ui/icons/Home';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 
 
@@ -55,13 +58,20 @@ render () {
 
 
     const sideList = (
+
       <div className={classes.list}>
-        <List>Dashboard</List>
+        <ListItem button>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+
         <Divider />
-        <List>Water</List>
-        <List>Nutrition</List>
-        <List>Exercise</List>
-        <List>Weight</List>
+        <ListItem>Water</ListItem>
+        <ListItem>Nutrition</ListItem>
+        <ListItem>Exercise</ListItem>
+        <ListItem>Weight</ListItem>
       </div>
     );
 
