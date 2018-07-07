@@ -8,6 +8,11 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuDrawer from '../MenuDrawer'
+import "./index.css";
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+
 
 
 const styles = {
@@ -21,21 +26,69 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  list: {
+    width: 250,
+  },
+ 
+  
 };
 
-function ButtonAppBar(props) {
+
+class ButtonAppBar extends React.Component {
 
 
-  const { classes } = props;
+state = {
+  left: false,
+};
+
+toggleDrawer = (side, open) => () => {
+  console.log("i clicked")
+  this.setState({
+    [side]: open,
+  });
+};
+
+
+
+render () {
+   const { classes } = this.props;
+
+
+    const sideList = (
+      <div className={classes.list}>
+        <List>Dashboard</List>
+        <Divider />
+        <List>Water</List>
+        <List>Nutrition</List>
+        <List>Exercise</List>
+        <List>Weight</List>
+      </div>
+    );
+
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+          <IconButton onClick={this.toggleDrawer('left', true)} className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
+          <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+            <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('left', false)}
+            onKeyDown={this.toggleDrawer('left', false)}
+          >
+            {sideList}
+          </div>
+          </Drawer>
+
+
           <Typography variant="title" color="inherit" className={classes.flex}>
+            <a style={{textDecoration: 'none', color:'white' }} href="/">
             HealthTracker
+            </a>
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
@@ -43,20 +96,11 @@ function ButtonAppBar(props) {
     </div>
 
   );
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
