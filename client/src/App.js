@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import UserInfoCard from './components/DashBoard/UserInfoCard';
-import DailyProgress from './components/DashBoard/DailyProgress';
-import HealthChart from './components/HealthChart';
-import DashBoard from "./pages/DashBoard"
-import Login from "./pages/Login"
+import DashBoard from './pages/DashBoard';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 import './App.css';
 
@@ -14,12 +12,12 @@ const App = () => (
     <div>
       <NavBar />
       <Switch>
-       <Route exact path="/" component={DashBoard} />
-       <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={DashBoard} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/Signup" component={Signup} />
       </Switch>
     </div>
   </Router>
 );
- 
 
 export default App;
