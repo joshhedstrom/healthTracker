@@ -1,0 +1,24 @@
+{
+  "name": "healthtracker",
+  "version": "1.0.0",
+  "description": "A Fitness and Nutrition Tracking App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshhedstrom/healthTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshhedstrom/healthTracker/issues"
+  },
+  "homepage": "https://github.com/joshhedstrom/healthTracker#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.1"
+  }
+}
