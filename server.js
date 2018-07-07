@@ -16,11 +16,11 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reacthealthtracker");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reacthealthtracker");
 
-mongoose.connect(process.env.MONGODB_URI, (err) => {
-	console.log(err || `Connected to MongoDB.`)
-})
+// mongoose.connect(process.env.MONGODB_URI, (err) => {
+// 	console.log(err || `Connected to MongoDB.`)
+// })
 
 
 // Start the API server
