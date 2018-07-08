@@ -51,7 +51,7 @@ function PaperSheet(props) {
             <Grid item xs={12} sm={6}>
               <TextField
                 id="username"
-                label="Username (required)"
+                label="Email (required)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
