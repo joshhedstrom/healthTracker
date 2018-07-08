@@ -25,7 +25,7 @@ function PaperSheet(props) {
     <div>
       <Paper className={classes.root} elevation={1}>
         <Typography variant="headline" component="h3">
-          Sign up for an Account!
+          Create Account
         </Typography>
           <Grid container spacing={24}>
             <Grid item xs={12} sm={6}>

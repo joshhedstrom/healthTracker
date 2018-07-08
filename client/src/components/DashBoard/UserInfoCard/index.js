@@ -6,6 +6,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
 
 const styles = {
   card: {
@@ -37,9 +42,31 @@ function SimpleMediaCard(props) {
           <Typography component="p">
             Loves exercising outdoors, hiking, cooking healthy food, and the occasional slice of carrot cake
           </Typography>
-          <Typography variant="headline" component="h4">
-            Points: 300
-          </Typography>
+          <List>
+            <ListItem>
+              <ListItemText primary="Water Intake" />
+              <ListItemText secondary="3 Glasses" />
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemText primary="Nutrion" />
+              <ListItemText secondary="Points: 10" />
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemText primary="Exercise" />
+              <ListItemText secondary="3 Hours" />
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemText primary="Weight" />
+              <ListItemText secondary="168 lbs" />
+            </ListItem>
+            <Divider />
+          </List>
+
+
+          
         </CardContent>
       </Card>
     </div>
