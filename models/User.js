@@ -7,7 +7,7 @@ const userSchema = new Schema({
   username: { type: String, require: true },
   password: { type: String, require: true },
   weight: { type: Number, required: false },
-  day: { type: Schema.Types.ObjectId, ref: "Day" }
+  days: [{ type: Schema.Types.ObjectId, ref: "Day"}]
 });
 
 const User = mongoose.model("User", userSchema);
