@@ -30,13 +30,21 @@ const styles = theme => ({
   },
   divStyle: {
     padding: 14,
+
   },
   infoButton: {
     minWith: 0,
   },
   root: {
-    flexGrow: 1,
+      flexGrow: 1,
   },
+  gridContainer: {
+    marginTop: 2,
+  }
+
+
+
+ 
 
 });
 
@@ -44,7 +52,41 @@ function MediaControlCard(props) {
   const { classes, theme } = props;
 
   return (
-    <div className={classes.divStyle}>
+    <div className={classes.root} >
+
+      <Grid className={classes.gridContainer} container spacing={24} justify="center" >
+        <Grid justify="center" item xs={24}>
+          <Button variant="contained">
+          <AddIcon />
+            Water
+          </Button>
+        </Grid>
+        <Grid justify="center" item xs={6}>
+          <Button variant="contained">
+           <AddIcon />
+             Nutrition
+          </Button>
+        </Grid>
+
+ 
+        <Grid justify="center" item xs={24}>
+          <Button variant="contained">
+            <AddIcon />
+             Exercise
+          </Button >
+        </Grid>
+        <Grid justify="center" item xs={6}>
+          <Button variant="contained">
+            <AddIcon />
+             Weight
+          </Button>
+        </Grid>
+
+
+      </Grid>
+
+
+
 
         <Card className={classes.card}>
           <div className={classes.details}>

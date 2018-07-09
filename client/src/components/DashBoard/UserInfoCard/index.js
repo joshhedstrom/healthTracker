@@ -65,8 +65,6 @@ function SimpleMediaCard(props) {
             <Divider />
           </List>
 
-
-          
         </CardContent>
       </Card>
     </div>
