@@ -50,7 +50,7 @@ function SimpleMediaCard(props) {
             <Divider />
             <ListItem>
               <ListItemText primary="Nutrion" />
-              <ListItemText secondary="Points: 10" />
+              <ListItemText secondary="10 Points" />
             </ListItem>
             <Divider />
             <ListItem>

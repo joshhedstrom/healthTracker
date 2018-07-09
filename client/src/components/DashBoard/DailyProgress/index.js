@@ -61,7 +61,7 @@ function MediaControlCard(props) {
             Water
           </Button>
         </Grid>
-        <Grid justify="center" item xs={6}>
+        <Grid justify="center" item xs={24}>
           <Button variant="contained">
            <AddIcon />
              Nutrition
@@ -75,7 +75,7 @@ function MediaControlCard(props) {
              Exercise
           </Button >
         </Grid>
-        <Grid justify="center" item xs={6}>
+        <Grid justify="center" item xs={24}>
           <Button variant="contained">
             <AddIcon />
              Weight
