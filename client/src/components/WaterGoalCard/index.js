@@ -106,7 +106,7 @@ render () {
           <ExpansionPanel  className={classes.expansionPanelStyle} defaultExpanded>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <div className={classes.column}>
-              <Typography className={classes.heading}>Water Graph</Typography>
+              <Typography className={classes.heading}>History</Typography>
             </div>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.details}>

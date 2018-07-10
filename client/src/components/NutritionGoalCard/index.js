@@ -84,12 +84,9 @@ render () {
             Nutrition Goal
           </Typography>
           <Typography>
-            Drink at least 8 fluid ounces each day. 
-            One Glass counts as one fluid ounce 
+            Each goal below counts as 1+ points. Try to see if you can meet all of these goals!
           </Typography>
-          <Typography variant="title">
-            Add Water
-          </Typography>
+         
 
           <Typography variant="subheading">
             Today's Progress
@@ -97,14 +94,16 @@ render () {
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell>3 Glasses</TableCell>
+                <TableCell>4 Points</TableCell>
               </TableRow>
             </TableBody>
           </Table>
 
         
         <FormControl component="fieldset">
-          <FormLabel component="legend">Select All Goals You Achieved Today </FormLabel>
+          <Typography variant="title">
+            Select All Goals You Achieved Today 
+          </Typography>
           <FormGroup>
             <FormControlLabel
               control={
@@ -231,11 +230,10 @@ render () {
 
 
           </FormGroup>
+          <Button variant="contained">Submit</Button>
       </FormControl>
 
-
-          <Button variant="contained">Submit</Button>
-        </Paper>
+    </Paper>
 
 
 
@@ -243,7 +241,7 @@ render () {
         <ExpansionPanel  className={classes.expansionPanelStyle} defaultExpanded>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <div className={classes.column}>
-              <Typography className={classes.heading}>Water Graph</Typography>
+              <Typography className={classes.heading}>History</Typography>
             </div>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.details}>
