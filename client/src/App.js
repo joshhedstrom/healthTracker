@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import WaterPage from './pages/WaterPage';
 import NutritionPage from './pages/NutritionPage';
+import ExercisePage from './pages/ExercisePage';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ const App = () => (
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/waterGoal" component={WaterPage} />
         <Route exact path="/nutritionGoal" component={NutritionPage} />
+        <Route exact path="/exerciseGoal" component={ExercisePage} />
       </Switch>
     </div>
   </Router>
