@@ -14,17 +14,16 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 
-
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
   },
   margin: {
-    margin: theme.spacing.unit,
-  },
-})
+    margin: theme.spacing.unit
+  }
+});
 
 function PaperSheet(props) {
   const { classes } = props;
@@ -33,71 +32,62 @@ function PaperSheet(props) {
     <div>
       <Paper className={classes.root} elevation={1}>
         <Typography variant="headline" component="h3">
-          Log In 
+          Log In
         </Typography>
         <Typography component="p">
+          <FormControl className={classes.margin}>
+            <InputLabel htmlFor="input-with-icon-adornment">Email</InputLabel>
+            <Input
+              id="username"
+              value={props.username}
+              onChange={props.onChange}
+              startAdornment={
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              }
+            />
+          </FormControl>
+          <TextField
+            className={classes.margin}
+            id="password"
+            value={props.password}
+            onChange={props.onChange}
+            label="Password"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              )
+            }}
+          />
+          <div className={classes.margin}>
+            <Grid container spacing={8} alignItems="flex-end">
+              <Grid item xs={8} sm={4}>
+                <Button
+                  onClick={props.onSubmit}
+                  variant="contained"
+                  color="primary"
+                >
+                  Log In
+                </Button>
+              </Grid>
 
-         <FormControl className={classes.margin}>
-        <InputLabel htmlFor="input-with-icon-adornment">Email</InputLabel>
-        <Input
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <TextField
-        className={classes.margin}
-        id="input-with-icon-textfield"
-        label="Password"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          ),
-        }}
-      />
-      <div className={classes.margin}>
-        <Grid container spacing={8} alignItems="flex-end">
-
-            <Grid item xs={8} sm={4}>
-              <Button variant="contained" color="primary">Log In</Button>
+              <Divider />
+              <Grid item xs={8} sm={4}>
+                <Button variant="contained">Create New Account</Button>
+              </Grid>
             </Grid>
-
-          <Divider />
-            <Grid item xs={8} sm={4}>
-              <Button variant="contained">Create New Account</Button>
-            </Grid>
-        </Grid>
-
-
-
-      </div>
+          </div>
         </Typography>
       </Paper>
-  
-
- 
-  </div>
-
-
-  )
+    </div>
+  );
 }
 
-
-
-
-
 PaperSheet.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(PaperSheet);
-
-
-
-
-
