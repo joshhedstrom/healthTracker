@@ -35,6 +35,9 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
   },
+  expansionPanelStyle: {
+    margin: 11,
+  }
 
 
 });
@@ -99,40 +102,21 @@ render () {
             </form>
           <Button variant="contained">Submit</Button>
         </Paper>
-        <Paper>
-           <ExpansionPanel defaultExpanded>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <div className={classes.column}>
-            <Typography className={classes.heading}>Location</Typography>
-          </div>
-          <div className={classes.column}>
-            <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
-          </div>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails className={classes.details}>
-          <div className={classes.column} />
-          <div className={classes.column}>
-            <Chip label="Barbados" className={classes.chip} onDelete={() => {}} />
-          </div>
-          <div className={classNames(classes.column, classes.helper)}>
-            <Typography variant="caption">
-              Select your destination of choice<br />
-              <a href="#sub-labels-and-columns" className={classes.link}>
-                Learn more
-              </a>
-            </Typography>
-          </div>
-        </ExpansionPanelDetails>
-        <Divider />
-        <ExpansionPanelActions>
-          <Button size="small">Cancel</Button>
-          <Button size="small" color="primary">
-            Save
-          </Button>
-        </ExpansionPanelActions>
-      </ExpansionPanel>
+      
+          <ExpansionPanel  className={classes.expansionPanelStyle} defaultExpanded>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+            <div className={classes.column}>
+              <Typography className={classes.heading}>Water Graph</Typography>
+            </div>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails className={classes.details}>
+                graph goes here
+          
+          </ExpansionPanelDetails>
 
-        </Paper>
+         
+        </ExpansionPanel>
+
 
 
       </div>
