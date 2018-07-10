@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import DashBoard from './pages/DashBoard';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import WaterPage from './pages/WaterPage';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ const App = () => (
         <Route exact path="/" component={DashBoard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/Signup" component={Signup} />
+        <Route exact path="/waterGoal" component={WaterPage} />
       </Switch>
     </div>
   </Router>
