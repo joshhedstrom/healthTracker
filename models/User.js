@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt-nodejs');
 
 const userSchema = new Schema({
   firstName: { type: String, required: true },
@@ -7,9 +8,38 @@ const userSchema = new Schema({
   username: { type: String, require: true },
   password: { type: String, require: true },
   weight: { type: Number, required: false },
-  days: [{ type: Schema.Types.ObjectId, ref: "Day"}]
+  days: [{ type: Schema.Types.ObjectId, ref: 'Day' }]
 });
 
-const User = mongoose.model("User", userSchema);
+UserSchema.pre('save', function(next) {
+  var user = this;
+  if (this.isModified('password') || this.isNew) {
+    bcrypt.genSalt(10, (err, salt) => {
+      if (err) {
+        return next(err);
+      }
+      bcrypt.hash(user.password, salt, null, (err, hash) => {
+        if (err) {
+          return next(err);
+        }
+        user.password = hash;
+        next();
+      });
+    });
+  } else {
+    return next();
+  }
+});
+
+UserSchema.methods.comparePassword = function(passw, cb) {
+  bcrypt.compare(passw, this.password, (err, isMatch) => {
+    if (err) {
+      return cb(err);
+    }
+    cb(null, isMatch);
+  });
+};
+
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
