@@ -23,9 +23,9 @@ class Signup extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const { firstname, lastname, username, weight, password } = this.state;
+    const { firstName, lastName, username, weight, password } = this.state;
 
-    axios.post('/api/auth/register', { firstname, lastname, username, weight, password }).then(result => {
+    axios.post('/api/auth/register', { firstName, lastName, username, weight, password }).then(result => {
       console.log(result)
       // this.props.history.push('/login');
     });
