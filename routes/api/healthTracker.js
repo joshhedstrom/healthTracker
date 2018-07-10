@@ -20,7 +20,7 @@ router.get("/:id", (req, res) => {
 // const Book = require('../models/Book.js');
 // const mongoose = require('mongoose');
 const passport = require('passport');
-require('../config/passport')(passport);
+require('../../config/passport')(passport);
 router.get(
   '/',
   passport.authenticate('jwt', { session: false }),

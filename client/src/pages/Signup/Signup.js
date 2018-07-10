@@ -16,17 +16,18 @@ class Signup extends Component {
   }
   onChange = e => {
     const state = this.state;
-    state[e.target.name] = e.target.value;
+    state[e.target.id] = e.target.value;
     this.setState(state);
   };
 
   onSubmit = e => {
     e.preventDefault();
 
-    const { username, password } = this.state;
+    const { firstname, lastname, username, weight, password } = this.state;
 
-    axios.post('/api/auth/register', { username, password }).then(result => {
-      this.props.history.push('/login');
+    axios.post('/api/auth/register', { firstname, lastname, username, weight, password }).then(result => {
+      console.log(result)
+      // this.props.history.push('/login');
     });
   };
 
