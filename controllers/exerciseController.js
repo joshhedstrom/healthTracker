@@ -2,25 +2,19 @@ const db = require("../models")
 
 module.exports = {
     //Exercise Controllers
-    createExercise: function(req, res) {
+    addExercise: function(req, res) {
         db.Exercise
-        .create(req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-
-    updateExercise: function(req, res) {
-        db.Exercise
-        .findOneAndUpdate({ _id: req.params.id }, req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-    
-    removeExercise: function(req, res) {
-        db.Exercise
-        .findById({ _id: req.params.id })
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
+        .create({exercise: req.body.exercise, duration: req.body.duration})
+        .then(exerciseModel => {
+            db.Day.findById({_id: req.body.id})
+            .then(dayModel => {
+                dayModel.exercises.push(exerciseModel._id)
+                dayModel.save()
+                return res.send("Exercise Added")
+            })
+            .catch(err => res.status(422).json(err))
+            return res.send("Exercise Added")
+        })
         .catch(err => res.status(422).json(err));
     },
 

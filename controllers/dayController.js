@@ -6,7 +6,7 @@ module.exports = {
         db.Day
         .create(req.body)
         .then(dbModel => {
-            db.User.findOne({username: req.body.username})
+            db.User.findByIdAndUpdate({username: req.body.username})
             .then((userModel) => {
                 userModel.days.push(dbModel._id)
                 userModel.save()
