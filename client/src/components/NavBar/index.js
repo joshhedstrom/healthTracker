@@ -45,7 +45,7 @@ state = {
 };
 
 toggleDrawer = (side, open) => () => {
-  console.log("i clicked")
+  
   this.setState({
     [side]: open,
   });
@@ -61,20 +61,26 @@ render () {
 
       <div className={classes.list}>
         <div component="nav">
+        <a style={{textDecoration: 'none', color:'white' }} href="/">
           <ListItem button>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
+         </a>
           <Divider />
 
-          <ListItem button>
-            <ListItemText primary="Water" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Nutrition" />
-          </ListItem>
+          <a style={{textDecoration: 'none', color:'white' }} href="/waterGoal">
+            <ListItem button>
+              <ListItemText primary="Water" />
+            </ListItem>
+           </a>
+          <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
+            <ListItem button>
+                <ListItemText primary="Nutrition" />
+            </ListItem>
+          </a>
           <ListItem button>
             <ListItemText primary="Exercise" />
           </ListItem>
@@ -111,7 +117,9 @@ render () {
             HealthTracker
             </a>
           </Typography>
-          <Button color="inherit">Login</Button>
+           <a style={{textDecoration: 'none', color:'white' }} href="/login">
+            <Button color="inherit">Login</Button>
+          </a>
         </Toolbar>
       </AppBar>
     </div>
