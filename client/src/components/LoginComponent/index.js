@@ -69,7 +69,9 @@ function PaperSheet(props) {
 
           <Divider />
             <Grid item xs={8} sm={4}>
-              <Button variant="contained">Create New Account</Button>
+             <a style={{textDecoration: 'none', color:'white' }} href="/Signup">
+               <Button variant="contained">Create New Account</Button>
+              </a>
             </Grid>
         </Grid>
 
