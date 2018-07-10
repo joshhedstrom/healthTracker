@@ -14,4 +14,20 @@ module.exports = {
         })
         .catch(err => res.status(422).json(err));
     },
+
+    //Update Water for the day
+    updateWater: function(req,res) {
+        db.Day
+        .findOneAndUpdate({ _id: req.params.id }, {water: req.body.water})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
+
+    //Update Nutrition for the day
+    updateNutrition: function(req,res) {
+        db.Day
+        .findOneAndUpdate({ _id: req.params.id }, {nutrition: req.body.nutrition})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
 }
