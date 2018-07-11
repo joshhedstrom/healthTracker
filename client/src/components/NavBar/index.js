@@ -111,7 +111,7 @@ render () {
             HealthTracker
             </a>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button href='/login' color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
