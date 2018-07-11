@@ -16,6 +16,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Charts from '../../Charts';
 
 const styles = {
   card: {
@@ -41,6 +42,7 @@ function SimpleMediaCard(props) {
           title="Contemplative Reptile"
         />
         <CardContent>
+          <Charts />
           <Typography gutterBottom variant="headline" component="h2">
             Charlie Johnson
           </Typography>
