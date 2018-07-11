@@ -1,39 +1,50 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import SignupComponent from '../../components/SignupComponent';
 
 class Signup extends Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    username: '',
-    weight: '',
-    password: '',
-    passwordConfirmation: ''
+  constructor() {
+    super();
+    this.state = {
+      firstName: '',
+      lastName: '',
+      username: '',
+      weight: '',
+      password: '',
+      passwordConfirmation: ''
+    };
   }
+  onChange = e => {
+    const state = this.state;
+    state[e.target.id] = e.target.value;
+    this.setState(state);
+  };
 
-  handleInputChange = event => {
-    this.setState({ [event.target.id]: event.target.value });
-  }
+  onSubmit = e => {
+    e.preventDefault();
 
-  handleSubmit = event => {
-    event.preventDefault();
-    console.log('Form Submitted')
-  }
+    const { firstName, lastName, username, weight, password } = this.state;
+
+    axios.post('/api/auth/register', { firstName, lastName, username, weight, password }).then(result => {
+      console.log(result)
+      // this.props.history.push('/login');
+    });
+  };
 
   render() {
     return (
       <div>
         <SignupComponent
-          firstNameAction={this.handleInputChange.bind()}
-          lastNameAction={this.handleInputChange.bind()}
-          usernameAction={this.handleInputChange.bind()}
-          weightAction={this.handleInputChange.bind()}
-          passwordAction={this.handleInputChange.bind()}
-          passwordConfirmAction={this.handleInputChange.bind()}
-          submitAction={this.handleSubmit.bind()}
+          firstNameAction={this.onChange.bind()}
+          lastNameAction={this.onChange.bind()}
+          usernameAction={this.onChange.bind()}
+          weightAction={this.onChange.bind()}
+          passwordAction={this.onChange.bind()}
+          passwordConfirmAction={this.onChange.bind()}
+          submitAction={this.onSubmit.bind()}
         />
       </div>
-    )
+    );
   }
 }
 
