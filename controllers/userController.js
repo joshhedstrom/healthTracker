@@ -1,4 +1,5 @@
 const db = require("../models")
+const moment = require("moment")
 
 module.exports = {
     // User controllers
@@ -8,6 +9,11 @@ module.exports = {
         .select("-__v -password")
         .populate({
             path: "days",
+            options: {
+                sort: {
+                    date: -1
+                }
+            },
             select: "-__v",
             populate: {
                 path: "exercises",
@@ -15,7 +21,7 @@ module.exports = {
                 select: "-__v"
             }
         })
-        .then(dbModel => res.json(dbModel))
+        .then((userModel) => res.json(userModel))
         .catch(err => res.status(422).json(err));
     },
 

@@ -14,8 +14,12 @@ router.post("/newExercise", (req, res) => {
   db.Exercise.addExercise(req, res)
 })
 
-router.get("/:id", (req, res) => {
+router.get("/user/:id", (req, res) => {
   db.User.findUserById(req, res)
+})
+
+router.get("/day/:id", (req, res) => {
+  db.Day.findDayByID(req, res)
 })
 
 module.exports = router;
