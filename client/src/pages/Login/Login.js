@@ -42,10 +42,8 @@ class Login extends Component {
     return (
       <div>
         <LoginComponent
-          username={username}
-          password={password}
-          onSubmit={this.onSubmit.bind()}
-          onChange={this.onChange.bind()}
+          usernameAction={this.onChange.bind()}
+          passwordAction={this.onChange.bind()}
         />
       </div>
     );
