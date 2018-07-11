@@ -4,8 +4,17 @@ module.exports = {
     // User controllers
     findUserById: function(req, res) {
         db.User
-        .findById(req.params.id)
-        .populate("days")
+        .findByIdAndUpdate({_id: req.params.id})
+        .select("-__v -password")
+        .populate({
+            path: "days",
+            select: "-__v",
+            populate: {
+                path: "exercises",
+                model: "Exercise",
+                select: "-__v"
+            }
+        })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },

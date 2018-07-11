@@ -65,7 +65,7 @@ render () {
       <div>
         <Paper className={classes.root} elevation={1}>
           <Typography variant="display1">
-            Water Goal
+            Exercsie Goal
           </Typography>
           <Typography>
             Drink at least 8 fluid ounces each day. 
