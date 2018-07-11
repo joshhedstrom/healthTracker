@@ -30,6 +30,7 @@ class Login extends Component {
         this.props.history.push('/');
       })
       .catch(error => {
+        console.log(error)
         if (error.response.status === 401) {
           this.setState({
             message: 'Login failed. Username or password not match'
@@ -44,6 +45,7 @@ class Login extends Component {
         <LoginComponent
           usernameAction={this.onChange.bind()}
           passwordAction={this.onChange.bind()}
+          submitAction={this.onSubmit.bind()}
         />
       </div>
     );

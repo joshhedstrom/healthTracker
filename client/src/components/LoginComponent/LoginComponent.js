@@ -56,11 +56,13 @@ function Login(props) {
           <Grid container spacing={8} alignItems="flex-end">
             <Grid item xs={8} sm={4}>
               <Button
-                onClick={props.onSubmit}
+                size="large"
                 variant="contained"
                 color="primary"
+                className={classes.button}
+                onClick={props.submitAction}
               >
-                Log In
+                Submit
               </Button>
             </Grid>
 

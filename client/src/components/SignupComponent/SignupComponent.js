@@ -95,7 +95,7 @@ function Signup(props) {
           <Grid item xs={12}>
             <Button
               size="large"
-              variant="outlined"
+              variant="contained"
               color="primary"
               className={classes.button}
               onClick={props.submitAction}
