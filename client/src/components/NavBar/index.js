@@ -117,7 +117,7 @@ render () {
             HealthTracker
             </a>
           </Typography>
-           <a style={{textDecoration: 'none', color:'white' }} href="/login">
+          <a style={{textDecoration: 'none', color:'white' }} href="/login">
             <Button color="inherit">Login</Button>
           </a>
         </Toolbar>

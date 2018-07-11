@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -18,7 +18,7 @@ const styles = theme => ({
   }
 });
 
-function PaperSheet(props) {
+function Signup(props) {
   const { classes } = props;
 
   return (
@@ -27,160 +27,90 @@ function PaperSheet(props) {
         <Typography variant="headline" component="h3">
           Create Account
         </Typography>
-          <Grid container spacing={24}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                id="firstName"
-                label="First Name (required)"
-                className={classes.textField}
-                margin="normal"
-                fullWidth
-                onChange={props.firstNameAction}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                id="lastName"
-                label="Last Name (required)"
-                className={classes.textField}
-                margin="normal"
-                fullWidth
-                onChange={props.lastNameAction}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                id="username"
-                label="Email (required)"
-                className={classes.textField}
-                margin="normal"
-                fullWidth
-                onChange={props.usernameAction}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-                <TextField
-                  id="weight"
-                  label="Weight (optional)"
-                  className={classes.textField}
-                  margin="normal"
-                  fullWidth
-                  onChange={props.weightAction}
-                >
-                </TextField>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                id="password"
-                label="Password"
-                className={classes.textField}
-                type="password"
-                autoComplete="current-password"
-                margin="normal"
-                fullWidth
-                onChange={props.passwordAction}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                id="passwordConfirmation"
-                label="Confirm Password"
-                className={classes.textField}
-                type="password"
-                autoComplete="current-password"
-                margin="normal"
-                fullWidth
-                onChange={props.passwordConfirmAction}
-              />
-            </Grid>
-            <Grid item xs={12}>
-                      <Button
-                          size="large"
-                          variant="outlined"
-                          color="primary"
-                          className={classes.button}
-                          onClick={props.submitAction}
-                      >
-                          Submit
-</Button>
-            </Grid>
+        <Grid container spacing={24}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="firstName"
+              label="First Name (required)"
+              className={classes.textField}
+              margin="normal"
+              fullWidth
+              onChange={props.firstNameAction}
+            />
           </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="lastName"
+              label="Last Name (required)"
+              className={classes.textField}
+              margin="normal"
+              fullWidth
+              onChange={props.lastNameAction}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="username"
+              label="Username (required)"
+              className={classes.textField}
+              margin="normal"
+              fullWidth
+              onChange={props.usernameAction}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="weight"
+              label="Weight (optional)"
+              className={classes.textField}
+              margin="normal"
+              fullWidth
+              onChange={props.weightAction}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="password"
+              label="Password"
+              className={classes.textField}
+              type="password"
+              autoComplete="current-password"
+              margin="normal"
+              fullWidth
+              onChange={props.passwordAction}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="passwordConfirmation"
+              label="Confirm Password"
+              className={classes.textField}
+              type="password"
+              autoComplete="current-password"
+              margin="normal"
+              fullWidth
+              onChange={props.passwordConfirmAction}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              size="large"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={props.submitAction}
+            >
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
       </Paper>
     </div>
   );
 }
 
-PaperSheet.propTypes = {
+Signup.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PaperSheet);
-
-{
-  /* 
-<FormControl className={classes.margin}>
-    <InputLabel htmlFor="input-with-icon-adornment">
-        First Name (required)
-            </InputLabel>
-    <Input
-        id="input-with-icon-adornment"
-        startAdornment={
-            <InputAdornment position="start">
-                <AccountCircle />
-            </InputAdornment>
-        }
-    />
-</FormControl>
-    <FormControl className={classes.margin}>
-        <InputLabel htmlFor="input-with-icon-adornment">
-            Last Name (required)
-            </InputLabel>
-        <Input
-            id="input-with-icon-adornment"
-            startAdornment={
-                <InputAdornment position="start">
-                    <AccountCircle />
-                </InputAdornment>
-            }
-        />
-    </FormControl>
-    <FormControl className={classes.margin}>
-        <InputLabel htmlFor="input-with-icon-adornment">
-            Username (required)
-            </InputLabel>
-        <Input
-            id="input-with-icon-adornment"
-            startAdornment={
-                <InputAdornment position="start">
-                    <AccountCircle />
-                </InputAdornment>
-            }
-        />
-    </FormControl>
-    <FormControl className={classes.margin}>
-        <InputLabel htmlFor="input-with-icon-adornment">
-            Password (required)
-            </InputLabel>
-        <Input
-            id="input-with-icon-adornment"
-            startAdornment={
-                <InputAdornment position="start">
-                    <AccountCircle />
-                </InputAdornment>
-            }
-        />
-    </FormControl>
-    <FormControl className={classes.margin}>
-        <InputLabel htmlFor="input-with-icon-adornment">
-            Weight (optional)
-            </InputLabel>
-        <Input
-            id="input-with-icon-adornment"
-            startAdornment={
-                <InputAdornment position="start">
-                    <AccountCircle />
-                </InputAdornment>
-            }
-        />
-    </FormControl> */
-}
+export default withStyles(styles)(Signup);
