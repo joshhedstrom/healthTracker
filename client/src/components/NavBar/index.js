@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import "./index.css";
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import HomeIcon from '@material-ui/icons/Home';
@@ -81,12 +80,16 @@ render () {
                 <ListItemText primary="Nutrition" />
             </ListItem>
           </a>
-          <ListItem button>
-            <ListItemText primary="Exercise" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Weight" />
-          </ListItem>
+          <a style={{textDecoration: 'none', color:'white' }} href="/exerciseGoal">
+            <ListItem button>
+              <ListItemText primary="Exercise" />
+            </ListItem>
+          </a>
+          <a style={{textDecoration: 'none', color:'white' }} href="/weightGoal">
+            <ListItem button>
+              <ListItemText primary="Weight" />
+            </ListItem>
+          </a>
 
         </div>
       </div>

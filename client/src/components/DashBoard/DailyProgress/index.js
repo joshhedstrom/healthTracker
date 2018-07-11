@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-import InfoIcon from '@material-ui/icons/Info';
 import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
