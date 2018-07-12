@@ -18,6 +18,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Grid from '@material-ui/core/Grid';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 
 
@@ -58,6 +64,17 @@ const styles = theme => ({
   header: {
     marginBottom: 28,
   },
+  formRoot: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  formControl: {
+    margin: theme.spacing.unit,
+    minWidth: 120,
+  },
+   selectEmpty: {
+    marginTop: theme.spacing.unit * 2,
+  },
 
 });
 
@@ -65,14 +82,21 @@ const styles = theme => ({
 class PaperSheet extends React.Component {
 
   state = {
-    glasses: ''
+    glasses: '',
+    workout: '',
+    name: 'hai',
+
+
 
   };
 
-  handleChange = name => event => {
+  handleChange = event => {
+    console.log(event.target.name)
+    console.log(this.state.minutes)
     this.setState({
-      [name]: event.target.value,
+      [event.target.name]: event.target.value,
     })
+  
   };
 
 
@@ -90,7 +114,6 @@ render () {
             Select the workout and duration
           </Typography>
          
-
           <Typography variant="subheading">
             Today's Progress
           </Typography>
@@ -102,25 +125,42 @@ render () {
             </TableBody>
           </Table>
 
-          <List className={classes.rootList} subheader={<li />}>
-              {[0].map(sectionId => (
-            <li key={`section-${sectionId}`} className={classes.listSection}>
-              <ul className={classes.ul}>
-            <ListSubheader align="center">{`Select Workout`}</ListSubheader>
-            {[
-              'Running', 'Walking', 'Strength Training', 'Yoga', 'Boxing',
-              'Swimming', 'HIIT', 
 
-            ].map(item => (
-              <ListItem key={`item-${sectionId}-${item}`}>
-                <ListItemText align="center" primary={` ${item}`} />
-                      </ListItem>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-          </List>
-          
+
+        <form align="center" className={classes.formRoot} autoComplete="off">
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="workout-simple">workout</InputLabel>
+            <Select
+              value={this.state.workout}
+              onChange={this.handleChange}
+              inputProps={{
+                name: 'workout',
+                id: 'workout-simple',
+              }}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value={1}>Running</MenuItem>
+              <MenuItem value={2}>Walking</MenuItem>
+              <MenuItem value={3}>Strength Training</MenuItem>
+              <MenuItem value={4}>Yoga</MenuItem>
+              <MenuItem value={5}>Boxing</MenuItem>
+              <MenuItem value={6}>Swimming</MenuItem>
+              <MenuItem value={7}>HIIT</MenuItem>
+              <MenuItem value={8}>Cycling</MenuItem>
+              <MenuItem value={9}>Swimming</MenuItem>
+              <MenuItem value={10}>HIIT</MenuItem>
+              <MenuItem value={11}>Stair Stepper</MenuItem>
+              <MenuItem value={12}>Other</MenuItem>
+            </Select>
+              <FormHelperText>Select the workout and duration</FormHelperText>
+          </FormControl>
+
+
+
+         
+        </form>
 
 
           <Grid container spacing={12}>
@@ -129,11 +169,13 @@ render () {
                 <TextField
                 id="addMinutes"
                 label="Minutes"
-                value={this.state.Minutes}
-                onChange={this.handleChange('Minutes')}
+                value={this.state.minutes}
+
+                onChange={this.handleChange}
                 type="number"
                 className={classes.textField}
                 margin="normal"
+                name="minutes"
               />
               </form>
             </Grid>
@@ -142,11 +184,12 @@ render () {
                 <TextField
                 id="addHours"
                 label="Hours"
-                value={this.state.Hours}
-                onChange={this.handleChange('Hours')}
+                value={this.state.hours}
+                onChange={this.handleChange}
                 type="number"
                 className={classes.textField}
                 margin="normal"
+                name="hours"
               />
               </form>
             </Grid>

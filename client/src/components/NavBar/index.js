@@ -89,6 +89,12 @@ render () {
             <ListItem button>
               <ListItemText primary="Weight" />
             </ListItem>
+            <Divider />
+          </a>
+          <a style={{textDecoration: 'none', color:'white' }} href="">
+            <ListItem button>
+              <ListItemText primary="Log Out" />
+            </ListItem>
           </a>
 
         </div>
@@ -113,8 +119,6 @@ render () {
             {sideList}
           </div>
           </Drawer>
-
-
           <Typography variant="title" color="inherit" className={classes.flex}>
             <a style={{textDecoration: 'none', color:'white' }} href="/">
             HealthTracker
