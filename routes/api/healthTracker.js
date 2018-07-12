@@ -14,13 +14,16 @@ router.post("/newExercise", (req, res) => {
   db.Exercise.addExercise(req, res)
 })
 
-router.get("/:id", (req, res) => {
+router.get("/user/:id", (req, res) => {
   db.User.findUserById(req, res)
 })
 
+router.get("/day/:id", (req, res) => {
+  db.Day.findDayByID(req, res)
+})
+
 //---------------------------------------------------------DUMMY AUTH ROUTES-------------------->>>>>>>>
-// const Book = require('../models/Book.js');
-// const mongoose = require('mongoose');
+
 const passport = require('passport');
 require('../../config/passport')(passport);
 router.get(
@@ -69,8 +72,6 @@ getToken = function (headers) {
     return null;
   }
 };
-
-//---------------------------------------------------------DUMMY AUTH ROUTES-------------------->>>>>>>>
 
 
 module.exports = router;

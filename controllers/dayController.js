@@ -3,16 +3,22 @@ module.exports = {
 
     //Day Controller
     createDay: function(req, res) {
-        db.Day
-        .create(req.body)
-        .then(dbModel => {
-            db.User.findByIdAndUpdate({username: req.body.username})
-            .then((userModel) => {
-                userModel.days.push(dbModel._id)
-                userModel.save()
-            })
+        db.Day.findOne({date: req.body.date, userId: req.body.userId})
+        .then(dbDay => {
+            if (dbDay) {
+                return res.json(dbDay)
+            } else {
+                db.Day.create(req.body)
+                .then(newDbDay => {
+                    db.User.findById({_id: req.body.userId})
+                    .then(dbUser => {
+                        dbUser.days.push(newDbDay._id)
+                        dbUser.save()
+                    })
+                    return res.json(newDbDay)
+                })
+            }
         })
-        .catch(err => res.status(422).json(err));
     },
 
     //Update Water for the day
@@ -30,4 +36,6 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+
 }
+
