@@ -60,36 +60,31 @@ render () {
       <div>
         <Paper className={classes.root} elevation={1}>
           <Typography variant="display1">
-            Water Goal
+            Weight Tracker
           </Typography>
           <Typography>
-            Drink at least 8 fluid ounces each day. 
-            One Glass counts as one fluid ounce 
+            Enter your weight as frequently as needed
           </Typography>
-          <Typography variant="title">
-            Add Water
-          </Typography>
+         
           <Typography variant="subheading">
-            Today's Progress
+            Current Weight
           </Typography>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell>3 Glasses</TableCell>
+                <TableCell>168 Lbs</TableCell>
               </TableRow>
             </TableBody>
           </Table>
 
-          <Button variant="outlined" size="small">+1 Glasses</Button>
-          <Button variant="outlined" size="small">+3 Glasses</Button>
-          <Button variant="outlined" size="small">+6 Glasses</Button>
+       
 
            <form className={classes.container} noValidate autoComplete="off">
               <TextField
-              id="addGlasses"
-              label="Enter Water"
-              value={this.state.glasses}
-              onChange={this.handleChange('glasses')}
+              id="addWeight"
+              label="Enter Weight"
+              value={this.state.Weight}
+              onChange={this.handleChange('Weight')}
               type="number"
               className={classes.textField}
               margin="normal"

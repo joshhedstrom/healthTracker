@@ -8,16 +8,18 @@ import TextField from '@material-ui/core/TextField';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Chip from '@material-ui/core/Chip';
-import Divider from '@material-ui/core/Divider';
-import classNames from 'classnames';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import Grid from '@material-ui/core/Grid';
+
+
 
 const styles = theme => ({
   root: {
@@ -37,7 +39,23 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11,
-  }
+  },
+  rootList: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+    position: 'relative',
+    overflow: 'auto',
+    maxHeight: 300,
+  },
+  listSection: {
+    backgroundColor: 'inherit',
+  },
+  ul: {
+    backgroundColor: 'inherit',
+    padding: 0,
+  },
+
 
 
 });
@@ -68,38 +86,71 @@ render () {
             Exercsie Goal
           </Typography>
           <Typography>
-            Drink at least 8 fluid ounces each day. 
-            One Glass counts as one fluid ounce 
+            Select the workout and duration
           </Typography>
-          <Typography variant="title">
-            Add Water
-          </Typography>
+         
+
           <Typography variant="subheading">
             Today's Progress
           </Typography>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell>3 Glasses</TableCell>
+                <TableCell>Worked Out 2 Hours</TableCell>
               </TableRow>
             </TableBody>
           </Table>
 
-          <Button variant="outlined" size="small">+1 Glasses</Button>
-          <Button variant="outlined" size="small">+3 Glasses</Button>
-          <Button variant="outlined" size="small">+6 Glasses</Button>
+          <List className={classes.rootList} subheader={<li />}>
+              {[0].map(sectionId => (
+            <li key={`section-${sectionId}`} className={classes.listSection}>
+              <ul className={classes.ul}>
+            <ListSubheader>{`Select Workout`}</ListSubheader>
+            {[
+              'Running', 'Walking', 'Strength Training', 'Yoga', 'Boxing',
+              'Swimming', 'HIIT', 
 
-           <form className={classes.container} noValidate autoComplete="off">
-              <TextField
-              id="addGlasses"
-              label="Enter Water"
-              value={this.state.glasses}
-              onChange={this.handleChange('glasses')}
-              type="number"
-              className={classes.textField}
-              margin="normal"
-            />
-            </form>
+            ].map(item => (
+              <ListItem key={`item-${sectionId}-${item}`}>
+                <ListItemText primary={` ${item}`} />
+                      </ListItem>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+          </List>
+          
+
+
+          <Grid container spacing={12}>
+            <Grid item xs={3}>
+             <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                id="addMinutes"
+                label="Minutes"
+                value={this.state.Minutes}
+                onChange={this.handleChange('Minutes')}
+                type="number"
+                className={classes.textField}
+                margin="normal"
+              />
+              </form>
+            </Grid>
+            <Grid item xs={3}>
+              <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                id="addHours"
+                label="Hours"
+                value={this.state.Hours}
+                onChange={this.handleChange('Hours')}
+                type="number"
+                className={classes.textField}
+                margin="normal"
+              />
+              </form>
+            </Grid>
+          </Grid>
+
           <Button variant="contained">Submit</Button>
         </Paper>
       
