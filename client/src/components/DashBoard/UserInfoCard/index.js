@@ -30,11 +30,7 @@ function SimpleMediaCard(props) {
   return (
     <div>
       <Card className={classes.card}>
-        <CardMedia
-          className={classes.media}
-          image="../../../static/images/brad.jpg"
-          title="Contemplative Reptile"
-        />
+        
         <CardContent>
           <Charts />
           <Typography gutterBottom variant="headline" component="h2">

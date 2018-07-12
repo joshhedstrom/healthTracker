@@ -35,15 +35,15 @@
                         ]
                     }],
                     options: {
-                        title: {
-                            display: false, 
-                        },
-                         legend: {
+                        responsive: true, 
+                        maintainAspectRatio: true,
+                            title: {
+                                display: false, 
+                            },
+                            legend: {
                                 display: true,
                                 position: 'bottom',
-                            
-                         },
-                         maintainAspectRatio: false
+                            },
                         }
                     } 
                 }
@@ -52,14 +52,15 @@
       
       render() {
         return (
-            <div className="Chart">
+            <div className="Chart-container">
                     <Line justify="center" item xs={24} 
 	                    data={this.state.chartData}
+
 	                      options={{
                             title: {
                                 display: this.state.chartData,
-                                text: `Hi Charlie! Here are your stats so for the week!`,
-                                fontSize: 40
+                                text: `Current Goals`,
+                                fontSize: 30
                             }
                             
                          }}
