@@ -12,7 +12,7 @@ class Login extends Component {
     };
   }
   onChange = e => {
-    this.setState({[e.target.id]: e.target.value})
+    this.setState({ [e.target.id]: e.target.value });
   };
 
   onSubmit = e => {
@@ -22,7 +22,7 @@ class Login extends Component {
       username: this.state.username,
       password: this.state.password,
       message: this.state.message
-    }
+    };
 
     axios
       .post('http://localhost:3000/auth/login', userDetails)
@@ -33,7 +33,7 @@ class Login extends Component {
         this.props.history.push('/');
       })
       .catch(error => {
-        console.log(error)
+        console.log(error);
         if (error.response.status === 401) {
           this.setState({
             message: 'Login failed. Username or password not match'

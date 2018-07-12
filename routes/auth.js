@@ -8,7 +8,7 @@ const router = express.Router();
 const User = require('../models/User.js');
 
 router.post('/register', (req, res) => {
-  console.log('register route reached')
+  console.log('register route reached');
   if (!req.body.username || !req.body.password) {
     res.json({ success: false, msg: 'Please pass username and password.' });
   } else {
@@ -25,7 +25,7 @@ router.post('/register', (req, res) => {
       }
       res.json({
         success: true,
-        msg: 'Successful created new user.',
+        msg: 'Successful created new user.'
       });
     });
   }
@@ -47,7 +47,11 @@ router.post('/login', (req, res) => {
         user.comparePassword(req.body.password, (err, isMatch) => {
           if (isMatch && !err) {
             const token = jwt.sign(user.toJSON(), settings.secret);
-            res.json({ success: true, token: 'JWT ' + token, userId: user._id });
+            res.json({
+              success: true,
+              token: 'JWT ' + token,
+              userId: user._id
+            });
           } else {
             res.status(401).send({
               success: false,
