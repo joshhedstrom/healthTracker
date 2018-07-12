@@ -12,20 +12,20 @@ class Login extends Component {
     };
   }
   onChange = e => {
-    const state = this.state;
-    state[e.target.name] = e.target.value;
-    this.setState(state);
+    this.setState({[e.target.id]: e.target.value})
   };
 
   onSubmit = e => {
     e.preventDefault();
 
-    const { username, password } = this.state;
-
-    console.log(this.state, " is this.state" )
+    let userDetails = {
+      username: this.state.username,
+      password: this.state.password,
+      message: this.state.message
+    }
 
     axios
-      .post('http://localhost:3001/auth/login', { username, password })
+      .post('http://localhost:3001/auth/login', userDetails)
       .then(result => {
         localStorage.setItem('jwtToken', result.data.token);
         this.setState({ message: '' });
