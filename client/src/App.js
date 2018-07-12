@@ -18,6 +18,7 @@ const App = () => (
       <NavBar />
       <Switch>
         <Route exact path="/" component={DashBoard} />
+        <Route exact path="/dashboard" component={Dashboard}/>
         <Route exact path="/login" component={Login} />
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/waterGoal" component={WaterPage} />
