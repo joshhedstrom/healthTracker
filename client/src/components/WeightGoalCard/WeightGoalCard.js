@@ -38,14 +38,25 @@ const styles = theme => ({
 class WeightGoalsComponent extends React.Component {
   state = {
     weight: 168,
-    lastWeight: 168
-  };
+    lastWeight: 168,
+    weightHistoryData: [],
+  }
+
+  componentDidMount() {
+    //Axios get request to get weight data from backend
+    //this.setState({weightHistoryData: response})
+    //Fill chart.js
+  }
 
   handleChange = name => event => {
     this.setState({
       [name]: event.target.value
     });
-  };
+  }
+
+  onSubmit = event => {
+      //Axios post to backend with data
+  }
 
   render() {
     const { classes } = this.props;
@@ -76,7 +87,7 @@ class WeightGoalsComponent extends React.Component {
               placeholder={this.state.lastWeight}
             />
           </form>
-          <Button variant="contained">Submit</Button>
+          <Button onClick={this.onSubmit.bind()} variant="contained">Submit</Button>
         </Paper>
         <ExpansionPanel className={classes.expansionPanelStyle} defaultExpanded>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
