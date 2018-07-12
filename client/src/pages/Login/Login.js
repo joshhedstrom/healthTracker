@@ -25,9 +25,9 @@ class Login extends Component {
     }
 
     axios
-      .post('http://localhost:3001/auth/login', userDetails)
+      .post('http://localhost:3000/auth/login', userDetails)
       .then(result => {
-        localStorage.setItem('jwtToken', result.data.token);
+        localStorage.setItem({'jwtToken': result.data.token, 'userId': result.data.userId});
         this.setState({ message: '' });
         this.props.history.push('/');
       })
@@ -41,7 +41,6 @@ class Login extends Component {
       });
   };
   render() {
-    const { username, password, message } = this.state;
     return (
       <div>
         <LoginComponent
