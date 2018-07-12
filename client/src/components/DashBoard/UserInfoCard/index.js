@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-
+import DailyProgress from '../DailyProgress';
 import Charts from '../../Charts';
 
 const styles = {
@@ -17,6 +17,10 @@ const styles = {
     marginLeft: 30,
     marginRight: 30,
     marginTop: 30,
+  },
+  root: {
+    marginTop: 15,
+    fontSize: 34,
   },
   media: {
     height: 0,
@@ -29,8 +33,11 @@ function SimpleMediaCard(props) {
   const { classes } = props;
   return (
     <div>
-      <Card className={classes.card}>
-        
+      <Typography className={classes.root} variant="display3" align="center">
+        DashBoard
+      </Typography>
+
+      <Card className={classes.card}>    
         <CardContent>
           <Charts />
           <Typography gutterBottom variant="headline" component="h2">
@@ -39,12 +46,6 @@ function SimpleMediaCard(props) {
           <Typography component="p">
             Loves exercising outdoors, hiking, cooking healthy food, and the occasional slice of carrot cake
           </Typography>
-
-
-
-
-
-
 
           <List>
             <ListItem>
@@ -68,8 +69,12 @@ function SimpleMediaCard(props) {
             </ListItem>
             <Divider />
           </List>
-
         </CardContent>
+
+
+
+
+
       </Card>
     </div>
   );

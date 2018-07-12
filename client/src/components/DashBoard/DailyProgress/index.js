@@ -53,30 +53,39 @@ function MediaControlCard(props) {
 
       <Grid className={classes.gridContainer} container spacing={24} justify="center" >
         <Grid justify="center" item xs={24}>
-          <Button variant="contained">
-          <AddIcon />
-            Water
-          </Button>
+          <a style={{textDecoration: 'none', color:'white' }} href="/waterGoal">
+            <Button variant="contained">
+            <AddIcon />
+              Water
+            </Button>
+          </a>
         </Grid>
         <Grid justify="center" item xs={24}>
-          <Button variant="contained">
-           <AddIcon />
-             Nutrition
-          </Button>
+          <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
+            <Button variant="contained">
+             <AddIcon />
+               Nutrition
+            </Button>
+          </a>
         </Grid>
 
  
         <Grid justify="center" item xs={24}>
-          <Button variant="contained">
-            <AddIcon />
-             Exercise
-          </Button >
+          <a style={{textDecoration: 'none', color:'white' }} href="/exerciseGoal">
+            <Button variant="contained">
+              <AddIcon />
+               Exercise
+            </Button >
+          </a>
+
         </Grid>
         <Grid justify="center" item xs={24}>
-          <Button variant="contained">
-            <AddIcon />
-             Weight
-          </Button>
+          <a style={{textDecoration: 'none', color:'white' }} href="/weightGoal">
+            <Button variant="contained">
+              <AddIcon />
+               Weight
+            </Button>
+          </a>
         </Grid>
 
 

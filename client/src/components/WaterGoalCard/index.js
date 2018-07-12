@@ -32,7 +32,11 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11,
-  }
+  },
+  header: {
+    marginBottom: 28,
+  },
+
 
 
 });
@@ -59,7 +63,7 @@ render () {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography variant="display1">
+          <Typography className={classes.header} variant="display1" align="center">
             Water Goal
           </Typography>
           <Typography>

@@ -55,8 +55,9 @@ const styles = theme => ({
     backgroundColor: 'inherit',
     padding: 0,
   },
-
-
+  header: {
+    marginBottom: 28,
+  },
 
 });
 
@@ -82,7 +83,7 @@ render () {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography variant="display1">
+          <Typography className={classes.header} variant="display1" align="center">
             Exercsie Goal
           </Typography>
           <Typography>
@@ -105,14 +106,14 @@ render () {
               {[0].map(sectionId => (
             <li key={`section-${sectionId}`} className={classes.listSection}>
               <ul className={classes.ul}>
-            <ListSubheader>{`Select Workout`}</ListSubheader>
+            <ListSubheader align="center">{`Select Workout`}</ListSubheader>
             {[
               'Running', 'Walking', 'Strength Training', 'Yoga', 'Boxing',
               'Swimming', 'HIIT', 
 
             ].map(item => (
               <ListItem key={`item-${sectionId}-${item}`}>
-                <ListItemText primary={` ${item}`} />
+                <ListItemText align="center" primary={` ${item}`} />
                       </ListItem>
                     ))}
                   </ul>

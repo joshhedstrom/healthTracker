@@ -35,7 +35,13 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11,
-  }
+  },
+  header: {
+    marginBottom: 28,
+  },
+  desc: {
+    marginBottom: 33,
+  },
 
 
 });
@@ -73,10 +79,10 @@ render () {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography variant="display1">
+          <Typography className={classes.header} variant="display1" align="center">
             Nutrition Goal
           </Typography>
-          <Typography>
+          <Typography className={classes.desc}>
             Each goal below counts as 1+ points. Try to see if you can meet all of these goals!
           </Typography>
          
