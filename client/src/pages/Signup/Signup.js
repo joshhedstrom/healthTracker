@@ -34,7 +34,8 @@ class Signup extends Component {
       axios
       .post('http://localhost:3001/auth/register', userDetails)
       .then(result => {
-        localStorage.setItem({ 'jwtToken': result.data.token, 'userId': result.data.userId });
+        localStorage.setItem('jwtToken', result.data.token);
+        localStorage.setItem('userId', result.data.userId);
         this.setState({ message: 'Welcome to your new account!' });
         this.props.history.push('/');
       });
