@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import "./index.css";
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import HomeIcon from '@material-ui/icons/Home';
@@ -45,7 +44,7 @@ state = {
 };
 
 toggleDrawer = (side, open) => () => {
-  console.log("i clicked")
+  
   this.setState({
     [side]: open,
   });
@@ -61,26 +60,36 @@ render () {
 
       <div className={classes.list}>
         <div component="nav">
+        <a style={{textDecoration: 'none', color:'white' }} href="/">
           <ListItem button>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
+         </a>
           <Divider />
 
-          <ListItem button>
-            <ListItemText primary="Water" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Nutrition" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Exercise" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Weight" />
-          </ListItem>
+          <a style={{textDecoration: 'none', color:'white' }} href="/waterGoal">
+            <ListItem button>
+              <ListItemText primary="Water" />
+            </ListItem>
+           </a>
+          <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
+            <ListItem button>
+                <ListItemText primary="Nutrition" />
+            </ListItem>
+          </a>
+          <a style={{textDecoration: 'none', color:'white' }} href="/exerciseGoal">
+            <ListItem button>
+              <ListItemText primary="Exercise" />
+            </ListItem>
+          </a>
+          <a style={{textDecoration: 'none', color:'white' }} href="/weightGoal">
+            <ListItem button>
+              <ListItemText primary="Weight" />
+            </ListItem>
+          </a>
 
         </div>
       </div>
@@ -111,7 +120,9 @@ render () {
             HealthTracker
             </a>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <a style={{textDecoration: 'none', color:'white' }} href="/login">
+            <Button color="inherit">Login</Button>
+          </a>
         </Toolbar>
       </AppBar>
     </div>
