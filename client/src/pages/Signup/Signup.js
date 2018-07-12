@@ -34,7 +34,6 @@ class Signup extends Component {
       axios
         .post('http://localhost:3001/auth/register', userDetails)
         .then(result => {
-          console.log(result);
           this.setState({ message: 'Welcome to your new account!' });
           this.props.history.push('/login');
         });
