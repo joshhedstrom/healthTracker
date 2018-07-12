@@ -1,26 +1,26 @@
-const router = require("express").Router();
-const db = require("../../controllers");
+const router = require('express').Router();
+const db = require('../../controllers');
 
 // Matches with "/api/healthTracker"
-router.post("/newUser", (req, res) => {
-  db.User.createUser(req, res)
-})
+router.post('/newUser', (req, res) => {
+  db.User.createUser(req, res);
+});
 
-router.post("/newDay", (req, res) => {
-  db.Day.createDay(req, res)
-})
+router.post('/newDay', (req, res) => {
+  db.Day.createDay(req, res);
+});
 
-router.post("/newExercise", (req, res) => {
-  db.Exercise.addExercise(req, res)
-})
+router.post('/newExercise', (req, res) => {
+  db.Exercise.addExercise(req, res);
+});
 
-router.get("/user/:id", (req, res) => {
-  db.User.findUserById(req, res)
-})
+router.get('/user/:id', (req, res) => {
+  db.User.findUserById(req, res);
+});
 
-router.get("/day/:id", (req, res) => {
-  db.Day.findDayByID(req, res)
-})
+router.get('/day/:id', (req, res) => {
+  db.Day.findDayByID(req, res);
+});
 
 //---------------------------------------------------------DUMMY AUTH ROUTES-------------------->>>>>>>>
 
@@ -32,7 +32,7 @@ router.get(
   (req, res) => {
     const token = getToken(req.headers);
     if (token) {
-      console.log('user is loggd in to the get route')
+      console.log('user is loggd in to the get route');
       // Book.find((err, books) => {
       //   if (err) return next(err);
       //   res.json(books);
@@ -49,7 +49,7 @@ router.post(
   (req, res) => {
     const token = getToken(req.headers);
     if (token) {
-      console.log('user is logged in to the post route')
+      console.log('user is logged in to the post route');
       // Book.create(req.body, (err, post) => {
       //   if (err) return next(err);
       //   res.json(post);
@@ -60,7 +60,7 @@ router.post(
   }
 );
 
-getToken = function (headers) {
+getToken = function(headers) {
   if (headers && headers.authorization) {
     let parted = headers.authorization.split(' ');
     if (parted.length === 2) {
@@ -72,6 +72,5 @@ getToken = function (headers) {
     return null;
   }
 };
-
 
 module.exports = router;
