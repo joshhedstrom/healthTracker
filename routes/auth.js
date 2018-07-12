@@ -20,29 +20,24 @@ router.post('/register', (req, res) => {
       weight: req.body.weight
     });
     newUser.save(err => {
-      const token = jwt.sign(user.toJSON(), settings.secret);
       if (err) {
         return res.json({ success: false, msg: 'Username already exists.' });
       }
       res.json({
         success: true,
         msg: 'Successful created new user.',
-        token: 'JWT' + token
       });
     });
   }
 });
 
 router.post('/login', (req, res) => {
-  console.log('login route reached')
   User.findOne(
     {
       username: req.body.username
     },
     (err, user) => {
       if (err) throw err;
-      console.log('USER INFO::::>>> ', user)
-
       if (!user) {
         res.status(401).send({
           success: false,
