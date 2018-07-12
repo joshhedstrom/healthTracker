@@ -8,7 +8,7 @@ class DashBoard extends Component {
     redirect: false,
     waterIntake: 0,
     nutritionPoints: 0,
-    exercsieHrs: 0,
+    exerciseHrs: 0,
     weightCurrent: 0
   };
 

@@ -63,17 +63,14 @@ class ButtonAppBar extends React.Component {
             </ListItem>
           </a>
           <Divider />
-          <a
-            style={{ textDecoration: 'none', color: 'white' }}
-            href="/waterGoal"
-          >
+          <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
             <ListItem button>
               <ListItemText primary="Water" />
             </ListItem>
           </a>
           <a
             style={{ textDecoration: 'none', color: 'white' }}
-            href="/nutritionGoal"
+            href="/nutrition"
           >
             <ListItem button>
               <ListItemText primary="Nutrition" />
@@ -81,16 +78,13 @@ class ButtonAppBar extends React.Component {
           </a>
           <a
             style={{ textDecoration: 'none', color: 'white' }}
-            href="/exerciseGoal"
+            href="/exercise"
           >
             <ListItem button>
               <ListItemText primary="Exercise" />
             </ListItem>
           </a>
-          <a
-            style={{ textDecoration: 'none', color: 'white' }}
-            href="/weightGoal"
-          >
+          <a style={{ textDecoration: 'none', color: 'white' }} href="/weight">
             <ListItem button>
               <ListItemText primary="Weight" />
             </ListItem>
