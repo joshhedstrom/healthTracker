@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import Grid from '@material-ui/core/Grid';
@@ -49,8 +49,8 @@ function MediaControlCard(props) {
   const { classes, theme } = props;
 
   return (
-    <div className={classes.root} >
 
+    <div className={classes.root} >
       <Grid className={classes.gridContainer} container spacing={24} justify="center" >
         <Grid justify="center" item xs={24}>
           <Button variant="contained">
@@ -58,6 +58,7 @@ function MediaControlCard(props) {
             Water
           </Button>
         </Grid>
+     
         <Grid justify="center" item xs={24}>
           <Button variant="contained">
            <AddIcon />
@@ -67,10 +68,12 @@ function MediaControlCard(props) {
 
  
         <Grid justify="center" item xs={24}>
-          <Button variant="contained">
-            <AddIcon />
-             Exercise
-          </Button >
+          <Link to="/newExercise">
+              <Button variant="contained">
+                 <AddIcon />
+                    Exercise
+              </Button >
+          </Link>
         </Grid>
         <Grid justify="center" item xs={24}>
           <Button variant="contained">
@@ -78,18 +81,14 @@ function MediaControlCard(props) {
              Weight
           </Button>
         </Grid>
+     
 
 
       </Grid>
 
 
-
-
-
-
-
     </div>
-
+  
 
   );
 }
