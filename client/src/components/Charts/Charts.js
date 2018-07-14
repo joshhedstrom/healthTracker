@@ -11,24 +11,22 @@
             this.state = {
                 chartData:{
 
-                    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ],
+                    // labels: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ],
+                    labels: ['Water', 'Excer.', 'Nutr.'],
             
                     datasets:[{
             
-                        label: '# of mins Excercised each day this week/Food/Water',
+                        // label: '# of mins Excercised each day this week/Food/Water',
                         strokeColor: "rgba(100, 190, 154, 1)",
                         data: [
                             120,
                             30,
-                            180,
-                            60, 
-                            130,
-                            0
+                            180
                         ],
                          backgroundColor: [
-                            'teal',
-                            'green',
-                            'orange',
+                            '#9a67ea',
+                            '#f06292',
+                            '#4d67f0',
                             'red',
                             'purple',
                             'pink'
@@ -41,7 +39,7 @@
                                 display: false, 
                             },
                             legend: {
-                                display: true,
+                                display: false,
                                 position: 'bottom',
                             },
                         }
@@ -53,15 +51,15 @@
       render() {
         return (
             <div className="Chart-container">
-                    <Line justify="center" item xs={24} 
+                    <Bar justify="center" //item xs={24} 
 	                    data={this.state.chartData}
 
 	                      options={{
-                            title: {
-                                display: this.state.chartData,
-                                text: `Current Goals`,
-                                fontSize: 30
-                            }
+                            // title: {
+                            //     display: this.state.chartData,
+                            //     text: `Current Goals`,
+                            //     fontSize: 30
+                            // }
                             
                          }}
                     />
