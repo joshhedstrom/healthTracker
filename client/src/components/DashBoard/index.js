@@ -35,7 +35,6 @@ const styles = {
   details: {
     display: 'flex',
     flexDirection: 'column',
-
   },
   content: {
     flex: '1 0 auto',
@@ -93,22 +92,22 @@ render () {
           <List>
             <ListItem>
               <ListItemText primary="Water Intake" />
-              <ListItemText secondary="3 Glasses" />
+              <ListItemText secondary={"Glasses: " + this.props.water} />
             </ListItem>
             <Divider />
             <ListItem>
               <ListItemText primary="Nutrion" />
-              <ListItemText secondary="10 Points" />
+              <ListItemText secondary={"Points: " + this.props.nutrition} />
             </ListItem>
             <Divider />
             <ListItem>
               <ListItemText primary="Exercise" />
-              <ListItemText secondary="3 Hours" />
+              <ListItemText secondary={"Duration: " + this.props.exercise + " Minutes"} />
             </ListItem>
             <Divider />
             <ListItem>
               <ListItemText primary="Weight" />
-              <ListItemText secondary="168 lbs" />
+              <ListItemText secondary={"Weight: " + this.props.weight} />
             </ListItem>
             <Divider />
           </List>
