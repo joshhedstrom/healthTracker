@@ -18,14 +18,10 @@ import Grid from '@material-ui/core/Grid';
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
+    textAlign: 'center',
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     margin: 10
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200
   },
   container: {
     display: 'flex',
@@ -34,58 +30,76 @@ const styles = theme => ({
   expansionPanelStyle: {
     margin: 11
   }
-});
+})
 
-class PaperSheet extends React.Component {
+class WaterGoalCard extends React.Component {
   state = {
-    glasses: ''
+    glasses: 3,
+    incrementer: 0,
+    historyData: [],
+  }
+
+  componentDidMount() {
+    //pull water data from backend
+  }
+
+  addGlass = event => {
+    let newGlasses = parseInt(event.target.value) + this.state.glasses;
+    this.setState({ glasses: newGlasses });
   };
 
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value
-    });
+  incrementGlass = event => {
+    let newGlasses = this.state.incrementer + this.state.glasses;
+    this.setState({ glasses: newGlasses, incrementer: 0 });
+  };
+
+  increment = event => {
+    this.setState({ incrementer: parseInt(event.target.value) });
   };
 
   render() {
     const { classes } = this.props;
-
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
           <Grid container spacing={24}>
             <Grid item xs={12}>
               <Typography variant="display1">Water Goal</Typography>
-
               <Typography>
-                Drink at least 8 fluid ounces each day. One Glass counts as one
-                fluid ounce
+                Drink at least 8 glasses of 8 fluid ounces each day.
               </Typography>
-
-              <Typography variant="title">Add Water</Typography>
-
-              <Typography variant="subheading">Today's Progress</Typography>
-
-              <Table>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>3 Glasses</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+              <br />
+              <Typography variant="subheading">
+                Today's Progress: {this.state.glasses} glasses
+              </Typography>
             </Grid>
             <Grid item xs={4}>
-              <Button variant="outlined" size="small">
+              <Button
+                onClick={this.addGlass.bind()}
+                value="1"
+                variant="outlined"
+                size="small"
+              >
                 +1 Glasses
               </Button>
             </Grid>
             <Grid item xs={4}>
-              <Button variant="outlined" size="small">
+              <Button
+                onClick={this.addGlass.bind()}
+                value="3"
+                variant="outlined"
+                size="small"
+              >
                 +3 Glasses
               </Button>
             </Grid>
             <Grid item xs={4}>
-              <Button variant="outlined" size="small">
+              <Button
+                onClick={this.addGlass.bind()}
+                value="6"
+                variant="outlined"
+                size="small"
+              >
                 +6 Glasses
               </Button>
             </Grid>
@@ -95,15 +109,16 @@ class PaperSheet extends React.Component {
                   id="addGlasses"
                   label="Enter Water"
                   fullWidth
-                  value={this.state.glasses}
-                  onChange={this.handleChange('glasses')}
                   type="number"
                   margin="normal"
+                  onChange={this.increment.bind()}
                 />
               </form>
             </Grid>
             <Grid item xs={12}>
-              <Button variant="contained">Submit</Button>
+              <Button onClick={this.incrementGlass.bind()} variant="contained">
+                Submit
+              </Button>
             </Grid>
           </Grid>
         </Paper>
@@ -129,8 +144,8 @@ class PaperSheet extends React.Component {
   }
 }
 
-PaperSheet.propTypes = {
+WaterGoalCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PaperSheet);
+export default withStyles(styles)(WaterGoalCard);
