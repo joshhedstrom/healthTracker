@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import UserInfoCard from '../../components/DashBoard/UserInfoCard';
-import DailyProgress from '../../components/DashBoard/DailyProgress';
+
+import DashBoardCompontent from '../../components/DashBoard';
 import { Redirect } from 'react-router-dom';
 
 class DashBoard extends Component {
@@ -22,8 +22,8 @@ class DashBoard extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        <UserInfoCard />
-        <DailyProgress />
+        <DashBoardCompontent />
+
       </div>
     );
   }
