@@ -25,8 +25,19 @@ const styles = {
   },
 };
 
-function SimpleMediaCard(props) {
-  const { classes } = props;
+
+class SimpleMediaCard extends React.Component {
+
+state = {
+
+};
+
+
+render () {
+
+
+
+  const { classes } = this.props;
   return (
     <div>
       <Card className={classes.card}>
@@ -39,10 +50,6 @@ function SimpleMediaCard(props) {
           <Typography component="p">
             Loves exercising outdoors, hiking, cooking healthy food, and the occasional slice of carrot cake
           </Typography>
-
-
-
-
 
 
 
@@ -72,7 +79,9 @@ function SimpleMediaCard(props) {
         </CardContent>
       </Card>
     </div>
-  );
+    );
+  }
+
 }
 
 SimpleMediaCard.propTypes = {
