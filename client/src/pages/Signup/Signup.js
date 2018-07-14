@@ -32,7 +32,7 @@ class Signup extends Component {
       };
 
       axios
-        .post('http://localhost:3001/auth/register', userDetails)
+        .post('/auth/register', userDetails)
         .then(result => {
           this.setState({ message: 'Welcome to your new account!' });
           this.props.history.push('/login');

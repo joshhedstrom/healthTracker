@@ -10,7 +10,7 @@ class DashBoard extends Component {
     firstName: "",
     lastName: "",
     redirect: false,
-    waterIntake: 0,
+    waterIntake: 3,
     nutritionPoints: 0,
     exerciseMins: 0,
     currentWeight: 0
