@@ -51,7 +51,7 @@
       render() {
         return (
             <div className="Chart-container">
-                    <Bar justify="center" //item xs={24} 
+                    <Pie justify="center" //item xs={24} 
 	                    data={this.state.chartData}
 
 	                      options={{
