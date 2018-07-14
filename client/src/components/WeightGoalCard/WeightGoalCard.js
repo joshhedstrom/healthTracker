@@ -48,6 +48,7 @@ class WeightGoalsComponent extends React.Component {
     //Fill chart.js
   }
 
+  
   handleChange = name => event => {
     this.setState({
       [name]: event.target.value
