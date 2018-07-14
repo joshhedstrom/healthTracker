@@ -13,6 +13,8 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+import ChartsBar from './../ChartsBar';
 import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
@@ -122,6 +124,7 @@ class WaterGoalCard extends React.Component {
             </Grid>
           </Grid>
         </Paper>
+
         <Grid container spacing={24}>
           <Grid item xs={12}>
             <ExpansionPanel
@@ -134,11 +137,12 @@ class WaterGoalCard extends React.Component {
                 </div>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className={classes.details}>
-                graph goes here
+                 <ChartsBar />
               </ExpansionPanelDetails>
             </ExpansionPanel>
           </Grid>
         </Grid>
+
       </div>
     );
   }

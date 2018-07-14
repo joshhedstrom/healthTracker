@@ -8,7 +8,6 @@ import WaterPage from './pages/WaterPage';
 import NutritionPage from './pages/NutritionPage';
 import ExercisePage from './pages/ExercisePage';
 import WeightPage from './pages/WeightPage';
-import Charts from './components/Charts';
 
 import './App.css';
 

@@ -14,7 +14,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
-import Charts from './../Charts';
+import ChartsPie from './../ChartsPie';
 
 
 const styles = {
@@ -84,7 +84,7 @@ render () {
       <Card className={classes.cardUser}>
         
         <CardContent>
-          <Charts />
+          <ChartsPie />
           <Typography gutterBottom variant="headline" component="h2">
             Charlie Johnson
           </Typography>
