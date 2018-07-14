@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import Grid from '@material-ui/core/Grid';
@@ -49,8 +49,8 @@ function MediaControlCard(props) {
   const { classes, theme } = props;
 
   return (
-    <div className={classes.root} >
 
+    <div className={classes.root} >
       <Grid className={classes.gridContainer} container spacing={24} justify="center" >
         <Grid justify="center" item xs={24}>
           <a style={{textDecoration: 'none', color:'white' }} href="/waterGoal">
@@ -60,6 +60,7 @@ function MediaControlCard(props) {
             </Button>
           </a>
         </Grid>
+     
         <Grid justify="center" item xs={24}>
           <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
             <Button variant="contained">
@@ -71,6 +72,7 @@ function MediaControlCard(props) {
 
  
         <Grid justify="center" item xs={24}>
+<<<<<<< HEAD
           <a style={{textDecoration: 'none', color:'white' }} href="/exerciseGoal">
             <Button variant="contained">
               <AddIcon />
@@ -78,6 +80,14 @@ function MediaControlCard(props) {
             </Button >
           </a>
 
+=======
+          <Link to="/newExercise">
+              <Button variant="contained">
+                 <AddIcon />
+                    Exercise
+              </Button >
+          </Link>
+>>>>>>> c87b477842ee762ae5d9678542dcd40b28261cd1
         </Grid>
         <Grid justify="center" item xs={24}>
           <a style={{textDecoration: 'none', color:'white' }} href="/weightGoal">
@@ -87,18 +97,14 @@ function MediaControlCard(props) {
             </Button>
           </a>
         </Grid>
+     
 
 
       </Grid>
 
 
-
-
-
-
-
     </div>
-
+  
 
   );
 }

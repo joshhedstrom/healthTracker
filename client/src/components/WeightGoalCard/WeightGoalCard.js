@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -20,114 +19,93 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: 10,
+    margin: 10
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200,
+    width: 200
   },
   container: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   expansionPanelStyle: {
-    margin: 11,
-  },
-  header: {
-    marginBottom: 28,
-  },
-  desc: {
-    marginBottom: 10,
-  },
-
-
-
+    margin: 11
+  }
 });
 
-
-class PaperSheet extends React.Component {
-
+class WeightGoalsComponent extends React.Component {
   state = {
-    glasses: ''
+    weight: 168,
+    lastWeight: 168,
+    weightHistoryData: [],
+  }
 
-  };
+  componentDidMount() {
+    //Axios get request to get weight data from backend
+    //this.setState({weightHistoryData: response})
+    //Fill chart.js
+  }
 
   handleChange = name => event => {
     this.setState({
-      [name]: event.target.value,
-    })
-  };
+      [name]: event.target.value
+    });
+  }
 
+  onSubmit = event => {
+      //Axios post to backend with data
+  }
 
-
-render () {
-  const { classes } = this.props;
+  render() {
+    const { classes } = this.props;
 
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography className={classes.header} variant="display1" align="center">
-            Weight Tracker
-          </Typography>
-          <Typography className={classes.desc}>
-            Enter your weight as frequently as needed
-          </Typography>
-         
-          <Typography variant="subheading">
-            Current Weight
-          </Typography>
+          <Typography variant="display1">Weight Tracker</Typography>
+          <br />
+          <Typography variant="subheading">Current Weight</Typography>
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell>168 Lbs</TableCell>
+                <TableCell>{this.state.lastWeight + ' lbs'}</TableCell>
               </TableRow>
             </TableBody>
           </Table>
 
-       
-
-           <form className={classes.container} noValidate autoComplete="off">
-              <TextField
+          <form className={classes.container} noValidate autoComplete="off">
+            <TextField
               id="addWeight"
               label="Enter Weight"
-              value={this.state.Weight}
-              onChange={this.handleChange('Weight')}
+              value={this.state.weight}
+              onChange={this.handleChange('weight')}
               type="number"
               className={classes.textField}
               margin="normal"
+              placeholder={this.state.lastWeight}
             />
-            </form>
-          <Button variant="contained">Submit</Button>
+          </form>
+          <Button onClick={this.onSubmit.bind()} variant="contained">Submit</Button>
         </Paper>
-      
-          <ExpansionPanel  className={classes.expansionPanelStyle} defaultExpanded>
+        <ExpansionPanel className={classes.expansionPanelStyle} defaultExpanded>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <div className={classes.column}>
               <Typography className={classes.heading}>History</Typography>
             </div>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.details}>
-                graph goes here
-          
+            graph goes here
           </ExpansionPanelDetails>
-
-         
         </ExpansionPanel>
-
-
-
       </div>
-  );
-
+    );
   }
 }
 
-PaperSheet.propTypes = {
-  classes: PropTypes.object.isRequired,
+WeightGoalsComponent.propTypes = {
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PaperSheet);
-=======
-export { default } from './WeightGoalCard';
->>>>>>> c87b477842ee762ae5d9678542dcd40b28261cd1
+export default withStyles(styles)(WeightGoalsComponent);

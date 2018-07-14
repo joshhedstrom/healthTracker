@@ -1,38 +1,77 @@
-const router = require("express").Router();
-const db = require("../../controllers");
+const router = require('express').Router();
+const db = require('../../controllers');
+const passport = require('passport');
+require('../../config/passport')(passport);
 
 // Matches with "/api/healthTracker"
-router.post("/newUser", (req, res) => {
-  db.User.createUser(req, res)
-})
+router.post('/newUser', passport.authenticate('jwt', { session: false }), (req, res) => {
+    const token = getToken(req.headers);
+    if (token) {
+      console.log('user is loggd in to the post route newUser');
+      db.User.createUser(req, res);
+    } else {
+      return res.status(403).send({ success: false, msg: 'Unauthorized.' });
+    }
+  }
+);
 
-router.post("/newDay", (req, res) => {
-  db.Day.createDay(req, res)
-})
+router.post('/newDay', passport.authenticate('jwt', { session: false }), (req, res) => {
+    const token = getToken(req.headers);
+    if (token) {
+      console.log('user is loggd in to the post route for newDay');
+      db.Day.createDay(req, res);
+    } else {
+      return res.status(403).send({ success: false, msg: 'Unauthorized.' });
+    }
+  }
+);
 
-router.post("/newExercise", (req, res) => {
-  db.Exercise.addExercise(req, res)
-})
+router.post('/newExercise', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const token = getToken(req.headers);
+  if (token) {
+    console.log('user is loggd in to the post route for NewExercise');
+    db.Exercise.addExercise(req, res);
+  } else {
+    return res.status(403).send({ success: false, msg: 'Unauthorized.' });
+  }
+ }
+);
 
-router.get("/user/:id", (req, res) => {
-  db.User.findUserById(req, res)
-})
 
-router.get("/day/:id", (req, res) => {
-  db.Day.findDayByID(req, res)
-})
+router.get('/user/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const token = getToken(req.headers);
+  if (token) {
+    console.log('user is loggd in to the get route user:id');
+    db.User.findUserById(req, res);
+  } else {
+    return res.status(403).send({ success: false, msg: 'Unauthorized.' });
+  }
+ }
+);
+
+router.get('/day/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const token = getToken(req.headers);
+  if (token) {
+    console.log('user is loggd in to the get route for day:id');
+    db.Day.findDayById(req, res);
+  } else {
+    return res.status(403).send({ success: false, msg: 'Unauthorized.' });
+  }
+ }
+);
+
+
 
 //---------------------------------------------------------DUMMY AUTH ROUTES-------------------->>>>>>>>
 
-const passport = require('passport');
-require('../../config/passport')(passport);
+
 router.get(
   '/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const token = getToken(req.headers);
     if (token) {
-      console.log('user is loggd in to the get route')
+      console.log('user is loggd in to the get route');
       // Book.find((err, books) => {
       //   if (err) return next(err);
       //   res.json(books);
@@ -49,7 +88,7 @@ router.post(
   (req, res) => {
     const token = getToken(req.headers);
     if (token) {
-      console.log('user is logged in to the post route')
+      console.log('user is logged in to the post route');
       // Book.create(req.body, (err, post) => {
       //   if (err) return next(err);
       //   res.json(post);
@@ -60,7 +99,7 @@ router.post(
   }
 );
 
-getToken = function (headers) {
+getToken = function(headers) {
   if (headers && headers.authorization) {
     let parted = headers.authorization.split(' ');
     if (parted.length === 2) {
@@ -72,6 +111,5 @@ getToken = function (headers) {
     return null;
   }
 };
-
 
 module.exports = router;

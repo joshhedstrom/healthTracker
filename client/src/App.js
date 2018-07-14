@@ -19,15 +19,12 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={DashBoard} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/Signup" component={Signup} />
-        <Route exact path="/waterGoal" component={WaterPage} />
-        <Route exact path="/nutritionGoal" component={NutritionPage} />
-        <Route exact path="/exerciseGoal" component={ExercisePage} />
-        <Route exact path="/weightGoal" component={WeightPage} />
-
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/water" component={WaterPage} />
+        <Route exact path="/nutrition" component={NutritionPage} />
+        <Route exact path="/exercise" component={ExercisePage} />
+        <Route exact path="/weight" component={WeightPage} />
       </Switch>
-
-      
     </div>
   </Router>
 );

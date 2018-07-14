@@ -11,24 +11,36 @@ class Signup extends Component {
       username: '',
       weight: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      message: ''
     };
   }
   onChange = e => {
-    const state = this.state;
-    state[e.target.id] = e.target.value;
-    this.setState(state);
+    this.setState({ [e.target.id]: e.target.value });
   };
 
   onSubmit = e => {
     e.preventDefault();
 
-    const { firstName, lastName, username, weight, password } = this.state;
+    if (this.state.password === this.state.passwordConfirmation) {
+      let userDetails = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        username: this.state.username,
+        weight: this.state.weight,
+        password: this.state.password
+      };
 
-    axios.post('/api/auth/register', { firstName, lastName, username, weight, password }).then(result => {
-      console.log(result)
-      // this.props.history.push('/login');
-    });
+      axios
+        .post('http://localhost:3001/auth/register', userDetails)
+        .then(result => {
+          this.setState({ message: 'Welcome to your new account!' });
+          this.props.history.push('/login');
+        });
+    } else {
+      this.setState({ message: 'Oops...your passwords did not match.' });
+      console.log('passwords did not match');
+    }
   };
 
   render() {
