@@ -72,12 +72,15 @@ state = {
 
 
 render () {
-
-
-
+	
   const { classes } = this.props;
   return (
+
     <div>
+	    <Typography className={classes.root} variant="display3" align="center">
+	        DashBoard
+	     </Typography>
+
       <Card className={classes.cardUser}>
         
         <CardContent>

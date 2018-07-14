@@ -64,7 +64,7 @@ class WeightGoalsComponent extends React.Component {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography variant="display1">Weight Tracker</Typography>
+          <Typography align="center" variant="display1">Weight Tracker</Typography>
           <br />
           <Typography variant="subheading">Current Weight</Typography>
           <Table>
