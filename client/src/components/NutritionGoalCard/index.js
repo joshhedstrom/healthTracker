@@ -42,6 +42,8 @@ const styles = theme => ({
 
 
 
+
+
 });
 
 
@@ -78,6 +80,8 @@ render () {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
+
+
           <Typography align="center" variant="display1">
             Nutrition Goal
           </Typography>
@@ -87,17 +91,14 @@ render () {
          
 
           <Typography variant="subheading" align="center">
-            Today's Progress
+            Today: 4 Points
           </Typography>
-          <Typography align="center">
-            4 Points
-          </Typography>
-    
+  
         <FormControl component="fieldset" >
-          <Typography variant="title" align="center">
+          <Typography  variant="title" align="center" className={classes.formHeader}>
             Select All Goals You Achieved Today 
           </Typography>
-          <Grid container spacing={24}>
+          <Grid container spacing={12}>
             <FormGroup>
             <Grid item xs={12} sm={6}>
               <FormControlLabel
