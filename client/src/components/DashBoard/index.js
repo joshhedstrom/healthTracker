@@ -88,9 +88,7 @@ render () {
           <Typography gutterBottom variant="headline" component="h2">
             Charlie Johnson
           </Typography>
-          <Typography component="p">
-            Loves exercising outdoors, hiking, cooking healthy food, and the occasional slice of carrot cake
-          </Typography>
+      
 
           <List>
             <ListItem>
