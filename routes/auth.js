@@ -8,10 +8,16 @@ const router = express.Router();
 const User = require('../models/User.js');
 
 router.post('/register', (req, res) => {
+
   console.log('register route reached');
+
   if (!req.body.username || !req.body.password) {
-    res.json({ success: false, msg: 'Please pass username and password.' });
+    res.json({
+      success: false,
+      msg: 'Please pass username and password.'
+    });
   } else {
+
     let newUser = new User({
       username: req.body.username,
       password: req.body.password,
@@ -19,23 +25,26 @@ router.post('/register', (req, res) => {
       lastName: req.body.lastName,
       weight: req.body.weight
     });
+
     newUser.save(err => {
-      if (err) {
-        return res.json({ success: false, msg: 'Username already exists.' });
-      } else {
-        res.json({
-          success: true,
-          msg: 'Successful created new user.'
-        });
-      }
-  
-    });
-  }
+        if (err) {
+          return res.json({
+            success: false,
+            msg: 'Username already exists.'
+          });
+        } else {
+          res.json({
+            success: true,
+            msg: 'Successful created new user.'
+          });
+        };
+      } // end newUser.save
+
+    )}; // end else
 });
 
 router.post('/login', (req, res) => {
-  User.findOne(
-    {
+  User.findOne({
       username: req.body.username
     },
     (err, user) => {
