@@ -23,10 +23,12 @@ router.post('/register', (req, res) => {
       if (err) {
         return res.json({ success: false, msg: 'Username already exists.' });
       } else {
-      res.json({
-        success: true,
-        msg: 'Successful created new user.'
-      });
+        res.json({
+          success: true,
+          msg: 'Successful created new user.'
+        });
+      }
+  
     });
   }
 });
