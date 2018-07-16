@@ -3,14 +3,15 @@ import DashBoardComponent from '../../components/DashBoard';
 
 import { Redirect } from 'react-router-dom';
 import axios from "axios"
+import moment from "moment"
 
 class DashBoard extends Component {
   state = {
-    userId: "",
+    userId: localStorage.getItem("userId"),
     firstName: "",
     lastName: "",
     redirect: false,
-    waterIntake: 3,
+    waterIntake: 0,
     nutritionPoints: 0,
     exerciseMins: 0,
     currentWeight: 0
@@ -39,15 +40,30 @@ class DashBoard extends Component {
     axios
     .get(url)
     .then(res => {
-      this.setState({
-        firstName: res.data.name,
-        lastName: res.data.name,
-        waterIntake: res.data.days[0].water,
-        nutritionPoints: res.data.days[0].nutrition,
-        exerciseMins: this.totalExerciseMinutes(res.data.days[0].exercises),
-        currentWeight: res.data.weight
-        
-      })
+      if (res.data.days.length) {
+        this.setState({
+          firstName: res.data.name,
+          lastName: res.data.name,
+          waterIntake: res.data.days[0].water,
+          nutritionPoints: res.data.days[0].nutrition,
+          exerciseMins: this.totalExerciseMinutes(res.data.days[0].exercises),
+          currentWeight: res.data.weight
+        })
+      } else {
+        this.setState({
+          firstName: res.data.name,
+          lastName: res.data.name,
+          currentWeight: res.data.weight
+        })
+
+        axios.post("http://localhost:3001/api/healthtracker/newDay", {
+          userId: this.state.userId,
+          date: moment().format("MM.DD.YYYY")
+        }).then(res => {
+          console.log(res)
+        })
+
+      }
     })
   }
 
