@@ -56,7 +56,7 @@ class WeightGoalsComponent extends React.Component {
 
     return (
       <div>
-        <Grid container spacing={24}>
+        <Grid container spacing={44}>
           <Grid item xs={12} sm={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography align="center" variant="display1">
