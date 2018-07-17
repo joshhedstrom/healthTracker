@@ -14,8 +14,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import style from './index.css';
-
-
+import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -66,7 +65,10 @@ const styles = {
   },
   gridContainer: {
     marginTop: 2,
-  }
+  },
+  paper: {
+    textAlign: 'center',
+  },
 };
 
 
@@ -125,52 +127,47 @@ render () {
 
 
 
-      
-
-
-      <Grid className={classes.gridContainer} container spacing={24} justify="center" >
-        <Grid justify="center" item xs={24}>
-          <a style={{textDecoration: 'none', color:'white' }} href="/water">
-            <Button variant="contained">
-            <AddIcon />
-              Water
-            </Button>
-          </a>
-        </Grid>
-     
-     
-        <Grid justify="center" item xs={24}>
-          <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
-            <Button variant="contained">
-             <AddIcon />
-               Nutrition
-            </Button>
-          </a>
-        </Grid>
-
- 
-        <Grid justify="center" item xs={24}>
-          <a style={{textDecoration: 'none', color:'white' }} href="/exercise">
-            <Button variant="contained">
+<Grid container spacing={8}>
+        <Grid item xs={6} sm={3} className={classes.paper}>
+          
+            <a style={{textDecoration: 'none', color:'white' }} href="/water">
+              <Button variant="contained">
               <AddIcon />
-               Exercise
-            </Button >
+                Water
+              </Button>
+            </a>
+
+        </Grid>
+        <Grid item xs={6} sm={3} className={classes.paper}>
+            <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
+              <Button variant="contained">
+               <AddIcon />
+                 Nutrition
+              </Button>
+          </a>
+        </Grid>
+        <Grid item xs={6} sm={3} className={classes.paper}>
+            <a style={{textDecoration: 'none', color:'white' }} href="/exercise">
+              <Button variant="contained">
+                <AddIcon />
+                 Exercise
+              </Button >
+          </a>
+        </Grid>
+        <Grid item xs={6} sm={3} className={classes.paper}>
+            <a style={{textDecoration: 'none', color:'white' }} href="/weight">
+              <Button variant="contained">
+                <AddIcon />
+                 Weight
+              </Button>
           </a>
         </Grid>
         
-        <Grid justify="center" item xs={24}>
-          <a style={{textDecoration: 'none', color:'white' }} href="/weight">
-            <Button variant="contained">
-              <AddIcon />
-               Weight
-            </Button>
-          </a>
-        </Grid>
-     
+    </Grid>
 
 
-      </Grid>
 
+  
 
     </div>
     );
