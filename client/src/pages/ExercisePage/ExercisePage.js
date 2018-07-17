@@ -4,8 +4,23 @@ import { Redirect } from 'react-router-dom';
 
 class ExerciseGoal extends Component {
   state = {
-    redirect: false
+    redirect: false,
+    activity: '',
+    minutes: 0,
+    hours: 0,
+    history: [],
   };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  handleSubmit = event => {
+    console.log(this.state)
+  }
+
   renderRedirect = () => {
     if (!localStorage.getItem('jwtToken')) {
       return <Redirect to="/login" />;
@@ -15,7 +30,14 @@ class ExerciseGoal extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        <ExerciseGoalCard />
+        <ExerciseGoalCard 
+        minutes={this.state.minutes}
+        hours={this.state.hours}
+        history={this.state.history}
+        activity={this.state.activity}
+        handleChange={this.handleChange.bind()}
+        handleSubmit={this.handleSubmit.bind()}
+         />
       </div>
     );
   }

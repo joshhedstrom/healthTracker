@@ -91,14 +91,14 @@ const styles = {
 
 class SimpleMediaCard extends React.Component {
 
-state = {
-
-};
-
+  componentDidMount() {
+    console.log(this.props.water)
+  }
 
 render () {
 	
   const { classes } = this.props;
+  console.log(this.props)
   return (
 
     <div>
@@ -109,9 +109,10 @@ render () {
       <Card className={classes.cardUser}>
         
         <CardContent>
+
           <Grid container spacing={24}>
             <Grid item xs={12} sm={6}>
-              <ChartsPie />
+              <ChartsPie waterChart={this.props.water} nutritionChart={this.props.nutrition} exerciseChart={this.props.exercise}/>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography gutterBottom variant="headline" component="h2" align="center">
@@ -139,6 +140,7 @@ render () {
               </Table>
             </Grid>
           </Grid>
+
         </CardContent>
       </Card>
 
