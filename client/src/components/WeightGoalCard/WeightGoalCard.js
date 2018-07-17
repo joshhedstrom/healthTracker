@@ -13,6 +13,8 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Grid from '@material-ui/core/Grid';
+
 
 const styles = theme => ({
   root: {
@@ -63,42 +65,35 @@ class WeightGoalsComponent extends React.Component {
 
     return (
       <div>
-        <Paper className={classes.root} elevation={1}>
-          <Typography align="center" variant="display1">Weight Tracker</Typography>
-          <br />
-          <Typography variant="subheading">Current Weight</Typography>
-          <Table>
-            <TableBody>
-              <TableRow>
-                <TableCell>{this.state.lastWeight + ' lbs'}</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
 
-          <form className={classes.container} noValidate autoComplete="off">
-            <TextField
-              id="addWeight"
-              label="Enter Weight"
-              value={this.state.weight}
-              onChange={this.handleChange('weight')}
-              type="number"
-              className={classes.textField}
-              margin="normal"
-              placeholder={this.state.lastWeight}
-            />
-          </form>
-          <Button onClick={this.onSubmit.bind()} variant="contained">Submit</Button>
-        </Paper>
-        <ExpansionPanel className={classes.expansionPanelStyle} defaultExpanded>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <div className={classes.column}>
-              <Typography className={classes.heading}>History</Typography>
-            </div>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails className={classes.details}>
-            graph goes here
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+        <Grid container spacing={24}>
+          <Grid item xs={12} sm={6}>
+            <Paper className={classes.root} elevation={1}>
+              <Typography align="center" variant="display1">Weight Tracker</Typography>
+              <Typography variant="subheading">Current Weight: {this.state.lastWeight + ' lbs'}</Typography>
+              <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                  id="addWeight"
+                  label="Enter Weight"
+                  value={this.state.weight}
+                  onChange={this.handleChange('weight')}
+                  type="number"
+                  className={classes.textField}
+                  margin="normal"
+                  placeholder={this.state.lastWeight}
+                />
+              </form>
+              <Button onClick={this.onSubmit.bind()} variant="contained">Submit</Button>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+           <Paper className={classes.root} elevation={1}>
+              <Typography variant="title" align="center">History (Last 7 Days)</Typography>
+              <Typography>Graph goes here </Typography>
+            </Paper>
+          </Grid>
+      </Grid>
+
       </div>
     );
   }

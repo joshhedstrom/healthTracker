@@ -18,6 +18,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox'
 import Grid from '@material-ui/core/Grid';
 import style from './index.css';
+import Chip from '@material-ui/core/Chip';
+
+
 
 
 const styles = theme => ({
@@ -26,6 +29,7 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     margin: 10,
+
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -38,7 +42,7 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11,
-  },
+  }
 
 
 
@@ -79,196 +83,189 @@ render () {
 
     return (
       <div>
-        <Paper className={classes.root} elevation={1}>
+        <Grid container spacing={24}>
+          <Grid item xs={12} sm={6}>
 
+            <Paper id="Parker" className={classes.root} elevation={1}>
+              <Typography align="center" variant="display2">
+                Nutrition Goal
+              </Typography>
+              <Paper>
+                <Typography>Current Progress: 9</Typography>
+              </Paper>
 
-          <Typography align="center" variant="display1">
-            Nutrition Goal
-          </Typography>
-          <Typography align="center">
-            Each goal below counts as 1+ points. Try to see if you can meet all of these goals!
-          </Typography>
-         
+             
 
-          <Typography variant="subheading" align="center">
-            Today: 4 Points
-          </Typography>
-  
-        <FormControl component="fieldset" >
-          <Typography  variant="title" align="center" className={classes.formHeader}>
-            Select All Goals You Achieved Today 
-          </Typography>
-          <Grid container spacing={12}>
-            <FormGroup>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.fruitAndVegs}
-                    onChange={this.handleChange('fruitAndVegs')}
-                    value="fruitAndVegs"
-                    color="primary"
+              <Typography align="center">
+                Each goal below counts as 1+ points. Try to see if you can meet all of these goals!
+              </Typography>
+            <FormControl component="fieldset" >
+              <Typography  variant="title" align="center" className={classes.formHeader}>
+                Select All Goals You Achieved Today 
+              </Typography>
+              <Grid container spacing={12}>
+                <FormGroup>
+                  <Grid item xs={12} sm={6}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={this.state.fruitAndVegs}
+                          onChange={this.handleChange('fruitAndVegs')}
+                          value="fruitAndVegs"
+                          color="primary"
+                        />
+                      }
+                      label="Had 5-9 Servings of Fruits and Vegetables"
+                    />
+                  </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.healthyFat}
+                        onChange={this.handleChange('healthyFat')}
+                        value="healthyFat"
+                        color="primary"
+                      />
+                    }
+                    label="Consumed at least 26 grams of healthy fat each day"
                   />
-                }
-                label="Had 5-9 Servings of Fruits and Vegetables"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.healthyFat}
-                    onChange={this.handleChange('healthyFat')}
-                    value="healthyFat"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.proteinBreakfast}
+                        onChange={this.handleChange('proteinBreakfast')}
+                        value="proteinBreakfast"
+                        color="primary"
+                      />
+                    }
+                    label="Eat at least 15 grams of protein for breakfast"
                   />
-                }
-                label="Consumed at least 26 grams of healthy fat each day"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.proteinBreakfast}
-                    onChange={this.handleChange('proteinBreakfast')}
-                    value="proteinBreakfast"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.newFruit}
+                        onChange={this.handleChange('newFruit')}
+                        value="newFruit"
+                        color="primary"
+                      />
+                    }
+                    label="Tried a new Fruit or Vegetables"
                   />
-                }
-                label="Eat at least 15 grams of protein for breakfast"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.newFruit}
-                    onChange={this.handleChange('newFruit')}
-                    value="newFruit"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.newReceipe}
+                        onChange={this.handleChange('newReceipe')}
+                        value="newReceipe"
+                        color="primary"
+                      />
+                    }
+                    label="Experimented with a new healthy receipe"
                   />
-                }
-                label="Tried a new Fruit or Vegetables"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.newReceipe}
-                    onChange={this.handleChange('newReceipe')}
-                    value="newReceipe"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.fastFood}
+                        onChange={this.handleChange('fastFood')}
+                        value="fastFood"
+                        color="primary"
+                      />
+                    }
+                    label="Avoided Fast Food"
                   />
-                }
-                label="Experimented with a new healthy receipe"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.fastFood}
-                    onChange={this.handleChange('fastFood')}
-                    value="fastFood"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.noMeat}
+                        onChange={this.handleChange('noMeat')}
+                        value="noMeat"
+                        color="primary"
+                      />
+                    }
+                    label="Refrained from eating meat"
                   />
-                }
-                label="Avoided Fast Food"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.noMeat}
-                    onChange={this.handleChange('noMeat')}
-                    value="noMeat"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.skipBreakfast}
+                        onChange={this.handleChange('skipBreakfast')}
+                        value="skipBreakfast"
+                        color="primary"
+                      />
+                    }
+                    label="Didn't skip breakfast"
                   />
-                }
-                label="Refrained from eating meat"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.skipBreakfast}
-                    onChange={this.handleChange('skipBreakfast')}
-                    value="skipBreakfast"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.skipBreakfast}
+                        onChange={this.handleChange('skipBreakfast')}
+                        value="skipBreakfast"
+                        color="primary"
+                      />
+                    }
+                    label="Didn't skip breakfast"
                   />
-                }
-                label="Didn't skip breakfast"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.skipBreakfast}
-                    onChange={this.handleChange('skipBreakfast')}
-                    value="skipBreakfast"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.noSugar}
+                        onChange={this.handleChange('noSugar')}
+                        value="noSugar"
+                        color="primary"
+                      />
+                    }
+                    label="Avoided Sugar"
                   />
-                }
-                label="Didn't skip breakfast"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.noSugar}
-                    onChange={this.handleChange('noSugar')}
-                    value="noSugar"
-                    color="primary"
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={this.state.noAlcohol}
+                        onChange={this.handleChange('noAlcohol')}
+                        value="noAlcohol"
+                        color="primary"
+                      />
+                    }
+                    label="Refrained from alcohol"
                   />
-                }
-                label="Avoided Sugar"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.noAlcohol}
-                    onChange={this.handleChange('noAlcohol')}
-                    value="noAlcohol"
-                    color="primary"
-                  />
-                }
-                label="Refrained from alcohol"
-              />
-            </Grid>
+                </Grid>
 
-          </FormGroup>
-      
-          <Button variant="contained">Submit</Button>
-        </Grid>
-      </FormControl>
-
-
-    </Paper>
-
-
-
-      
-        <ExpansionPanel  className={classes.expansionPanelStyle} defaultExpanded>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <div className={classes.column}>
-              <Typography className={classes.heading}>History</Typography>
-            </div>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails className={classes.details}>
-                graph goes here
+              </FormGroup>
           
-          </ExpansionPanelDetails>
+              <Button variant="contained">Submit</Button>
+            </Grid>
+          </FormControl>
+        </Paper>
+      </Grid>
 
-         
-        </ExpansionPanel>
+
+
+      <Grid item xs={12} sm={6}>
+        <Paper className={classes.root} elevation={1}>
+          <Typography variant="title" align="center">History (Last 7 Days)</Typography>
+          <Typography>Graph goes here </Typography>
+        </Paper>
+      </Grid>
+    </Grid>
 
 
 
