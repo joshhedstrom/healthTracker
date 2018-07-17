@@ -5,11 +5,6 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
 import ChartsBar from './../ChartsBar';
 import Grid from '@material-ui/core/Grid';
 
@@ -131,21 +126,9 @@ class WaterGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-                    <Paper className={classes.root} elevation={1}>
-
-            <ExpansionPanel
-              className={classes.expansionPanelStyle}
-              defaultExpanded
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <div className={classes.column}>
-                  <Typography className={classes.heading}>History</Typography>
-                </div>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails className={classes.details}>
-                <ChartsBar />
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
+            <Paper className={classes.root} elevation={1}>
+              <Typography className={classes.heading}>History</Typography>
+              <ChartsBar />
             </Paper>
           </Grid>
         </Grid>
