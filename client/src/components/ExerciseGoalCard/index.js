@@ -5,10 +5,6 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -30,7 +26,7 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200
+    // width: 200
   },
   container: {
     display: 'flex',
@@ -41,10 +37,10 @@ const styles = theme => ({
   },
   rootList: {
     width: '100%',
-    maxWidth: 360,
+    // maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
-    position: 'relative',
-    overflow: 'auto',
+    // position: 'relative',
+    // overflow: 'auto',
     maxHeight: 300
   },
   listSection: {
@@ -70,7 +66,7 @@ const styles = theme => ({
   }
 });
 
-class PaperSheet extends React.Component {
+class ExerciseGoalCard extends React.Component {
   render() {
     const { classes } = this.props;
 
@@ -85,7 +81,7 @@ class PaperSheet extends React.Component {
             Exercise Goal
           </Typography>
           <Typography variant="subheading">Today's Progress</Typography>
-                <p>{this.props.history}</p>
+          <p>{this.props.history}</p>
           <Grid container spacing={12}>
             <Grid item xs={12}>
               <form
@@ -93,10 +89,10 @@ class PaperSheet extends React.Component {
                 className={classes.formRoot}
                 autoComplete="off"
               >
-                <FormControl className={classes.formControl}>
+                <FormControl fullWidth className={classes.formControl}>
                   <InputLabel htmlFor="workout-simple">workout</InputLabel>
                   <Select
-                    value={this.props.workout}
+                    value={this.props.activity}
                     onChange={this.props.handleChange}
                     inputProps={{
                       name: 'workout',
@@ -125,8 +121,7 @@ class PaperSheet extends React.Component {
                 </FormControl>
               </form>
             </Grid>
-
-            <Grid item xs={3}>
+            <Grid item xs={6}>
               <form className={classes.container} noValidate autoComplete="off">
                 <TextField
                   id="addMinutes"
@@ -137,28 +132,30 @@ class PaperSheet extends React.Component {
                   className={classes.textField}
                   margin="normal"
                   name="minutes"
+                  fullWidth
                 />
               </form>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={6}>
               <form className={classes.container} noValidate autoComplete="off">
                 <TextField
                   id="addHours"
                   label="Hours"
                   value={this.props.hours}
-                  onChange={this.handleChange}
+                  onChange={this.props.handleChange}
                   type="number"
                   className={classes.textField}
                   margin="normal"
                   name="hours"
+                  fullWidth
                 />
               </form>
             </Grid>
+            <Grid item xs={12}>
+              <Button variant="contained">Submit</Button>
+            </Grid>
           </Grid>
-
-          <Button variant="contained">Submit</Button>
         </Paper>
-
         <ExpansionPanel className={classes.expansionPanelStyle} defaultExpanded>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <div className={classes.column}>
@@ -174,8 +171,8 @@ class PaperSheet extends React.Component {
   }
 }
 
-PaperSheet.propTypes = {
+ExerciseGoalCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PaperSheet);
+export default withStyles(styles)(ExerciseGoalCard);

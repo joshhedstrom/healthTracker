@@ -26,7 +26,14 @@ class ExerciseGoal extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        <ExerciseGoalCard />
+        <ExerciseGoalCard 
+        minutes={this.state.minutes}
+        hours={this.state.hours}
+        history={this.state.history}
+        activity={this.state.activity}
+        handleChange={this.handleChange.bind()}
+        
+         />
       </div>
     );
   }
