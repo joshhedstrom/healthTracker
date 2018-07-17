@@ -75,7 +75,7 @@ class ExerciseGoalCard extends React.Component {
 
     return (
       <div>
-        <Grid container spacing={16}>
+        <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography
@@ -174,19 +174,21 @@ class ExerciseGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <ExpansionPanel
-              className={classes.expansionPanelStyle}
-              defaultExpanded
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <div className={classes.column}>
-                  <Typography className={classes.heading}>History</Typography>
-                </div>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails className={classes.details}>
-                graph goes here
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
+            <Paper className={classes.root} elevation={1}>
+              <ExpansionPanel
+                className={classes.expansionPanelStyle}
+                defaultExpanded
+              >
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                  <div className={classes.column}>
+                    <Typography className={classes.heading}>History</Typography>
+                  </div>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className={classes.details}>
+                  graph goes here
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+            </Paper>
           </Grid>
         </Grid>
       </div>
