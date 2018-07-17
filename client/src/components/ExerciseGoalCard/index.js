@@ -65,7 +65,7 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 2
   },
   submit: {
-    textAlign: 'center',
+    textAlign: 'center'
   }
 });
 
@@ -75,96 +75,120 @@ class ExerciseGoalCard extends React.Component {
 
     return (
       <div>
-        <Paper className={classes.root} elevation={1}>
-          <Typography
-            className={classes.header}
-            variant="display1"
-            align="center"
-          >
-            Exercise Goal
-          </Typography>
-          <Typography variant="subheading">Today's Progress</Typography>
-          <p>{this.props.history}</p>
-          <Grid container spacing={16}>
-            <Grid item xs={12}>
-              <form
+        <Grid container spacing={16}>
+          <Grid item xs={12} md={6}>
+            <Paper className={classes.root} elevation={1}>
+              <Typography
+                className={classes.header}
+                variant="display1"
                 align="center"
-                className={classes.formRoot}
-                autoComplete="off"
               >
-                <FormControl fullWidth className={classes.formControl}>
-                  <InputLabel htmlFor="workout-simple">workout</InputLabel>
-                  <Select
-                    value={this.props.activity}
-                    onChange={this.props.handleChange}
-                    inputProps={{ name: 'activity', id: 'workout-simple' }}
+                Exercise Goal
+              </Typography>
+
+              <Typography variant="subheading">Today's Progress</Typography>
+              <p>{this.props.history}</p>
+              <Grid container spacing={16}>
+                <Grid item xs={12}>
+                  <form
+                    align="center"
+                    className={classes.formRoot}
+                    autoComplete="off"
                   >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={'walking'}>Walking</MenuItem>
-                    <MenuItem value={'jogging'}>Jogging</MenuItem>
-                    <MenuItem value={'running'}>Running</MenuItem>
-                    <MenuItem value={'swimming'}>Swimming</MenuItem>
-                    <MenuItem value={'cycling'}>Cycling</MenuItem>
-                    <MenuItem value={'yoga'}>Yoga</MenuItem>
-                    <MenuItem value={'hiit'}>HIIT</MenuItem>
-                    <MenuItem value={'strengthTraining'}>Strength Training</MenuItem>
-                    <MenuItem value={'stairStepper'}>Stair Stepper</MenuItem>
-                    <MenuItem value={'boxing'}>Boxing</MenuItem>
-                    <MenuItem value={'other'}>Other</MenuItem>
-                  </Select>
-                  <FormHelperText>
-                    Select the workout and duration
-                  </FormHelperText>
-                </FormControl>
-              </form>
-            </Grid>
-            <Grid item xs={6}>
-              <form className={classes.container} noValidate autoComplete="off">
-                <TextField
-                  id="addHours"
-                  label="Hours"
-                  value={this.props.hours}
-                  onChange={this.props.handleChange}
-                  type="number"
-                  className={classes.textField}
-                  margin="normal"
-                  name="hours"
-                  fullWidth
-                />
-              </form>
-            </Grid>
-            <Grid item xs={6}>
-              <form className={classes.container} noValidate autoComplete="off">
-                <TextField
-                  id="addMinutes"
-                  label="Minutes"
-                  value={this.props.minutes}
-                  onChange={this.props.handleChange}
-                  type="number"
-                  className={classes.textField}
-                  margin="normal"
-                  name="minutes"
-                  fullWidth
-                />
-              </form>
-            </Grid>
-            <Grid className={classes.submit} item xs={12}>
-              <Button onClick={this.props.handleSubmit} variant="contained">Submit</Button>
-            </Grid>
+                    <FormControl fullWidth className={classes.formControl}>
+                      <InputLabel htmlFor="workout-simple">workout</InputLabel>
+                      <Select
+                        value={this.props.activity}
+                        onChange={this.props.handleChange}
+                        inputProps={{ name: 'activity', id: 'workout-simple' }}
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={'walking'}>Walking</MenuItem>
+                        <MenuItem value={'jogging'}>Jogging</MenuItem>
+                        <MenuItem value={'running'}>Running</MenuItem>
+                        <MenuItem value={'swimming'}>Swimming</MenuItem>
+                        <MenuItem value={'cycling'}>Cycling</MenuItem>
+                        <MenuItem value={'yoga'}>Yoga</MenuItem>
+                        <MenuItem value={'hiit'}>HIIT</MenuItem>
+                        <MenuItem value={'strengthTraining'}>
+                          Strength Training
+                        </MenuItem>
+                        <MenuItem value={'stairStepper'}>
+                          Stair Stepper
+                        </MenuItem>
+                        <MenuItem value={'boxing'}>Boxing</MenuItem>
+                        <MenuItem value={'other'}>Other</MenuItem>
+                      </Select>
+                      <FormHelperText>
+                        Select the workout and duration
+                      </FormHelperText>
+                    </FormControl>
+                  </form>
+                </Grid>
+                <Grid item xs={6}>
+                  <form
+                    className={classes.container}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <TextField
+                      id="addHours"
+                      label="Hours"
+                      value={this.props.hours}
+                      onChange={this.props.handleChange}
+                      type="number"
+                      className={classes.textField}
+                      margin="normal"
+                      name="hours"
+                      fullWidth
+                    />
+                  </form>
+                </Grid>
+                <Grid item xs={6}>
+                  <form
+                    className={classes.container}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <TextField
+                      id="addMinutes"
+                      label="Minutes"
+                      value={this.props.minutes}
+                      onChange={this.props.handleChange}
+                      type="number"
+                      className={classes.textField}
+                      margin="normal"
+                      name="minutes"
+                      fullWidth
+                    />
+                  </form>
+                </Grid>
+                <Grid className={classes.submit} item xs={12}>
+                  <Button onClick={this.props.handleSubmit} variant="contained">
+                    Submit
+                  </Button>
+                </Grid>
+              </Grid>
+            </Paper>
           </Grid>
-        </Paper>
-        <ExpansionPanel className={classes.expansionPanelStyle} defaultExpanded>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <div className={classes.column}>
-              <Typography className={classes.heading}>History</Typography>
-            </div>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails className={classes.details}>
-            graph goes here
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          <Grid item xs={12} md={6}>
+            <ExpansionPanel
+              className={classes.expansionPanelStyle}
+              defaultExpanded
+            >
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                <div className={classes.column}>
+                  <Typography className={classes.heading}>History</Typography>
+                </div>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className={classes.details}>
+                graph goes here
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+          </Grid>
+        </Grid>
       </div>
     );
   }
