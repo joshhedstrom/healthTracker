@@ -21,179 +21,168 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-
 import ChartsPie from './../ChartsPie';
-
 
 const styles = {
   cardUser: {
     marginLeft: 30,
     marginRight: 30,
-    marginTop: 30,
+    marginTop: 30
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
-
+    paddingTop: '56.25%' // 16:9
   },
   card: {
     marginTop: 11,
-    display: 'flex',
+    display: 'flex'
   },
   details: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   content: {
-    flex: '1 0 auto',
+    flex: '1 0 auto'
   },
-  button: {
-    
-  },
+  button: {},
   input: {
-    display: 'none',
+    display: 'none'
   },
   divStyle: {
-    padding: 14,
-
+    padding: 14
   },
   infoButton: {
-    minWith: 0,
+    minWith: 0
   },
   root: {
-      flexGrow: 1,
+    flexGrow: 1
   },
   gridContainer: {
-    marginTop: 2,
+    marginTop: 2
   },
   paper: {
-    textAlign: 'center',
+    textAlign: 'center'
   },
   waterButton: {
-    backgroundColor: '#9a67eaab',
+    backgroundColor: '#9a67eaab'
   },
   nutritionButton: {
-    backgroundColor: '#10953bb8',
+    backgroundColor: '#10953bb8'
   },
   exerciseButton: {
-    backgroundColor: '#ea6192b5',
+    backgroundColor: '#ea6192b5'
   },
   weightButton: {
-    backgroundColor: '#4d66f0b5',
-  },
-
-
+    backgroundColor: '#4d66f0b5'
+  }
 };
 
-
-
-
-
-class SimpleMediaCard extends React.Component {
-
+class Dashboard extends React.Component {
   componentDidMount() {
-    console.log(this.props.water)
+    console.log(this.props.water);
   }
 
-render () {
-	
-  const { classes } = this.props;
-  console.log(this.props)
-  return (
-
-    <div>
-	    <Typography className={classes.root} variant="display3" align="center">
-	        DashBoard
-	     </Typography>
-
-      <Card className={classes.cardUser}>
-        
-        <CardContent>
-
-          <Grid container spacing={24}>
-            <Grid item xs={12} sm={6}>
-              <ChartsPie waterChart={this.props.water} nutritionChart={this.props.nutrition} exerciseChart={this.props.exercise}/>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Typography gutterBottom variant="headline" component="h2" align="center">
-                Charlie Johnson
-              </Typography>
-              <Table> 
-                <TableBody>
-                  <TableRow> 
-                    <TableCell>Water (Cups)</TableCell>
+  render() {
+    const { classes } = this.props;
+    console.log(this.props);
+    return (
+      <div>
+        <Typography className={classes.root} variant="display3" align="center">
+          DashBoard
+        </Typography>
+        <Card className={classes.cardUser}>
+          <CardContent>
+            <Grid container spacing={4}>
+              <Grid item xs={12} sm={6}>
+                <ChartsPie
+                  waterChart={this.props.water}
+                  nutritionChart={this.props.nutrition}
+                  exerciseChart={this.props.exercise}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Typography
+                  gutterBottom
+                  variant="headline"
+                  component="h2"
+                  align="center"
+                >
+                  Charlie Johnson
+                </Typography>
+                <Table>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>Water (Cups)</TableCell>
                       <TableCell>{this.props.water}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Nutrition (Points)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Nutrition (Points)</TableCell>
                       <TableCell>{this.props.nutrition}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Exercise (Duration)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Exercise (Duration)</TableCell>
                       <TableCell>{this.props.exercise}</TableCell>
-                  </TableRow>
-                   <TableRow>
-                    <TableCell>Weight (LBS)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Weight (LBS)</TableCell>
                       <TableCell>{this.props.weight}</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </Grid>
             </Grid>
-          </Grid>
-
-        </CardContent>
-      </Card>
-
-
-
-  <Grid container spacing={8}>
-        <Grid item xs={6} sm={3} className={classes.paper}>
-            <a style={{textDecoration: 'none', color:'white' }} href="/water">
+          </CardContent>
+        </Card>
+        <Grid container spacing={4}>
+          <Grid item xs={6} sm={3} className={classes.paper}>
+            <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
               <Button variant="contained" className={classes.waterButton}>
-              <AddIcon />
+                <AddIcon />
                 Water
               </Button>
             </a>
-        </Grid>
-        <Grid item xs={6} sm={3} className={classes.paper}>
-            <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
+          </Grid>
+          <Grid item xs={6} sm={3} className={classes.paper}>
+            <a
+              style={{ textDecoration: 'none', color: 'white' }}
+              href="/nutritionGoal"
+            >
               <Button variant="contained" className={classes.nutritionButton}>
-               <AddIcon />
-                 Nutrition
+                <AddIcon />
+                Nutrition
               </Button>
-          </a>
-        </Grid>
-        <Grid item xs={6} sm={3} className={classes.paper}>
-            <a style={{textDecoration: 'none', color:'white' }} href="/exercise">
+            </a>
+          </Grid>
+          <Grid item xs={6} sm={3} className={classes.paper}>
+            <a
+              style={{ textDecoration: 'none', color: 'white' }}
+              href="/exercise"
+            >
               <Button variant="contained" className={classes.exerciseButton}>
                 <AddIcon />
-                 Exercise
-              </Button >
-          </a>
-        </Grid>
-        <Grid item xs={6} sm={3} className={classes.paper}>
-            <a style={{textDecoration: 'none', color:'white' }} href="/weight">
+                Exercise
+              </Button>
+            </a>
+          </Grid>
+          <Grid item xs={6} sm={3} className={classes.paper}>
+            <a
+              style={{ textDecoration: 'none', color: 'white' }}
+              href="/weight"
+            >
               <Button variant="contained" className={classes.weightButton}>
                 <AddIcon />
-                 Weight
+                Weight
               </Button>
-          </a>
+            </a>
+          </Grid>
         </Grid>
-    </Grid>
-
-
-
-
-  
-
-    </div>
+      </div>
     );
   }
-
 }
 
-SimpleMediaCard.propTypes = {
-  classes: PropTypes.object.isRequired,
+Dashboard.propTypes = {
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(SimpleMediaCard);
+export default withStyles(styles)(Dashboard);
