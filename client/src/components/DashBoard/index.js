@@ -69,6 +69,20 @@ const styles = {
   paper: {
     textAlign: 'center',
   },
+  waterButton: {
+    backgroundColor: '#9a67eaab',
+  },
+  nutritionButton: {
+    backgroundColor: '#10953bb8',
+  },
+  exerciseButton: {
+    backgroundColor: '#ea6192b5',
+  },
+  weightButton: {
+    backgroundColor: '#4d66f0b5',
+  },
+
+
 };
 
 
@@ -131,7 +145,7 @@ render () {
         <Grid item xs={6} sm={3} className={classes.paper}>
           
             <a style={{textDecoration: 'none', color:'white' }} href="/water">
-              <Button variant="contained">
+              <Button variant="contained" className={classes.waterButton}>
               <AddIcon />
                 Water
               </Button>
@@ -140,7 +154,7 @@ render () {
         </Grid>
         <Grid item xs={6} sm={3} className={classes.paper}>
             <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
-              <Button variant="contained">
+              <Button variant="contained" className={classes.nutritionButton}>
                <AddIcon />
                  Nutrition
               </Button>
@@ -148,7 +162,7 @@ render () {
         </Grid>
         <Grid item xs={6} sm={3} className={classes.paper}>
             <a style={{textDecoration: 'none', color:'white' }} href="/exercise">
-              <Button variant="contained">
+              <Button variant="contained" className={classes.exerciseButton}>
                 <AddIcon />
                  Exercise
               </Button >
@@ -156,7 +170,7 @@ render () {
         </Grid>
         <Grid item xs={6} sm={3} className={classes.paper}>
             <a style={{textDecoration: 'none', color:'white' }} href="/weight">
-              <Button variant="contained">
+              <Button variant="contained" className={classes.weightButton}>
                 <AddIcon />
                  Weight
               </Button>
