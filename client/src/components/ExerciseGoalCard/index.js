@@ -25,7 +25,7 @@ const styles = theme => ({
   },
   textField: {
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing.unit
     // width: 200
   },
   container: {
@@ -94,10 +94,7 @@ class ExerciseGoalCard extends React.Component {
                   <Select
                     value={this.props.activity}
                     onChange={this.props.handleChange}
-                    inputProps={{
-                      name: 'workout',
-                      id: 'workout-simple'
-                    }}
+                    inputProps={{ name: 'workout', id: 'workout-simple' }}
                   >
                     <MenuItem value="">
                       <em>None</em>
@@ -124,21 +121,6 @@ class ExerciseGoalCard extends React.Component {
             <Grid item xs={6}>
               <form className={classes.container} noValidate autoComplete="off">
                 <TextField
-                  id="addMinutes"
-                  label="Minutes"
-                  value={this.props.minutes}
-                  onChange={this.handleChange}
-                  type="number"
-                  className={classes.textField}
-                  margin="normal"
-                  name="minutes"
-                  fullWidth
-                />
-              </form>
-            </Grid>
-            <Grid item xs={6}>
-              <form className={classes.container} noValidate autoComplete="off">
-                <TextField
                   id="addHours"
                   label="Hours"
                   value={this.props.hours}
@@ -147,6 +129,21 @@ class ExerciseGoalCard extends React.Component {
                   className={classes.textField}
                   margin="normal"
                   name="hours"
+                  fullWidth
+                />
+              </form>
+            </Grid>
+            <Grid item xs={6}>
+              <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                  id="addMinutes"
+                  label="Minutes"
+                  value={this.props.minutes}
+                  onChange={this.handleChange}
+                  type="number"
+                  className={classes.textField}
+                  margin="normal"
+                  name="minutes"
                   fullWidth
                 />
               </form>
