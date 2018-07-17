@@ -59,7 +59,7 @@ class WaterGoalCard extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <Grid container spacing={16}>
+        <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1}>
               <Grid container spacing={24}>
@@ -131,21 +131,22 @@ class WaterGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Grid item xs={12}>
-              <ExpansionPanel
-                className={classes.expansionPanelStyle}
-                defaultExpanded
-              >
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                  <div className={classes.column}>
-                    <Typography className={classes.heading}>History</Typography>
-                  </div>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className={classes.details}>
-                  <ChartsBar />
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-            </Grid>
+                    <Paper className={classes.root} elevation={1}>
+
+            <ExpansionPanel
+              className={classes.expansionPanelStyle}
+              defaultExpanded
+            >
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                <div className={classes.column}>
+                  <Typography className={classes.heading}>History</Typography>
+                </div>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className={classes.details}>
+                <ChartsBar />
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            </Paper>
           </Grid>
         </Grid>
       </div>
