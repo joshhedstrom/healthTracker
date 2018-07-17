@@ -17,6 +17,10 @@ class ExerciseGoal extends Component {
     });
   };
 
+  handleSubmit = event => {
+    console.log(this.state)
+  }
+
   renderRedirect = () => {
     if (!localStorage.getItem('jwtToken')) {
       return <Redirect to="/login" />;
@@ -32,7 +36,7 @@ class ExerciseGoal extends Component {
         history={this.state.history}
         activity={this.state.activity}
         handleChange={this.handleChange.bind()}
-        
+        handleSubmit={this.handleSubmit.bind()}
          />
       </div>
     );

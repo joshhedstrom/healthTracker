@@ -63,6 +63,9 @@ const styles = theme => ({
   },
   selectEmpty: {
     marginTop: theme.spacing.unit * 2
+  },
+  submit: {
+    textAlign: 'center',
   }
 });
 
@@ -82,7 +85,7 @@ class ExerciseGoalCard extends React.Component {
           </Typography>
           <Typography variant="subheading">Today's Progress</Typography>
           <p>{this.props.history}</p>
-          <Grid container spacing={12}>
+          <Grid container spacing={16}>
             <Grid item xs={12}>
               <form
                 align="center"
@@ -94,23 +97,22 @@ class ExerciseGoalCard extends React.Component {
                   <Select
                     value={this.props.activity}
                     onChange={this.props.handleChange}
-                    inputProps={{ name: 'workout', id: 'workout-simple' }}
+                    inputProps={{ name: 'activity', id: 'workout-simple' }}
                   >
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value={1}>Running</MenuItem>
-                    <MenuItem value={2}>Walking</MenuItem>
-                    <MenuItem value={3}>Strength Training</MenuItem>
-                    <MenuItem value={4}>Yoga</MenuItem>
-                    <MenuItem value={5}>Boxing</MenuItem>
-                    <MenuItem value={6}>Swimming</MenuItem>
-                    <MenuItem value={7}>HIIT</MenuItem>
-                    <MenuItem value={8}>Cycling</MenuItem>
-                    <MenuItem value={9}>Swimming</MenuItem>
-                    <MenuItem value={10}>HIIT</MenuItem>
-                    <MenuItem value={11}>Stair Stepper</MenuItem>
-                    <MenuItem value={12}>Other</MenuItem>
+                    <MenuItem value={'walking'}>Walking</MenuItem>
+                    <MenuItem value={'jogging'}>Jogging</MenuItem>
+                    <MenuItem value={'running'}>Running</MenuItem>
+                    <MenuItem value={'swimming'}>Swimming</MenuItem>
+                    <MenuItem value={'cycling'}>Cycling</MenuItem>
+                    <MenuItem value={'yoga'}>Yoga</MenuItem>
+                    <MenuItem value={'hiit'}>HIIT</MenuItem>
+                    <MenuItem value={'strengthTraining'}>Strength Training</MenuItem>
+                    <MenuItem value={'stairStepper'}>Stair Stepper</MenuItem>
+                    <MenuItem value={'boxing'}>Boxing</MenuItem>
+                    <MenuItem value={'other'}>Other</MenuItem>
                   </Select>
                   <FormHelperText>
                     Select the workout and duration
@@ -139,7 +141,7 @@ class ExerciseGoalCard extends React.Component {
                   id="addMinutes"
                   label="Minutes"
                   value={this.props.minutes}
-                  onChange={this.handleChange}
+                  onChange={this.props.handleChange}
                   type="number"
                   className={classes.textField}
                   margin="normal"
@@ -148,8 +150,8 @@ class ExerciseGoalCard extends React.Component {
                 />
               </form>
             </Grid>
-            <Grid item xs={12}>
-              <Button variant="contained">Submit</Button>
+            <Grid className={classes.submit} item xs={12}>
+              <Button onClick={this.props.handleSubmit} variant="contained">Submit</Button>
             </Grid>
           </Grid>
         </Paper>
