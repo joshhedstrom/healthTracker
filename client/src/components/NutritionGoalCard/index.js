@@ -18,6 +18,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox'
 import Grid from '@material-ui/core/Grid';
 import style from './index.css';
+import Chip from '@material-ui/core/Chip';
+
+
 
 
 const styles = theme => ({
@@ -26,6 +29,7 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     margin: 10,
+
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -38,7 +42,11 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11,
-  },
+  }
+
+
+
+
 
 });
 
@@ -77,15 +85,19 @@ render () {
       <div>
         <Grid container spacing={24}>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.root} elevation={1}>
-              <Typography align="center" variant="display1">
+
+            <Paper id="Parker" className={classes.root} elevation={1}>
+              <Typography align="center" variant="display2">
                 Nutrition Goal
               </Typography>
+              <Paper>
+                <Typography>Current Progress: 9</Typography>
+              </Paper>
+
+             
+
               <Typography align="center">
                 Each goal below counts as 1+ points. Try to see if you can meet all of these goals!
-              </Typography>
-              <Typography variant="subheading" align="center">
-                Today: 4 Points
               </Typography>
             <FormControl component="fieldset" >
               <Typography  variant="title" align="center" className={classes.formHeader}>
