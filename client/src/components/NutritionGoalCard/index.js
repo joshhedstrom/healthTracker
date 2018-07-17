@@ -83,7 +83,7 @@ render () {
 
     return (
       <div>
-        <Grid container spacing={24}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
 
             <Paper id="Parker" className={classes.root} elevation={1}>
