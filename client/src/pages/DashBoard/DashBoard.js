@@ -42,6 +42,7 @@ class DashBoard extends Component {
     .then(res => {
       if (res.data.days.length) {
         this.setState({
+          ...this.state,
           firstName: res.data.name,
           lastName: res.data.name,
           waterIntake: res.data.days[0].water,
@@ -51,6 +52,7 @@ class DashBoard extends Component {
         })
       } else {
         this.setState({
+          ...this.state,
           firstName: res.data.name,
           lastName: res.data.name,
           currentWeight: res.data.weight
@@ -60,7 +62,7 @@ class DashBoard extends Component {
           userId: this.state.userId,
           date: moment().format("MM.DD.YYYY")
         }).then(res => {
-          console.log(res)
+          // console.log(res)
         })
 
       }
@@ -74,6 +76,7 @@ class DashBoard extends Component {
   };
 
   render() {
+    console.log(this.state)
     return (
       <div>
         {this.renderRedirect()}

@@ -66,14 +66,14 @@ const styles = {
 
 class SimpleMediaCard extends React.Component {
 
-state = {
-
-};
-
+  componentDidMount() {
+    console.log(this.props.water)
+  }
 
 render () {
 	
   const { classes } = this.props;
+  console.log(this.props)
   return (
 
     <div>
@@ -84,7 +84,8 @@ render () {
       <Card className={classes.cardUser}>
         
         <CardContent>
-          <ChartsPie />
+          {console.log(this.props.water)}
+          <ChartsPie waterChart={this.props.water} nutritionChart={this.props.nutrition} exerciseChart={this.props.exercise}/>
           <Typography gutterBottom variant="headline" component="h2">
             Charlie Johnson
           </Typography>
