@@ -109,48 +109,49 @@ render () {
       <Card className={classes.cardUser}>
         
         <CardContent>
-          <ChartsPie />
-          <Typography gutterBottom variant="headline" component="h2" align="center">
-            Charlie Johnson
-          </Typography>
-
-          <Table> 
-            <TableBody>
-              <TableRow> 
-                <TableCell>Water (Cups)</TableCell>
-                  <TableCell>{this.props.water}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Nutrition (Points)</TableCell>
-                  <TableCell>{this.props.nutrition}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Exercise (Duration)</TableCell>
-                  <TableCell>{this.props.exercise}</TableCell>
-              </TableRow>
-               <TableRow>
-                <TableCell>Weight (LBS)</TableCell>
-                  <TableCell>{this.props.weight}</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-
-
+          <Grid container spacing={24}>
+            <Grid item xs={12} sm={6}>
+              <ChartsPie />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography gutterBottom variant="headline" component="h2" align="center">
+                Charlie Johnson
+              </Typography>
+              <Table> 
+                <TableBody>
+                  <TableRow> 
+                    <TableCell>Water (Cups)</TableCell>
+                      <TableCell>{this.props.water}</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Nutrition (Points)</TableCell>
+                      <TableCell>{this.props.nutrition}</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Exercise (Duration)</TableCell>
+                      <TableCell>{this.props.exercise}</TableCell>
+                  </TableRow>
+                   <TableRow>
+                    <TableCell>Weight (LBS)</TableCell>
+                      <TableCell>{this.props.weight}</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
 
 
 
-<Grid container spacing={8}>
+  <Grid container spacing={8}>
         <Grid item xs={6} sm={3} className={classes.paper}>
-          
             <a style={{textDecoration: 'none', color:'white' }} href="/water">
               <Button variant="contained" className={classes.waterButton}>
               <AddIcon />
                 Water
               </Button>
             </a>
-
         </Grid>
         <Grid item xs={6} sm={3} className={classes.paper}>
             <a style={{textDecoration: 'none', color:'white' }} href="/nutritionGoal">
@@ -176,8 +177,8 @@ render () {
               </Button>
           </a>
         </Grid>
-        
     </Grid>
+
 
 
 

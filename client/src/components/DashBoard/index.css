@@ -9,12 +9,16 @@ td.MuiTableCell-body-148 {
 }
 
 h2.MuiTypography-gutterBottom-95 {
-    margin-top: 20%;
     font-size: 202%;
 }
 
 div.MuiGrid-spacing-xs-8-176 > .MuiGrid-item-156 {
     padding: 0px;
+}
+
+div.SimpleMediaCard-cardUser-126 {
+    margin-top: 10px;
+   
 }
 
 
