@@ -25,11 +25,11 @@ const styles = theme => ({
   },
   progressColorWater: {
     backgroundColor: '#63c5e4',
-    marginLeft: "19%",
+    marginLeft: '19%',
     marginRight: '19%',
-    marginBottom: "28px",
-    marginTop: "19px",
-    padding: "4px",
+    marginBottom: '28px',
+    marginTop: '19px',
+    padding: '4px'
   }
 });
 
@@ -47,6 +47,13 @@ class WaterGoalCard extends React.Component {
   addGlass = event => {
     let newGlasses = parseInt(event.target.value) + this.state.glasses;
     this.setState({ glasses: newGlasses });
+    axios
+      .post('http://localhost:3001/api/healthTracker/addWater', {
+        water: value,
+        userId: localStorage.userId
+      })
+      .then(data => console.log(data));
+    console.log(value);
   };
 
   incrementGlass = event => {
@@ -72,13 +79,15 @@ class WaterGoalCard extends React.Component {
                     Drink at least 8 glasses of 8 fluid ounces each day.
                   </Typography>
                   <br />
-                  <Paper className={classes.progressColorWater} >
-                    <Typography align="center">Current Progress: {this.state.glasses}</Typography>
-                   </Paper>
+                  <Paper className={classes.progressColorWater}>
+                    <Typography align="center">
+                      Current Progress: {this.state.glasses}
+                    </Typography>
+                  </Paper>
                 </Grid>
                 <Grid item xs={4}>
                   <Button
-                    onClick={this.addGlass.bind()}
+                    onClick={this.addGlass}
                     value="1"
                     variant="outlined"
                     size="small"
@@ -88,7 +97,7 @@ class WaterGoalCard extends React.Component {
                 </Grid>
                 <Grid item xs={4}>
                   <Button
-                    onClick={this.addGlass.bind()}
+                    onClick={this.addGlass}
                     value="3"
                     variant="outlined"
                     size="small"
@@ -98,7 +107,7 @@ class WaterGoalCard extends React.Component {
                 </Grid>
                 <Grid item xs={4}>
                   <Button
-                    onClick={this.addGlass.bind()}
+                    onClick={this.addGlass}
                     value="6"
                     variant="outlined"
                     size="small"

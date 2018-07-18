@@ -5,12 +5,14 @@ import { Redirect } from 'react-router-dom';
 class NutritionGoal extends Component {
   state = {
     redirect: false
-  };
+  }
+
+  
   renderRedirect = () => {
     if (!localStorage.getItem('jwtToken')) {
       return <Redirect to="/login" />;
     }
-  };
+  }
 
   render() {
     return (
