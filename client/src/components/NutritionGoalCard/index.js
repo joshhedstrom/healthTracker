@@ -78,21 +78,22 @@ render () {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
 
-            <Paper id="Parker" className={classes.root} elevation={1}>
+            <Paper className={classes.root} elevation={1}>
               <Typography align="center" variant="display2">
                 Nutrition Goal
               </Typography>
-              <Paper>
-                <Typography>Current Progress: 9</Typography>
-              </Paper>
-
-             
 
               <Typography align="center">
                 Each goal below counts as 1+ points. Try to see if you can meet all of these goals!
               </Typography>
+
+
+              <Paper id="progress">
+                <Typography align="center">Current Progress: 9</Typography>
+              </Paper>
+
             <FormControl component="fieldset" >
-              <Typography  variant="title" align="center" className={classes.formHeader}>
+              <Typography id="formTitle"  variant="title" align="center" className={classes.formHeader}>
                 Select All Goals You Achieved Today 
               </Typography>
               <Grid container spacing={12}>
