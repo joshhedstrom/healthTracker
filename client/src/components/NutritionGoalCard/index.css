@@ -4,10 +4,7 @@ div.MuiFormGroup-root-230 {
     flex-direction: unset;
 }
 
-/*h2.MuiTypography-title-84 {
-  	margin-top: 9%;
-    margin-bottom: 5%;
-}*/
+
 
 h3.MuiTypography-subheading-85 {
 
@@ -21,14 +18,26 @@ button.MuiButton-contained-111 {
     margin-top: 26px;
 }
 
-div#Parker.MuiPaper-root-13.MuiPaper-elevation2-17.MuiPaper-rounded-14 {
+div#progress.MuiPaper-root-13.MuiPaer-elevation2-17.MuiPaper-rounded-14 {
 	margin-left: 19%;
     margin-right: 19%;
-    background-color: #8ddf86;
+    background-color: green;
     margin-bottom: 28px;
     margin-top: 19px;
     padding: 4px;
 }
+
+div#progress.MuiPaper-root-13.MuiPaper-elevation2-17.MuiPaper-rounded-14 {
+    margin-left: 19%;
+    margin-right: 19%;
+    background-color: green;
+    margin-bottom: 28px;
+    margin-top: 19px;
+    padding: 4px;
+}
+
+
+
 
 p.MuiTypography-root-78.MuiTypography-body1-87.MuiTypography-alignCenter-91 {
 	padding: 0% 8% 0% 8%;

@@ -88,7 +88,7 @@ render () {
               </Typography>
 
 
-              <Paper id="Parker">
+              <Paper id="progress">
                 <Typography align="center">Current Progress: 9</Typography>
               </Paper>
 

@@ -64,9 +64,9 @@ class WaterGoalCard extends React.Component {
                     Drink at least 8 glasses of 8 fluid ounces each day.
                   </Typography>
                   <br />
-                  <Typography variant="subheading">
-                    Today's Progress: {this.state.glasses} glasses
-                  </Typography>
+                  <Paper id="progress">
+                    <Typography align="center">Current Progress: {this.state.glasses}</Typography>
+                   </Paper>
                 </Grid>
                 <Grid item xs={4}>
                   <Button

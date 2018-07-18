@@ -62,6 +62,14 @@ const styles = theme => ({
   },
   submit: {
     textAlign: 'center'
+  },
+  progressColor: {
+    backgroundColor: '#e9b1ce',
+    marginLeft: "19%",
+    marginRight: '19%',
+    marginBottom: "28px",
+    marginTop: "19px",
+    padding: "4px",
   }
 });
 
@@ -82,7 +90,7 @@ class ExerciseGoalCard extends React.Component {
                 Exercise Goal
               </Typography>
 
-              <Paper id="progress">
+              <Paper className={classes.progressColor}>
                 <Typography align="center">Current Progress: {this.props.history} ??</Typography>
               </Paper>
 
