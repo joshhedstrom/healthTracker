@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -5,6 +6,15 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 import ChartsBar from './../ChartsBar';
 import Grid from '@material-ui/core/Grid';
 
@@ -22,31 +32,26 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11
-  },
-  progressColorWater: {
-    backgroundColor: '#63c5e4',
-    marginLeft: "19%",
-    marginRight: '19%',
-    marginBottom: "28px",
-    marginTop: "19px",
-    padding: "4px",
   }
-});
+})
 
 class WaterGoalCard extends React.Component {
   state = {
-    glasses: 3,
+    glasses: 0,
     incrementer: 0,
-    historyData: []
-  };
+    historyData: [],
+  }
 
   componentDidMount() {
     //pull water data from backend
   }
 
-  addGlass = event => {
-    let newGlasses = parseInt(event.target.value) + this.state.glasses;
+  addGlass = value => {
+    let newGlasses = value + this.state.glasses;
     this.setState({ glasses: newGlasses });
+    axios.post("http://localhost:3001/api/healthTracker/addWater", {water: value, userId: localStorage.userId } )
+    .then(data => console.log(data));
+    console.log(value)
   };
 
   incrementGlass = event => {
@@ -62,84 +67,86 @@ class WaterGoalCard extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
-              <Grid container spacing={24}>
-                <Grid item xs={12}>
-                  <Typography variant="display1">Water Goal</Typography>
-                  <Typography>
-                    Drink at least 8 glasses of 8 fluid ounces each day.
-                  </Typography>
-                  <br />
-                  <Paper className={classes.progressColorWater} >
-                    <Typography align="center">Current Progress: {this.state.glasses}</Typography>
-                   </Paper>
-                </Grid>
-                <Grid item xs={4}>
-                  <Button
-                    onClick={this.addGlass.bind()}
-                    value="1"
-                    variant="outlined"
-                    size="small"
-                  >
-                    +1 Glasses
-                  </Button>
-                </Grid>
-                <Grid item xs={4}>
-                  <Button
-                    onClick={this.addGlass.bind()}
-                    value="3"
-                    variant="outlined"
-                    size="small"
-                  >
-                    +3 Glasses
-                  </Button>
-                </Grid>
-                <Grid item xs={4}>
-                  <Button
-                    onClick={this.addGlass.bind()}
-                    value="6"
-                    variant="outlined"
-                    size="small"
-                  >
-                    +6 Glasses
-                  </Button>
-                </Grid>
-                <Grid item xs={12}>
-                  <form
-                    className={classes.container}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <TextField
-                      id="addGlasses"
-                      label="Enter Water"
-                      fullWidth
-                      type="number"
-                      margin="normal"
-                      onChange={this.increment.bind()}
-                    />
-                  </form>
-                </Grid>
-                <Grid item xs={12}>
-                  <Button
-                    onClick={this.incrementGlass.bind()}
-                    variant="contained"
-                  >
-                    Submit
-                  </Button>
-                </Grid>
-              </Grid>
-            </Paper>
+        <Paper className={classes.root} elevation={1}>
+          <Grid container spacing={24}>
+            <Grid item xs={12}>
+              <Typography variant="display1">Water Goal</Typography>
+              <Typography>
+                Drink at least 8 glasses of 8 fluid ounces each day.
+              </Typography>
+              <br />
+              <Typography variant="subheading">
+                Today's Progress: {this.state.glasses} glasses
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Button
+                onClick={() => this.addGlass(1)}
+                value="1"
+                variant="outlined"
+                size="small"
+              >
+                +1 Glasses
+              </Button>
+            </Grid>
+            <Grid item xs={4}>
+              <Button
+                onClick={() => this.addGlass(3)}
+                value="3"
+                variant="outlined"
+                size="small"
+              >
+                +3 Glasses
+              </Button>
+            </Grid>
+            <Grid item xs={4}>
+              <Button
+                onClick={() => this.addGlass(6)}
+                value="6"
+                variant="outlined"
+                size="small"
+              >
+                +6 Glasses
+              </Button>
+            </Grid>
+            <Grid item xs={12}>
+              <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                  id="addGlasses"
+                  label="Enter Water"
+                  fullWidth
+                  type="number"
+                  margin="normal"
+                  onChange={this.increment.bind()}
+                />
+              </form>
+            </Grid>
+            <Grid item xs={12}>
+              <Button onClick={this.incrementGlass.bind()} variant="contained">
+                Submit
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
-              <Typography className={classes.heading}>History</Typography>
-              <ChartsBar />
-            </Paper>
+        </Paper>
+
+        <Grid container spacing={24}>
+          <Grid item xs={12}>
+            <ExpansionPanel
+              className={classes.expansionPanelStyle}
+              defaultExpanded
+            >
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                <div className={classes.column}>
+                  <Typography className={classes.heading}>History</Typography>
+                </div>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className={classes.details}>
+                 <ChartsBar />
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
           </Grid>
         </Grid>
+
       </div>
     );
   }
@@ -150,3 +157,4 @@ WaterGoalCard.propTypes = {
 };
 
 export default withStyles(styles)(WaterGoalCard);
+
