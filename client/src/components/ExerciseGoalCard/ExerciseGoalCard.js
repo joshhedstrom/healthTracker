@@ -87,7 +87,7 @@ class ExerciseGoalCard extends React.Component {
                 variant="display1"
                 align="center"
               >
-                Exercise Goal
+                Exercise Tracker
               </Typography>
 
               <Paper className={classes.progressColor}>
@@ -102,7 +102,7 @@ class ExerciseGoalCard extends React.Component {
                     autoComplete="off"
                   >
                     <FormControl fullWidth className={classes.formControl}>
-                      <InputLabel htmlFor="workout-simple">workout</InputLabel>
+                      <InputLabel htmlFor="workout-simple">Workouts</InputLabel>
                       <Select
                         value={this.props.activity}
                         onChange={this.props.handleChange}
