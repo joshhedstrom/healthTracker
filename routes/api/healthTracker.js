@@ -60,6 +60,18 @@ router.get('/day/:id', passport.authenticate('jwt', { session: false }), (req, r
  }
 );
 
+router.put('/newWater', passport.authenticate('jwt', { session: false}), (req, res) => {
+  const token = getToken(req.headers);
+  if (token) {
+    console.log('user is loggd in to the get route for day:id');
+    db.Water.findDayById(req, res);
+  } else {
+    return res.status(403).send({ success: false, msg: 'Unauthorized.' });
+  }
+ }
+);
+
+
 
 
 //---------------------------------------------------------DUMMY AUTH ROUTES-------------------->>>>>>>>
