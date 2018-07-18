@@ -22,6 +22,14 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11
+  },
+  progressColorWater: {
+    backgroundColor: '#63c5e4',
+    marginLeft: "19%",
+    marginRight: '19%',
+    marginBottom: "28px",
+    marginTop: "19px",
+    padding: "4px",
   }
 });
 
@@ -64,7 +72,7 @@ class WaterGoalCard extends React.Component {
                     Drink at least 8 glasses of 8 fluid ounces each day.
                   </Typography>
                   <br />
-                  <Paper id="progress">
+                  <Paper className={classes.progressColorWater} >
                     <Typography align="center">Current Progress: {this.state.glasses}</Typography>
                    </Paper>
                 </Grid>
