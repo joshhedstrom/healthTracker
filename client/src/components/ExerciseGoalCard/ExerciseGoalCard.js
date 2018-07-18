@@ -82,8 +82,10 @@ class ExerciseGoalCard extends React.Component {
                 Exercise Goal
               </Typography>
 
-              <Typography variant="subheading">Today's Progress</Typography>
-              <p>{this.props.history}</p>
+              <Paper id="progress">
+                <Typography align="center">Current Progress: {this.props.history} ??</Typography>
+              </Paper>
+
               <Grid container spacing={16}>
                 <Grid item xs={12}>
                   <form
