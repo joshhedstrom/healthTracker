@@ -56,7 +56,7 @@ router.get('/day/:id', passport.authenticate('jwt', { session: false }), (req, r
   const token = getToken(req.headers);
   if (token) {
     console.log('user is loggd in to the get route for day:id');
-    db.Day.findDayById(req, res);
+    db.Day.addWater(req, res)
   } else {
     return res.status(403).send({ success: false, msg: 'Unauthorized.' });
   }
@@ -64,11 +64,11 @@ router.get('/day/:id', passport.authenticate('jwt', { session: false }), (req, r
 );
 
 // Adds water to the given day.
-router.put('/newWater', passport.authenticate('jwt', { session: false}), (req, res) => {
+router.post('/newWater', passport.authenticate('jwt', { session: false}), (req, res) => {
   const token = getToken(req.headers);
   if (token) {
-    console.log('user is loggd in to the get route for day:id');
-    db.Water.findDayById(req, res);
+    console.log('Water is being added');
+    db.Day.addWater(req, res);
   } else {
     return res.status(403).send({ success: false, msg: 'Unauthorized.' });
   }

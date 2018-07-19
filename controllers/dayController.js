@@ -22,10 +22,14 @@ module.exports = {
     },
 
     //Update Water for the day
-    addWater: function(req,res) {
+    addWater: function(req, res) {
         db.Day
-        .findOne({ _id: req.params.id }, {water: req.body.water})
-        .then(dbModel => res.json(dbModel))
+        .findOne({ _id: req.body.id })
+        .then(dbModel => {
+            dbModel.water = req.body.water
+            dbModel.save()
+            return res.json(dbModel)
+        })
         .catch(err => res.status(422).json(err));
     },
 
@@ -41,7 +45,6 @@ module.exports = {
         db.Day
         .find({userId: req.params.userId}, null, {sort: {date: -1}, limit: 7} ) 
         .then(dbDays => {
-            console.log(dbDays);
             return res.json(dbDays)
         })
         .catch(err => res.status(422).json(err));
