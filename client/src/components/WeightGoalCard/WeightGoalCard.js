@@ -6,8 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import ChartsLine from './../ChartsLine';
 import Style from "./weightGoal.css"
-import ChartsBar from './../ChartsBar';
+
 
 
 const styles = theme => ({
@@ -106,7 +107,7 @@ class WeightGoalsComponent extends React.Component {
               <Typography variant="title" align="center">
                 History (Last 7 Days)
               </Typography>
-              <ChartsBar />
+              <ChartsLine />
             </Paper>
           </Grid>
         </Grid>
