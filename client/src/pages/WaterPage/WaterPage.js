@@ -6,9 +6,8 @@ import axios from 'axios';
 class WaterGoal extends Component {
   state = {
     redirect: false,
-    glasses: 3,
-    incrementer: 0,
-    historyData: []
+    glasses: 0,
+    currentDayId: ""
   }
 
   renderRedirect = () => {
@@ -18,27 +17,35 @@ class WaterGoal extends Component {
   }
 
   componentDidMount() {
-    //pull water data from backend
-  }
+    // Sets the url to query
+    let url = `/api/healthtracker/getDays/${localStorage.getItem('userId')}`
 
-  addGlass = event => {
-    let newGlasses = parseInt(event.target.value) + this.state.glasses;
-    this.setState({ glasses: newGlasses });
-    axios
-      .post('/api/healthTracker/addWater', {
-        water: 'value',
-        userId: localStorage.userId
+    // Sets the Authorization request header
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+
+    axios.get(url)
+    .then(res => {
+      let data = res.data
+      this.setState({
+        glasses: data[0].water,
+        currentDayId: data[0]._id
       })
-      .then(data => console.log(data));
+    })
+
   }
 
-  incrementGlass = () => {
-    let newGlasses = this.state.incrementer + this.state.glasses;
-    this.setState({ glasses: newGlasses, incrementer: 0 });
-  }
-
-  increment = event => {
-    this.setState({ incrementer: parseInt(event.target.value) });
+  addGlass(number) {
+    this.setState({glasses: this.state.glasses + number},() => {
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+      axios.post('/api/healthTracker/newWater', {
+        water: this.state.glasses,
+        id: this.state.currentDayId
+      })
+      .then(data => console.log(data))
+      .catch(err => {
+        console.log(err)
+      })
+    })
   }
 
   render() {
@@ -46,9 +53,7 @@ class WaterGoal extends Component {
       <div>
         {this.renderRedirect()}
         <WaterGoalCard
-        incrementGlass={this.incrementGlass.bind()}
-        increment={this.increment.bind()}
-        addGlass={this.addGlass.bind()}
+        addGlass={this.addGlass.bind(this)}
         glasses={this.state.glasses}
          />
       </div>

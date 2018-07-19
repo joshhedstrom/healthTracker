@@ -57,8 +57,7 @@ class WaterGoalCard extends React.Component {
                 </Grid>
                 <Grid item xs={4}>
                   <Button
-                    onClick={this.props.addGlass}
-                    value="1"
+                    onClick={() => {this.props.addGlass(1)}}
                     variant="outlined"
                     size="small"
                   >
@@ -67,8 +66,7 @@ class WaterGoalCard extends React.Component {
                 </Grid>
                 <Grid item xs={4}>
                   <Button
-                    onClick={this.props.addGlass}
-                    value="3"
+                    onClick={() => {this.props.addGlass(3)}}
                     variant="outlined"
                     size="small"
                   >
@@ -77,8 +75,7 @@ class WaterGoalCard extends React.Component {
                 </Grid>
                 <Grid item xs={4}>
                   <Button
-                    onClick={this.props.addGlass}
-                    value="6"
+                    onClick={() => {this.props.addGlass(6)}}
                     variant="outlined"
                     size="small"
                   >
@@ -97,13 +94,11 @@ class WaterGoalCard extends React.Component {
                       fullWidth
                       type="number"
                       margin="normal"
-                      onChange={this.props.increment.bind()}
                     />
                   </form>
                 </Grid>
                 <Grid item xs={12}>
                   <Button
-                    onClick={this.props.incrementGlass.bind()}
                     variant="contained"
                   >
                     Submit
