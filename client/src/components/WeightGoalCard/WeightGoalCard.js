@@ -31,9 +31,9 @@ const styles = theme => ({
     textAlign: 'center'
   },
   progressColorWeight: {
-    backgroundColor: '#e9b1ce',
-    marginLeft: "19%",
-    marginRight: '19%',
+    backgroundColor: '#4d66f0b5',
+    marginLeft: "15%",
+    marginRight: '15%',
     marginBottom: "28px",
     marginTop: "19px",
     padding: "4px",
@@ -84,7 +84,7 @@ class WeightGoalsComponent extends React.Component {
               <form className={classes.container} noValidate autoComplete="off" align="center">
                 <TextField
                   id="addWeight"
-                  label="Enter Weight"
+                  label="Enter New Weight"
                   fullWidth
                   value={this.state.weight}
                   onChange={this.handleChange('weight')}

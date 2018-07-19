@@ -7,12 +7,17 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
+    paddingBottom: theme.spacing.unit * 2,
+    textAlign: "center",
+    margin: 10
+
   },
   margin: {
     margin: theme.spacing.unit
@@ -24,7 +29,7 @@ function Login(props) {
 
   return (
     <div>
-      <Paper className={classes.root} elevation={1}>
+      <Paper className={classes.root} elevation={1} justify="center">
         <Typography variant="headline" component="h3">
           Log In
         </Typography>
@@ -36,16 +41,18 @@ function Login(props) {
           fullWidth
           onChange={props.usernameAction}
         />
-        <TextField
-          id="password"
-          label="Password"
-          className={classes.textField}
-          type="password"
-          autoComplete="current-password"
-          margin="normal"
-          fullWidth
-          onChange={props.passwordAction}
-        />
+        <Tooltip title="Case Sensitive">
+          <TextField
+            id="password"
+            label="Password"
+            className={classes.textField}
+            type="password"
+            autoComplete="current-password"
+            margin="normal"
+            fullWidth
+            onChange={props.passwordAction}
+          />
+        </Tooltip>
         <div className={classes.margin}>
           <Grid container spacing={8} alignItems="flex-end">
             <Grid item xs={8} sm={4}>
