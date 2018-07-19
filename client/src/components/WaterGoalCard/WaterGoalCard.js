@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ChartsBar from './../ChartsBar';
 import Grid from '@material-ui/core/Grid';
-import axios from 'axios';
 
 const styles = theme => ({
   root: {
