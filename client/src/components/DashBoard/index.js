@@ -78,9 +78,6 @@ const styles = {
 };
 
 class Dashboard extends React.Component {
-  componentDidMount() {
-    console.log(this.props.water);
-  }
 
   render() {
     const { classes } = this.props;

@@ -7,6 +7,9 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import ChartsLine from './../ChartsLine';
+import Style from "./weightGoal.css"
+
+
 
 const styles = theme => ({
   root: {
@@ -18,15 +21,26 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200
+    
   },
   container: {
-    display: 'flex',
-    flexWrap: 'wrap'
+    width: "97%",
   },
   expansionPanelStyle: {
     margin: 11
+  },
+  center: {
+    textAlign: 'center'
+  },
+  progressColorWeight: {
+    backgroundColor: '#4d66f0b5',
+    marginLeft: "15%",
+    marginRight: '15%',
+    marginBottom: "28px",
+    marginTop: "19px",
+    padding: "4px",
   }
+ 
 });
 
 class WeightGoalsComponent extends React.Component {
@@ -57,19 +71,24 @@ class WeightGoalsComponent extends React.Component {
 
     return (
       <div>
-        <Grid container spacing={44}>
-          <Grid item xs={12} sm={6}>
+        <Grid container spacing={24}>
+          <Grid item xs={12} sm={6} className={classes.center}>
             <Paper className={classes.root} elevation={1}>
               <Typography align="center" variant="display1">
                 Weight Tracker
               </Typography>
-              <Typography variant="subheading">
-                Current Weight: {this.state.lastWeight + ' lbs'}
-              </Typography>
-              <form className={classes.container} noValidate autoComplete="off">
-                <TextField
+              
+
+              <Paper className={classes.progressColorWeight}>
+                <Typography align="center">Current Weight: {this.state.lastWeight + ' lbs'} </Typography>
+              </Paper>
+
+              <form className={classes.container} noValidate autoComplete="off" align="center">
+                <TextField className={classes.center}
                   id="addWeight"
                   label="Enter Weight"
+                  fullWidth
+
                   value={this.state.weight}
                   onChange={this.handleChange('weight')}
                   type="number"
@@ -82,7 +101,7 @@ class WeightGoalsComponent extends React.Component {
                 Submit
               </Button>
             </Paper>
-          </Grid>
+            </Grid>
           <Grid item xs={12} sm={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography variant="title" align="center">

@@ -8,6 +8,7 @@ import moment from "moment"
 class DashBoard extends Component {
   state = {
     userId: localStorage.getItem("userId"),
+    currentDayId: "",
     firstName: "",
     lastName: "",
     redirect: false,
@@ -40,7 +41,6 @@ class DashBoard extends Component {
     axios
     .get(url)
     .then(res => {
-      console.log(res)
       if (res.data.days.length) {
         this.setState({
           firstName: res.data.name,
@@ -48,6 +48,7 @@ class DashBoard extends Component {
           waterIntake: res.data.days[0].water,
           nutritionPoints: res.data.days[0].nutrition,
           exerciseMins: this.totalExerciseMinutes(res.data.days[0].exercises),
+          currentDayId: res.data.days[0].id,
           currentWeight: res.data.weight
         })
       } else {

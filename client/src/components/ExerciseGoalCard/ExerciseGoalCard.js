@@ -11,6 +11,14 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
+
 import ChartsBar from './../ChartsBar';
 
 const styles = theme => ({
@@ -88,7 +96,7 @@ class ExerciseGoalCard extends React.Component {
                 variant="display1"
                 align="center"
               >
-                Exercise Goal
+                Exercise Tracker
               </Typography>
 
               <Paper className={classes.progressColor}>
@@ -103,7 +111,7 @@ class ExerciseGoalCard extends React.Component {
                     autoComplete="off"
                   >
                     <FormControl fullWidth className={classes.formControl}>
-                      <InputLabel htmlFor="workout-simple">workout</InputLabel>
+                      <InputLabel htmlFor="workout-simple">Workouts</InputLabel>
                       <Select
                         value={this.props.activity}
                         onChange={this.props.handleChange}
@@ -178,6 +186,41 @@ class ExerciseGoalCard extends React.Component {
                   </Button>
                 </Grid>
               </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Paper className={classes.root} elevation={1}>
+              <Typography variant="display1" className={classes.heading}>Today</Typography>
+              
+
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Exercises</TableCell>
+                      <TableCell>Duration</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>Walking</TableCell>
+                      <TableCell>30 Minutes</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Yoga (Points)</TableCell>
+                      <TableCell>1 Hour</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Running</TableCell>
+                      <TableCell>24 Minutes</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Strength Training</TableCell>
+                      <TableCell>1 Hour</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+       
+
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
