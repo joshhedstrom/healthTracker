@@ -44,16 +44,13 @@ class NutritionGoalCard extends React.Component {
               <Typography align="center" variant="display2">
                 Nutrition Goal
               </Typography>
-
               <Typography align="center">
                 Each goal below counts as 1+ points. Try to see if you can meet
                 all of these goals!
               </Typography>
-
               <Paper id="progress">
-                <Typography align="center">Current Progress: 9</Typography>
+                <Typography align="center">Current Progress: {this.props.progress}</Typography>
               </Paper>
-
               <FormControl component="fieldset">
                 <Typography
                   id="formTitle"
@@ -69,7 +66,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.fruitAndVegs}
                             onChange={this.props.handleChange('fruitAndVegs')}
                             value="fruitAndVegs"
                             color="primary"
@@ -82,7 +78,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.healthyFat}
                             onChange={this.props.handleChange('healthyFat')}
                             value="healthyFat"
                             color="primary"
@@ -95,7 +90,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.proteinBreakfast}
                             onChange={this.props.handleChange('proteinBreakfast')}
                             value="proteinBreakfast"
                             color="primary"
@@ -108,7 +102,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.newFruit}
                             onChange={this.props.handleChange('newFruit')}
                             value="newFruit"
                             color="primary"
@@ -121,7 +114,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.newReceipe}
                             onChange={this.props.handleChange('newReceipe')}
                             value="newReceipe"
                             color="primary"
@@ -134,7 +126,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.fastFood}
                             onChange={this.props.handleChange('fastFood')}
                             value="fastFood"
                             color="primary"
@@ -147,7 +138,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.noMeat}
                             onChange={this.props.handleChange('noMeat')}
                             value="noMeat"
                             color="primary"
@@ -160,7 +150,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.skipBreakfast}
                             onChange={this.props.handleChange('skipBreakfast')}
                             value="skipBreakfast"
                             color="primary"
@@ -173,7 +162,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.skipBreakfast}
                             onChange={this.props.handleChange('skipBreakfast')}
                             value="skipBreakfast"
                             color="primary"
@@ -186,7 +174,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.noSugar}
                             onChange={this.props.handleChange('noSugar')}
                             value="noSugar"
                             color="primary"
@@ -199,7 +186,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked={this.props.noAlcohol}
                             onChange={this.props.handleChange('noAlcohol')}
                             value="noAlcohol"
                             color="primary"
@@ -209,13 +195,11 @@ class NutritionGoalCard extends React.Component {
                       />
                     </Grid>
                   </FormGroup>
-
-                  <Button variant="contained">Submit</Button>
+                  <Button onClick={this.props.handleSubmit} variant="contained">Submit</Button>
                 </Grid>
               </FormControl>
             </Paper>
           </Grid>
-
           <Grid item xs={12} sm={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography variant="title" align="center">

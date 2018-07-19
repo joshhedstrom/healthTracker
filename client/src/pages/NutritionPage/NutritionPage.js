@@ -5,6 +5,7 @@ import axios from 'axios';
 
 class NutritionGoal extends Component {
   state = {
+    progress: 0,
     healthyFat: false,
     proteinBreakfast: false,
     newFruit: false,
@@ -23,10 +24,15 @@ class NutritionGoal extends Component {
     }
   }
 
+  componentDidMount() {
+    //axios call to check current progress
+  }
+
+  handleSubmit = ()=> {
+    //axios call to update database
+  }
+
   handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    })
     this.setState({
       [name]: event.target.checked
     })
@@ -38,15 +44,8 @@ class NutritionGoal extends Component {
         {this.renderRedirect()}
         <NutritionGoalCard 
         handleChange={this.handleChange.bind()}
-        healthyFat={this.state.healthyFat}
-        proteinBreakfast={this.state.proteinBreakfast}
-        newFruit={this.state.newFruit}
-        newReceipe={this.state.newReceipe}
-        fastFood={this.state.fastFood}
-        noMeat={this.state.noMeat}
-        skipBreakfast={this.state.skipBreakfast}
-        noSugar={this.state.noSugar}
-        noAlcohol={this.state.noAlcohol}
+        progress={this.state.progress}
+        handleSubmit={this.handleSubmit}
          />
       </div>
     );
