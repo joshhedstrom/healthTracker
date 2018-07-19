@@ -11,12 +11,15 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+
+import ChartsBar from './../ChartsBar';
 
 const styles = theme => ({
   root: {
@@ -223,7 +226,7 @@ class ExerciseGoalCard extends React.Component {
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography className={classes.heading}>History</Typography>
-              <div>graph goes here</div>
+              <ChartsBar />
             </Paper>
           </Grid>
         </Grid>

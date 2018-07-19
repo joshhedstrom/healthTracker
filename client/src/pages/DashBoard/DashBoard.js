@@ -8,6 +8,7 @@ import moment from "moment"
 class DashBoard extends Component {
   state = {
     userId: localStorage.getItem("userId"),
+    currentDayId: "",
     firstName: "",
     lastName: "",
     redirect: false,
@@ -33,7 +34,7 @@ class DashBoard extends Component {
   componentDidMount() {
     this.setState({userId: localStorage.getItem("userId")})
 
-    let url = `http://localhost:3001/api/healthtracker/user/${localStorage.getItem('userId')}`
+    let url = `/api/healthtracker/user/${localStorage.getItem('userId')}`
     axios.defaults.headers.common['Authorization'] = localStorage.getItem(
       'jwtToken'
     );
@@ -42,27 +43,26 @@ class DashBoard extends Component {
     .then(res => {
       if (res.data.days.length) {
         this.setState({
-          ...this.state,
           firstName: res.data.name,
           lastName: res.data.name,
           waterIntake: res.data.days[0].water,
           nutritionPoints: res.data.days[0].nutrition,
           exerciseMins: this.totalExerciseMinutes(res.data.days[0].exercises),
+          currentDayId: res.data.days[0].id,
           currentWeight: res.data.weight
         })
       } else {
         this.setState({
-          ...this.state,
           firstName: res.data.name,
           lastName: res.data.name,
           currentWeight: res.data.weight
         })
 
-        axios.post("http://localhost:3001/api/healthtracker/newDay", {
+        axios.post("/api/healthtracker/newDay", {
           userId: this.state.userId,
           date: moment().format("MM.DD.YYYY")
         }).then(res => {
-          // console.log(res)
+          console.log(res)
         })
 
       }
@@ -76,7 +76,6 @@ class DashBoard extends Component {
   };
 
   render() {
-    console.log(this.state)
     return (
       <div>
         {this.renderRedirect()}
