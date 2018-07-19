@@ -23,8 +23,8 @@ const styles = theme => ({
   margin: {
     margin: theme.spacing.unit
   },
-  button: {
-    paddingBottom: 4,
+  buttonStyle: {
+    paddingBottom: "6%",
   }
 });
 
@@ -59,14 +59,19 @@ function Login(props) {
         </Tooltip>
 
         <Grid container spacing={12}>
-          <Grid item xs={12} sm={3}>
-            <Button size="large" variant="contained" color="primary" onClick={props.submitAction}>
+          <Grid item xs={12} sm={3} className={classes.buttonStyle}>
+            <Button 
+              size="large" 
+              variant="contained" 
+              color="primary" 
+              onClick={props.submitAction}
+            >
               Submit
             </Button>
           </Grid>
           <Grid item xs={12} sm={3}>
             <Button size="small" variant="contained" href="/signup" >
-              Create New Account
+              New User
            </Button>
           </Grid>
         </Grid>
