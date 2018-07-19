@@ -60,11 +60,9 @@
 	                    data={this.state.chartData}
 
 	                      options={{
-                            // title: {
-                            //     display: this.state.chartData,
-                            //     text: `Current Goals`,
-                            //     fontSize: 30
-                            // }
+                            legend: {
+                                display: false
+                            }
                             
                          }}
                     />

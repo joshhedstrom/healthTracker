@@ -11,6 +11,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Grid from '@material-ui/core/Grid';
 import style from './index.css';
 import Chip from '@material-ui/core/Chip';
+import ChartsBar from './../ChartsBar';
 
 
 
@@ -256,6 +257,7 @@ render () {
         <Paper className={classes.root} elevation={1}>
           <Typography variant="title" align="center">History (Last 7 Days)</Typography>
           <Typography>Graph goes here </Typography>
+          <ChartsBar />
         </Paper>
       </Grid>
     </Grid>

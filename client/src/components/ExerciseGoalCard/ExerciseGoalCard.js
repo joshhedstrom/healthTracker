@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import ChartsBar from './../ChartsBar';
 
 const styles = theme => ({
   root: {
@@ -182,7 +183,7 @@ class ExerciseGoalCard extends React.Component {
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography className={classes.heading}>History</Typography>
-              <div>graph goes here</div>
+              <ChartsBar />
             </Paper>
           </Grid>
         </Grid>
