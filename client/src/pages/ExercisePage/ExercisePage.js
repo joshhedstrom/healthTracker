@@ -8,7 +8,7 @@ class ExerciseGoal extends Component {
     activity: '',
     minutes: 0,
     hours: 0,
-    history: [],
+    history: []
   };
 
   handleChange = event => {
@@ -18,8 +18,8 @@ class ExerciseGoal extends Component {
   };
 
   handleSubmit = event => {
-    console.log(this.state)
-  }
+    //axios post to database
+  };
 
   renderRedirect = () => {
     if (!localStorage.getItem('jwtToken')) {
@@ -30,14 +30,14 @@ class ExerciseGoal extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        <ExerciseGoalCard 
-        minutes={this.state.minutes}
-        hours={this.state.hours}
-        history={this.state.history}
-        activity={this.state.activity}
-        handleChange={this.handleChange.bind()}
-        handleSubmit={this.handleSubmit.bind()}
-         />
+        <ExerciseGoalCard
+          minutes={this.state.minutes}
+          hours={this.state.hours}
+          history={this.state.history}
+          activity={this.state.activity}
+          handleChange={this.handleChange.bind()}
+          handleSubmit={this.handleSubmit.bind()}
+        />
       </div>
     );
   }
