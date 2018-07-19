@@ -29,7 +29,14 @@ const styles = theme => ({
   },
   center: {
     textAlign: 'center'
-
+  },
+  progressColorWeight: {
+    backgroundColor: '#e9b1ce',
+    marginLeft: "19%",
+    marginRight: '19%',
+    marginBottom: "28px",
+    marginTop: "19px",
+    padding: "4px",
   }
  
 });
@@ -68,9 +75,11 @@ class WeightGoalsComponent extends React.Component {
               <Typography align="center" variant="display1">
                 Weight Tracker
               </Typography>
-              <Typography variant="subheading">
-                Current Weight: {this.state.lastWeight + ' lbs'}
-              </Typography>
+              
+
+              <Paper className={classes.progressColorWeight}>
+                <Typography align="center">Current Weight: {this.state.lastWeight + ' lbs'} </Typography>
+              </Paper>
 
               <form className={classes.container} noValidate autoComplete="off" align="center">
                 <TextField
