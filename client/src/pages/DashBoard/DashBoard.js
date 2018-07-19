@@ -33,16 +33,16 @@ class DashBoard extends Component {
   componentDidMount() {
     this.setState({userId: localStorage.getItem("userId")})
 
-    let url = `http://localhost:3001/api/healthtracker/user/${localStorage.getItem('userId')}`
+    let url = `/api/healthtracker/user/${localStorage.getItem('userId')}`
     axios.defaults.headers.common['Authorization'] = localStorage.getItem(
       'jwtToken'
     );
     axios
     .get(url)
     .then(res => {
+      console.log(res)
       if (res.data.days.length) {
         this.setState({
-          ...this.state,
           firstName: res.data.name,
           lastName: res.data.name,
           waterIntake: res.data.days[0].water,
@@ -52,17 +52,16 @@ class DashBoard extends Component {
         })
       } else {
         this.setState({
-          ...this.state,
           firstName: res.data.name,
           lastName: res.data.name,
           currentWeight: res.data.weight
         })
 
-        axios.post("http://localhost:3001/api/healthtracker/newDay", {
+        axios.post("/api/healthtracker/newDay", {
           userId: this.state.userId,
           date: moment().format("MM.DD.YYYY")
         }).then(res => {
-          // console.log(res)
+          console.log(res)
         })
 
       }
@@ -76,7 +75,6 @@ class DashBoard extends Component {
   };
 
   render() {
-    console.log(this.state)
     return (
       <div>
         {this.renderRedirect()}
