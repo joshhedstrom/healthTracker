@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import Style from "./weightGoal.css"
 
 const styles = theme => ({
   root: {
@@ -20,9 +21,7 @@ const styles = theme => ({
     
   },
   container: {
-    width: "97%"
-
-
+    width: "97%",
   },
   expansionPanelStyle: {
     margin: 11
@@ -82,18 +81,17 @@ class WeightGoalsComponent extends React.Component {
               </Paper>
 
               <form className={classes.container} noValidate autoComplete="off" align="center">
-                <TextField
+                <TextField className={classes.center}
                   id="addWeight"
-                  label="Enter New Weight"
+                  label="Enter Weight"
                   fullWidth
+
                   value={this.state.weight}
                   onChange={this.handleChange('weight')}
                   type="number"
                   className={classes.textField}
                   margin="normal"
                   placeholder={this.state.lastWeight}
-                  
-
                 />
               </form>
               <Button onClick={this.onSubmit.bind()} variant="contained">

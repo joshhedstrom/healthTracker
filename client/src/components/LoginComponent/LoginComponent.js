@@ -8,6 +8,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Tooltip from '@material-ui/core/Tooltip';
+import style from './loginComponent.css'
+
 
 
 const styles = theme => ({
@@ -17,10 +19,12 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 2,
     textAlign: "center",
     margin: 10
-
   },
   margin: {
     margin: theme.spacing.unit
+  },
+  button: {
+    paddingBottom: 4,
   }
 });
 
@@ -53,28 +57,20 @@ function Login(props) {
             onChange={props.passwordAction}
           />
         </Tooltip>
-        <div className={classes.margin}>
-          <Grid container spacing={8} alignItems="flex-end">
-            <Grid item xs={8} sm={4}>
-              <Button
-                size="large"
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                onClick={props.submitAction}
-              >
-                Submit
-              </Button>
-            </Grid>
 
-            <Divider />
-            <Grid item xs={8} sm={4}>
-              <Button href="/signup" variant="contained">
-                Create New Account
-              </Button>
-            </Grid>
+        <Grid container spacing={12}>
+          <Grid item xs={12} sm={3}>
+            <Button size="large" variant="contained" color="primary" onClick={props.submitAction}>
+              Submit
+            </Button>
           </Grid>
-        </div>
+          <Grid item xs={12} sm={3}>
+            <Button size="small" variant="contained" href="/signup" >
+              Create New Account
+           </Button>
+          </Grid>
+        </Grid>
+
       </Paper>
     </div>
   );
