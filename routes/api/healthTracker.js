@@ -15,6 +15,7 @@ router.post('/newUser', passport.authenticate('jwt', { session: false }), (req, 
   }
 );
 
+// Creates a new day with default values
 router.post('/newDay', passport.authenticate('jwt', { session: false }), (req, res) => {
     const token = getToken(req.headers);
     if (token) {
@@ -26,6 +27,7 @@ router.post('/newDay', passport.authenticate('jwt', { session: false }), (req, r
   }
 );
 
+// Adds exercise to the given day, !! NEEDS WORK !!
 router.post('/newExercise', passport.authenticate('jwt', { session: false }), (req, res) => {
   const token = getToken(req.headers);
   if (token) {
@@ -37,7 +39,7 @@ router.post('/newExercise', passport.authenticate('jwt', { session: false }), (r
  }
 );
 
-
+// Gets all the user data for a given userId
 router.get('/user/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
   const token = getToken(req.headers);
   if (token) {
@@ -49,6 +51,7 @@ router.get('/user/:id', passport.authenticate('jwt', { session: false }), (req, 
  }
 );
 
+// Gets a specific day by the dayId
 router.get('/day/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
   const token = getToken(req.headers);
   if (token) {
@@ -60,6 +63,7 @@ router.get('/day/:id', passport.authenticate('jwt', { session: false }), (req, r
  }
 );
 
+// Adds water to the given day.
 router.put('/newWater', passport.authenticate('jwt', { session: false}), (req, res) => {
   const token = getToken(req.headers);
   if (token) {
@@ -71,57 +75,16 @@ router.put('/newWater', passport.authenticate('jwt', { session: false}), (req, r
  }
 );
 
-
-
-
-//---------------------------------------------------------DUMMY AUTH ROUTES-------------------->>>>>>>>
-
-
-router.get(
-  '/',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    const token = getToken(req.headers);
-    if (token) {
-      console.log('user is loggd in to the get route');
-      // Book.find((err, books) => {
-      //   if (err) return next(err);
-      //   res.json(books);
-      // });
-    } else {
-      return res.status(403).send({ success: false, msg: 'Unauthorized.' });
-    }
-  }
-);
-
-router.post(
-  '/',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    const token = getToken(req.headers);
-    if (token) {
-      console.log('user is logged in to the post route');
-      // Book.create(req.body, (err, post) => {
-      //   if (err) return next(err);
-      //   res.json(post);
-      // });
-    } else {
-      return res.status(403).send({ success: false, msg: 'Unauthorized.' });
-    }
-  }
-);
-
-getToken = function(headers) {
-  if (headers && headers.authorization) {
-    let parted = headers.authorization.split(' ');
-    if (parted.length === 2) {
-      return parted[1];
-    } else {
-      return null;
-    }
+// Gets all the days for a given userId
+router.get('/getDays/:userId', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const token = getToken(req.headers);
+  if (token) {
+    console.log('user is loggd in to the get route for day:id');
+    db.Day.findDayByuserId(req,res)
   } else {
-    return null;
+    return res.status(403).send({ success: false, msg: 'Unauthorized.' });
   }
-};
+ }
+);
 
 module.exports = router;
