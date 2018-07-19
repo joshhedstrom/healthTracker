@@ -46,7 +46,11 @@
                 <div className="Chart-container">
                     <Pie justify="center" //item xs={24} 
 	                    data={chartData}
-                        options={{ }}
+                        options={{
+                            legend: {
+                                display: true
+                            }
+                         }}
                     />
             
             </div>
