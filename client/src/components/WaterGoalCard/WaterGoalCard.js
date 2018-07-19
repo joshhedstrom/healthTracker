@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ChartsBar from './../ChartsBar';
 import Grid from '@material-ui/core/Grid';
+import axios from 'axios';
 
 const styles = theme => ({
   root: {
@@ -49,11 +50,11 @@ class WaterGoalCard extends React.Component {
     this.setState({ glasses: newGlasses });
     axios
       .post('http://localhost:3001/api/healthTracker/addWater', {
-        water: value,
+        water: 'value',
         userId: localStorage.userId
       })
       .then(data => console.log(data));
-    console.log(value);
+    console.log('value');
   };
 
   incrementGlass = event => {
