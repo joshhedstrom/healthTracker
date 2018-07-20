@@ -71,7 +71,7 @@ const styles = theme => ({
     textAlign: 'center'
   },
   progressColor: {
-    backgroundColor: '#e9b1ce',
+    backgroundColor: '#ea6192b5',
     marginLeft: '19%',
     marginRight: '19%',
     marginBottom: '28px',

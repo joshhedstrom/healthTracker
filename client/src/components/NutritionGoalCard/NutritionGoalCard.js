@@ -10,6 +10,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import style from './index.css';
+import green from '@material-ui/core/colors/green';
+
 
 const styles = theme => ({
   root: {
@@ -30,6 +32,7 @@ const styles = theme => ({
   expansionPanelStyle: {
     margin: 11
   }
+ 
 });
 
 class NutritionGoalCard extends React.Component {
@@ -71,6 +74,7 @@ class NutritionGoalCard extends React.Component {
                             onChange={this.props.handleChange('fruitAndVegs')}
                             value="fruitAndVegs"
                             color="primary"
+                           
                           />
                         }
                         label="Had 5-9 Servings of Fruits and Vegetables"

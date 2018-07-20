@@ -22,11 +22,11 @@
                     this.props.nutritionChart 
                 ],
                  backgroundColor: [
-                    '#9a67ea',
-                    '#f06292',
-                    '#4d67f0',
+                    '#63c5e4',
+                    '#ea6192b5',
+                    '#10953bb8',
                     'red',
-                    'purple',
+                    '#63c5e4',
                     'pink'
                 ]
             }],

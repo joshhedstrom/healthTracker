@@ -8,7 +8,7 @@
     
     renderChart() {
         let chartData = {
-
+          
             labels: this.props.dates,
     
             datasets:[{
@@ -17,12 +17,13 @@
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: this.props.quantities,
                 backgroundColor: [
-                    '#9a67ea',
-                    '#f06292',
-                    '#4d67f0',
-                    'red',
-                    'purple',
-                    'pink'
+                    '#ef5e92',
+                    '#ff92c4',
+                    '#ef5e92',
+                    '#ff92c4',
+                    '#ef5e92',
+                    '#ff92c4',
+                    '#ef5e92'
                 ]
             }],
             options: {
@@ -51,7 +52,7 @@
                                         beginAtZero: true
                                     }
                                 }]
-
+                              
                             }
                         }}
                     />
