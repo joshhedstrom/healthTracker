@@ -20,6 +20,8 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 import ChartsPie from './../ChartsPie';
 
@@ -73,7 +75,7 @@ const styles = {
     backgroundColor: '#ea6192b5'
   },
   weightButton: {
-    backgroundColor: '#4d66f0b5'
+    backgroundColor: '#4d66f08a'
   }
 };
 
@@ -132,45 +134,53 @@ class Dashboard extends React.Component {
         </Card>
         <Grid container spacing={4}>
           <Grid item xs={6} sm={3} className={classes.paper}>
-            <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
-              <Button variant="contained" className={classes.waterButton}>
-                <AddIcon />
-                Water
-              </Button>
-            </a>
+            <Tooltip title="Log Water">
+              <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
+                <Button variant="contained" className={classes.waterButton}>
+                  <AddIcon />
+                  Water
+                </Button>
+              </a>
+            </Tooltip>
           </Grid>
           <Grid item xs={6} sm={3} className={classes.paper}>
-            <a
-              style={{ textDecoration: 'none', color: 'white' }}
-              href="/nutritionGoal"
-            >
-              <Button variant="contained" className={classes.nutritionButton}>
-                <AddIcon />
-                Nutrition
-              </Button>
-            </a>
+            <Tooltip title="Log Nutrition">
+              <a
+                style={{ textDecoration: 'none', color: 'white' }}
+                href="/nutritionGoal"
+              >
+                <Button variant="contained" className={classes.nutritionButton}>
+                  <AddIcon />
+                  Nutrition
+                </Button>
+              </a>
+            </Tooltip>
           </Grid>
           <Grid item xs={6} sm={3} className={classes.paper}>
-            <a
-              style={{ textDecoration: 'none', color: 'white' }}
-              href="/exercise"
-            >
-              <Button variant="contained" className={classes.exerciseButton}>
-                <AddIcon />
-                Exercise
-              </Button>
-            </a>
+            <Tooltip title="Log Exercise">
+              <a
+                style={{ textDecoration: 'none', color: 'white' }}
+                href="/exercise"
+              >
+                <Button variant="contained" className={classes.exerciseButton}>
+                  <AddIcon />
+                  Exercise
+                </Button>
+              </a>
+            </Tooltip>
           </Grid>
           <Grid item xs={6} sm={3} className={classes.paper}>
-            <a
-              style={{ textDecoration: 'none', color: 'white' }}
-              href="/weight"
-            >
-              <Button variant="contained" className={classes.weightButton}>
-                <AddIcon />
-                Weight
-              </Button>
-            </a>
+            <Tooltip title="Log Weight">
+              <a
+                style={{ textDecoration: 'none', color: 'white' }}
+                href="/weight"
+              >
+                <Button variant="contained" className={classes.weightButton}>
+                  <AddIcon />
+                  Weight
+                </Button>
+              </a>
+            </Tooltip>
           </Grid>
         </Grid>
       </div>
