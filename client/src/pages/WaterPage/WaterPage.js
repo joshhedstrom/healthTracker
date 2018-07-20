@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import WaterGoalCard from '../../components/WaterGoalCard';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import moment from 'moment'
 
 class WaterGoal extends Component {
   state = {
     redirect: false,
     glasses: 0,
     currentDayId: "",
-    updatedWater: 0
+    updatedWater: 0,
+    quantities: [],
+    dates: []
+
   }
 
   renderRedirect = () => {
@@ -27,9 +31,21 @@ class WaterGoal extends Component {
     axios.get(url)
     .then(res => {
       let data = res.data
+
+      let waterQuantities = []
+      let datesArr = []
+
+      for (let i = data.length - 1; i > -1; i --) {
+        waterQuantities.push(data[i].water)
+        datesArr.push(moment(data[i].date).format("MM/DD/YYYY"))
+      }
+
       this.setState({
         glasses: data[0].water,
-        currentDayId: data[0]._id
+        currentDayId: data[0]._id,
+        quantities: waterQuantities,
+        dates: datesArr
+
       })
     })
 
@@ -77,6 +93,8 @@ class WaterGoal extends Component {
         handleChange={this.handleChange.bind(this)}
         handleClick={this.handleClick.bind(this)}
         glasses={this.state.glasses}
+        quantities={this.state.quantities}
+        dates={this.state.dates}
          />
       </div>
     );
