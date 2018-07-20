@@ -112,7 +112,7 @@ class WaterGoalCard extends React.Component {
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography className={classes.heading}>History</Typography>
-              <ChartsBar />
+              <ChartsBar quantities={this.props.quantities} dates={this.props.dates} />
             </Paper>
           </Grid>
         </Grid>
