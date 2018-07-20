@@ -33,15 +33,15 @@ class DashBoard extends Component {
 
   componentDidMount() {
     this.setState({userId: localStorage.getItem("userId")})
+    let todaysDate = moment().format("MM.DD.YYYY")
 
     let url = `/api/healthtracker/user/${localStorage.getItem('userId')}`
-    axios.defaults.headers.common['Authorization'] = localStorage.getItem(
-      'jwtToken'
-    );
-    axios
-    .get(url)
-    .then(res => {
-      if (res.data.days.length) {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+
+    axios.get(url).then(res => {
+      let user = res.data
+      let mostRecentDate = moment(user.days[0].date).format("MM.DD.YYYY")
+      if (mostRecentDate === todaysDate) {
         this.setState({
           firstName: res.data.name,
           lastName: res.data.name,
@@ -62,7 +62,7 @@ class DashBoard extends Component {
           userId: this.state.userId,
           date: moment().format("MM.DD.YYYY")
         }).then(res => {
-          console.log(res)
+          this.setState({currentDayId: res.data._id})
         })
 
       }
