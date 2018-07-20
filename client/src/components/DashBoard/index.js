@@ -147,7 +147,7 @@ class Dashboard extends React.Component {
             <Tooltip title="Log Nutrition">
               <a
                 style={{ textDecoration: 'none', color: 'white' }}
-                href="/nutritionGoal"
+                href="/nutrition"
               >
                 <Button variant="contained" className={classes.nutritionButton}>
                   <AddIcon />
