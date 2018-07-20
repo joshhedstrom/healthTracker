@@ -94,11 +94,13 @@ class WaterGoalCard extends React.Component {
                       fullWidth
                       type="number"
                       margin="normal"
+                      onChange={this.props.handleChange}
                     />
                   </form>
                 </Grid>
                 <Grid item xs={12}>
                   <Button
+                    onClick={this.props.handleClick}
                     variant="contained"
                   >
                     Submit

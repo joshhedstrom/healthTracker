@@ -7,7 +7,8 @@ class WaterGoal extends Component {
   state = {
     redirect: false,
     glasses: 0,
-    currentDayId: ""
+    currentDayId: "",
+    updatedWater: 0
   }
 
   renderRedirect = () => {
@@ -48,12 +49,33 @@ class WaterGoal extends Component {
     })
   }
 
+  handleChange(e) {
+    this.setState({ updatedWater: e.target.value }
+);
+  }
+
+  handleClick() {
+    this.setState({glasses: this.state.updatedWater}, () => {
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+      axios.post('/api/healthTracker/newWater', {
+        water: this.state.updatedWater,
+        id: this.state.currentDayId
+      })
+      .then(data => data)
+      .catch(err => {
+        console.log(err)
+      })
+    })
+  }
+
   render() {
     return (
       <div>
         {this.renderRedirect()}
         <WaterGoalCard
         addGlass={this.addGlass.bind(this)}
+        handleChange={this.handleChange.bind(this)}
+        handleClick={this.handleClick.bind(this)}
         glasses={this.state.glasses}
          />
       </div>
