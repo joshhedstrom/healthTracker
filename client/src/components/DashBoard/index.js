@@ -64,7 +64,7 @@ const styles = {
     textAlign: 'center'
   },
   waterButton: {
-    backgroundColor: '#9a67eaab'
+    backgroundColor: '#63c5e4'
   },
   nutritionButton: {
     backgroundColor: '#10953bb8'
