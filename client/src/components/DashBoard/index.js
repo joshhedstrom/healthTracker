@@ -81,7 +81,6 @@ class Dashboard extends React.Component {
 
   render() {
     const { classes } = this.props;
-    console.log(this.props);
     return (
       <div>
         <Typography className={classes.root} variant="display3" align="center">
