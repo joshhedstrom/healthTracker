@@ -7,22 +7,17 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
-
-
-
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: "4%"
+    margin: '4%'
   },
   margin: {
     margin: theme.spacing.unit
   }
 });
-
-
 
 class Signup extends React.Component {
   render() {
@@ -33,7 +28,6 @@ class Signup extends React.Component {
           <Typography variant="headline" component="h3" align="center">
             Create Account
           </Typography>
-          <h4>{this.props.message}</h4>
           <Grid container spacing={24}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -111,11 +105,7 @@ class Signup extends React.Component {
               </Button>
             </Grid>
           </Grid>
-
-
         </Paper>
-
-
       </div>
     );
   }

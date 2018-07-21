@@ -8,13 +8,12 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      message: '',
-      open: false,
-    }
+      open: false
+    };
   }
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
-  }
+  };
 
   handleClickOpen = () => {
     this.setState({ open: true });
@@ -29,26 +28,23 @@ class Login extends Component {
 
     let userDetails = {
       username: this.state.username,
-      password: this.state.password,
-      message: this.state.message
-    }
+      password: this.state.password
+    };
 
     axios
       .post('/auth/login', userDetails)
       .then(result => {
         localStorage.setItem('jwtToken', result.data.token);
         localStorage.setItem('userId', result.data.userId);
-        this.setState({ message: '' });
         this.props.history.push('/');
       })
       .catch(error => {
         console.log(error);
         if (error.response.status === 401) {
-          console.log("handle click open")
-            this.handleClickOpen()
+          this.handleClickOpen();
         }
-      })
-  }
+      });
+  };
   render() {
     return (
       <div>
@@ -56,7 +52,6 @@ class Login extends Component {
           usernameAction={this.onChange.bind()}
           passwordAction={this.onChange.bind()}
           submitAction={this.onSubmit.bind()}
-          message={this.state.message}
           open={this.state.open}
           onClose={this.handleClose}
         />

@@ -9,8 +9,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
-import style from './index.css';
-import green from '@material-ui/core/colors/green';
+import './index.css';
 
 
 const styles = theme => ({
@@ -65,7 +64,7 @@ class NutritionGoalCard extends React.Component {
                 >
                   Select All Goals You Achieved Today
                 </Typography>
-                <Grid container spacing={12}>
+                <Grid container spacing={8}>
                   <FormGroup>
                     <Grid item xs={12} sm={6}>
                       <FormControlLabel
