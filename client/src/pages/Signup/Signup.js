@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SignupComponent from '../../components/SignupComponent';
 
+
+
 class Signup extends Component {
   constructor() {
     super();
@@ -12,9 +14,21 @@ class Signup extends Component {
       weight: '',
       password: '',
       passwordConfirmation: '',
-      message: ''
+      message: '',
+      open: false,
     };
   }
+
+  handleClickOpen = () => {
+    this.setState({ open: true }, 
+      console.log("hande click triggered")
+      );
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
@@ -38,8 +52,10 @@ class Signup extends Component {
           this.props.history.push('/login');
         });
     } else {
-      this.setState({ message: 'Oops...your passwords did not match.' });
-      console.log('passwords did not match');
+      console.log("is else working??")
+      this.handleClickOpen()
+
+
     }
   };
 
@@ -55,7 +71,12 @@ class Signup extends Component {
           passwordConfirmAction={this.onChange.bind()}
           submitAction={this.onSubmit.bind()}
           message={this.state.message}
+
+          open={this.state.handleClickOpen}
+
+
         />
+
       </div>
     );
   }

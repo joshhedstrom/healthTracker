@@ -2,11 +2,16 @@
   "name": "healthtracker",
   "version": "1.0.0",
   "description": "A Fitness and Nutrition Tracking App",
+  "engines": {
+    "node": "8.11.1"
+  },
   "main": "server.js",
   "scripts": {
     "client": "node scripts/start-client.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"nodemon server.js\" \"npm run client\""
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,5 +37,10 @@
     "nodemon": "^1.18.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0"
-  }
+  },
+  "root": "build/",
+  "clean_urls": false,
+  "routes": {
+    "/**": "index.html"
+}
 }

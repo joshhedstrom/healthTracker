@@ -8,12 +8,21 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      message: ''
+      message: '',
+      open: false,
     }
   }
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   }
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
 
   onSubmit = e => {
     e.preventDefault();
@@ -35,9 +44,8 @@ class Login extends Component {
       .catch(error => {
         console.log(error);
         if (error.response.status === 401) {
-          this.setState({
-            message: "Oops...we didn't recognize that username or password"
-          })
+          console.log("handle click open")
+            this.handleClickOpen()
         }
       })
   }
@@ -49,6 +57,8 @@ class Login extends Component {
           passwordAction={this.onChange.bind()}
           submitAction={this.onSubmit.bind()}
           message={this.state.message}
+          open={this.state.open}
+          onClose={this.handleClose}
         />
       </div>
     );

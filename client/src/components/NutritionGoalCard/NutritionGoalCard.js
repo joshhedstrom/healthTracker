@@ -18,7 +18,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: 10
+    margin: "4% 5% 0% 5%"
   },
   textField: {
     marginLeft: theme.spacing.unit,
