@@ -25,7 +25,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001"
-
-
+  "proxy": "http://localhost:3001",
+  
+    "root": "build/",
+    "clean_urls": false,
+    "routes": {
+      "/**": "index.html"
+  }
 }
