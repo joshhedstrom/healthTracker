@@ -1,48 +1,51 @@
 # healthTracker
 
-One Paragraph of project description goes here
+This simple health application was designed to help you track your personal health, fitness, and nutrition goals. Once you've created your account, you can easily log your weight, water consumption, nutrition goals and fitness activities. You're on your way to a healthier you!
 
-## Getting Started
+## Usage
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Create an account, and then login to get started!
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+To run this app on your local machine, make sure you have [MongoDB](https://www.mongodb.com/download-center#community) and [Node.js](https://nodejs.org/en/download/) installed.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+First, clone this repository to your local machine, and then install the dependencies using:
 
 ```
-Give the example
+npm install
 ```
 
-And repeat
+In a seperate terminal start Mongo:
 
 ```
-until finished
+mongod
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
 
+Then start the server:
+
+```
+npm start
+```
+
+And go to the [browser](http://localhost:3000) to view the application!~
 
 
 ## Built With
 
 * [React](https://reactjs.org/) - Frontend Framework
-* [MongoDB](https://www.mongodb.com/) - Database
-* [Express](https://expressjs.com/) - Web Framework
 * [Node.js](https://nodejs.org/en/) - Javascript Runtime Environment
+* [Express](https://expressjs.com/) - Web Framework
+* [MongoDB](https://www.mongodb.com/) - Database
 * [Passport](https://http://www.passportjs.org/) - Authentication
-* [Heroku](https://http://heroku.com/) - Hosting
+* [bcrypt-nodejs](https://www.npmjs.com/package/bcrypt-nodejs) - Password Hashing
+* [Charts.js](https://www.chartjs.org/) - Charts
 * [Material-UI](https://http://material-ui.com/) - Styling
+* [Heroku](https://http://heroku.com/) - Hosting
+
 
 ## Authors
 
