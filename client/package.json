@@ -13,6 +13,7 @@
     "react": "^16.4.1",
     "react-chartjs-2": "^2.7.2",
     "react-dom": "^16.4.1",
+    "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.3.1",
     "react-script": "^2.0.5",
     "react-scripts": "1.1.4",
@@ -26,10 +27,9 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3001",
-  
-    "root": "build/",
-    "clean_urls": false,
-    "routes": {
-      "/**": "index.html"
+  "root": "build/",
+  "clean_urls": false,
+  "routes": {
+    "/**": "index.html"
   }
 }
