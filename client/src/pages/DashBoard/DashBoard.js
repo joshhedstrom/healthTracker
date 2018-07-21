@@ -40,7 +40,12 @@ class DashBoard extends Component {
 
     axios.get(url).then(res => {
       let user = res.data
-      let mostRecentDate = moment(user.days[0].date).format("MM.DD.YYYY")
+      let mostRecentDate = moment().add(-1, 'days').format("MM.DD.YYYY")
+
+      if (user.days.length) {
+        mostRecentDate = moment(user.days[0].date).format("MM.DD.YYYY")
+      }
+
       if (mostRecentDate === todaysDate) {
         this.setState({
           firstName: res.data.name,
