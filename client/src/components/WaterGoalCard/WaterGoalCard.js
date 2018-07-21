@@ -14,7 +14,7 @@ const styles = theme => ({
     textAlign: 'center',
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: 10
+    margin: "3% 3% -1% 3%"
   },
   container: {
     display: 'flex',
@@ -29,7 +29,7 @@ const styles = theme => ({
     marginRight: '19%',
     marginBottom: '28px',
     marginTop: '19px',
-    padding: '4px'
+    padding: '#6cb272'
   }
 })
 

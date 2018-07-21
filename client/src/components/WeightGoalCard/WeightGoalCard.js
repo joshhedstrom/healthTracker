@@ -14,7 +14,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: 10
+    margin: "5% 4% -3% 4%"
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -33,10 +33,14 @@ const styles = theme => ({
     backgroundColor: '#4d66f08a',
     marginLeft: '15%',
     marginRight: '15%',
-    marginBottom: '28px',
-    marginTop: '19px',
-    padding: '4px'
-  }
+    marginBottom: "28px",
+    marginTop: "19px",
+    padding: "4px",
+  },
+  buttonStyle: {
+    marginTop: "4%"
+
+  },
 });
 
 class WeightGoalsComponent extends React.Component {
@@ -67,9 +71,9 @@ class WeightGoalsComponent extends React.Component {
 
     return (
       <div>
-        <Grid container spacing={24}>
+        <Grid container spacing={8}>
           <Grid item xs={12} sm={6} className={classes.center}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.root} elevation={1} id="weightCardTracker">
               <Typography align="center" variant="display1">
                 Weight Tracker
               </Typography>
@@ -98,13 +102,13 @@ class WeightGoalsComponent extends React.Component {
                   margin="normal"
                 />
               </form>
-              <Button onClick={this.onSubmit.bind()} variant="contained">
+              <Button onClick={this.onSubmit.bind()} variant="contained" className={classes.buttonStyle}>
                 Submit
               </Button>
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.root} elevation={1} id="weightCardGraph">
               <Typography variant="title" align="center">
                 History (Last 7 Days)
               </Typography>
