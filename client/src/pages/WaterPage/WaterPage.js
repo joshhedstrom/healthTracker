@@ -52,13 +52,19 @@ class WaterGoal extends Component {
   }
 
   addGlass(number) {
-    this.setState({glasses: this.state.glasses + number},() => {
+    let arr = this.state.quantities
+    let newTotal = this.state.glasses + number
+
+    arr.splice(-1,1)
+    arr.push(newTotal)
+
+    this.setState({ glasses: newTotal, quantities: arr }, () => {
       axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
       axios.post('/api/healthTracker/newWater', {
         water: this.state.glasses,
         id: this.state.currentDayId
       })
-      .then(data => console.log(data))
+      .then(data => (data))
       .catch(err => {
         console.log(err)
       })
@@ -66,11 +72,15 @@ class WaterGoal extends Component {
   }
 
   handleChange(e) {
-    this.setState({ updatedWater: e.target.value }
-);
+    this.setState({ updatedWater: e.target.value });
   }
 
   handleClick() {
+    let arr = this.state.quantities
+
+    arr.splice(-1,1)
+    arr.push(this.state.updatedWater)
+
     this.setState({glasses: this.state.updatedWater}, () => {
       axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
       axios.post('/api/healthTracker/newWater', {
@@ -89,12 +99,12 @@ class WaterGoal extends Component {
       <div>
         {this.renderRedirect()}
         <WaterGoalCard
-        addGlass={this.addGlass.bind(this)}
-        handleChange={this.handleChange.bind(this)}
-        handleClick={this.handleClick.bind(this)}
-        glasses={this.state.glasses}
-        quantities={this.state.quantities}
-        dates={this.state.dates}
+          addGlass={this.addGlass.bind(this)}
+          handleChange={this.handleChange.bind(this)}
+          handleClick={this.handleClick.bind(this)}
+          glasses={this.state.glasses}
+          quantities={this.state.quantities}
+          dates={this.state.dates}
          />
       </div>
     );
