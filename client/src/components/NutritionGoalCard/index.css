@@ -1,8 +1,22 @@
-div.MuiFormGroup-root-230 {
+div.MuiFormGroup-root-232{
     display: flex;
     flex-wrap: wrap;
     flex-direction: unset;
 }
+
+
+@media (min-width: 600px) {
+
+    h2#formTitle.MuiTypography-root-80.MuiTypography-title-86.MuiTypography-alignCenter-93 {
+    font-size: 1.2rem;
+    padding-bottom: 8%;
+}
+ 
+
+
+
+}
+
 
 
 
