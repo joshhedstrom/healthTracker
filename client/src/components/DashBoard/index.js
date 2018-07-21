@@ -9,10 +9,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
 import style from './index.css';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -21,6 +17,11 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Tooltip from '@material-ui/core/Tooltip';
+import Avatar from '@material-ui/core/Avatar';
+import FontAwesome from "react-fontawesome"
+
+
+
 
 
 import ChartsPie from './../ChartsPie';
@@ -76,7 +77,34 @@ const styles = {
   },
   weightButton: {
     backgroundColor: '#4d66f08a'
+  },
+  waterAvatar: {
+     backgroundColor: '#63c5e4',
+     width: "61px",
+    height: "61px"
+  },
+  NutritionAvatar: {
+     backgroundColor: '#10953bb8',
+     width: "61px",
+    height: "61px"
+  },
+  exerciseAvatar: {
+     backgroundColor: '#ea6192b5',
+     width: "61px",
+    height: "61px"
+  },
+  weightAvatar: {
+     backgroundColor: '#4d66f08a',
+     width: "61px",
+    height: "61px"
+  },
+  tableCellStyle: {
+    padding: 0
   }
+  
+
+
+
 };
 
 class Dashboard extends React.Component {
@@ -110,20 +138,74 @@ class Dashboard extends React.Component {
                 <Table>
                   <TableBody>
                     <TableRow>
-                      <TableCell>Water (Cups)</TableCell>
-                      <TableCell>{this.props.water}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>Water (Cups)</TableCell>
+                      <TableCell className={classes.tableCellStyle}>{this.props.water}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>
+                        <Avatar className={classes.waterAvatar}>
+                          <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
+                            <FontAwesome
+                            className='fas fa-tint'
+                            name='rocket'
+                            size='2x'
+                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                            />
+                          </a>
+                        </Avatar>
+                      </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>Nutrition (Points)</TableCell>
-                      <TableCell>{this.props.nutrition}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>Nutrition (Points)</TableCell>
+                      <TableCell className={classes.tableCellStyle}>{this.props.nutrition}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>
+                        <Avatar className={classes.NutritionAvatar}>
+                          <a
+                              style={{ textDecoration: 'none', color: 'white' }}
+                              href="/nutrition"
+                            >
+                            <FontAwesome
+                            className='fas fa-utensils'
+                            size='2x'
+                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                            />
+                          </a>
+                        </Avatar>
+                      </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>Exercise (Duration)</TableCell>
-                      <TableCell>{this.props.exercise}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>Exercise (Duration)</TableCell>
+                      <TableCell className={classes.tableCellStyle}>{this.props.exercise}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>
+                        <Avatar className={classes.exerciseAvatar}>
+                         <a
+                            style={{ textDecoration: 'none', color: 'white' }}
+                            href="/exercise"
+                          >
+                          <FontAwesome
+                          className='fas fa-dumbbell'
+                          size='2x'
+                          style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                          />
+                        </a>
+                      </Avatar>
+                      </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>Weight (LBS)</TableCell>
-                      <TableCell>{this.props.weight}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>Weight (LBS)</TableCell>
+                      <TableCell className={classes.tableCellStyle}>{this.props.weight}</TableCell>
+                      <TableCell className={classes.tableCellStyle}>
+                        <Avatar className={classes.weightAvatar}>
+                          <a
+                              style={{ textDecoration: 'none', color: 'white' }}
+                              href="/weight"
+                            >
+                            <FontAwesome
+                            className='fas fa-weight'
+                            size='2x'
+                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                            />
+                          </a>
+                        </Avatar>
+                      </TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -131,57 +213,6 @@ class Dashboard extends React.Component {
             </Grid>
           </CardContent>
         </Card>
-        <Grid container spacing={4}>
-          <Grid item xs={6} sm={3} className={classes.paper}>
-            <Tooltip title="Log Water">
-              <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
-                <Button variant="contained" className={classes.waterButton}>
-                  <AddIcon />
-                  Water
-                </Button>
-              </a>
-            </Tooltip>
-          </Grid>
-          <Grid item xs={6} sm={3} className={classes.paper}>
-            <Tooltip title="Log Nutrition">
-              <a
-                style={{ textDecoration: 'none', color: 'white' }}
-                href="/nutrition"
-              >
-                <Button variant="contained" className={classes.nutritionButton}>
-                  <AddIcon />
-                  Nutrition
-                </Button>
-              </a>
-            </Tooltip>
-          </Grid>
-          <Grid item xs={6} sm={3} className={classes.paper}>
-            <Tooltip title="Log Exercise">
-              <a
-                style={{ textDecoration: 'none', color: 'white' }}
-                href="/exercise"
-              >
-                <Button variant="contained" className={classes.exerciseButton}>
-                  <AddIcon />
-                  Exercise
-                </Button>
-              </a>
-            </Tooltip>
-          </Grid>
-          <Grid item xs={6} sm={3} className={classes.paper}>
-            <Tooltip title="Log Weight">
-              <a
-                style={{ textDecoration: 'none', color: 'white' }}
-                href="/weight"
-              >
-                <Button variant="contained" className={classes.weightButton}>
-                  <AddIcon />
-                  Weight
-                </Button>
-              </a>
-            </Tooltip>
-          </Grid>
-        </Grid>
       </div>
     );
   }
