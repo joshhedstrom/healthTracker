@@ -2,3 +2,15 @@ input.MuiInput-inputType-253 {
     height: 1.1875em;
     text-align: center;
 }
+
+
+@media (min-width: 600px) {
+
+	div#weightCardGraph.WeightGoalsComponent-root-128 {
+		margin: 5% 4% -7% -2%;
+	}
+	div#weightCardTracker.WeightGoalsComponent-root-128 {
+		padding-bottom: 5%;
+	}
+}
+
