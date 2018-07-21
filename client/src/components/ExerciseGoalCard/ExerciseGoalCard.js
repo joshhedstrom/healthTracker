@@ -16,6 +16,8 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import style from './index.css';
+
 
 import ChartsBar from './../ChartsBar';
 
@@ -24,7 +26,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: 10
+    margin: "5% 4% -1% 4%"
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -88,7 +90,7 @@ class ExerciseGoalCard extends React.Component {
       <div>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.root} elevation={1} >
               <Typography
                 className={classes.header}
                 variant="display1"
@@ -189,7 +191,7 @@ class ExerciseGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.root} elevation={1} id="exerciseCard">
               <Typography variant="display1" className={classes.heading}>
                 Today
               </Typography>
