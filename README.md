@@ -31,7 +31,7 @@ Then start the server:
 npm start
 ```
 
-And go to the [browser](http://localhost:3000) to view the application!~
+And go to the [browser](http://localhost:3000) to view the application!
 
 
 ## Built With
