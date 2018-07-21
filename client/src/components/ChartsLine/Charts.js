@@ -20,35 +20,19 @@
                         strokeColor: "rgba(100, 190, 154, 0)",
                         fillColor:  "teal",
                         data: [
-                            5,
-                            6,
-                            2,
-                            10,
-                            12,
-                            10,
-                            3,
+                            180,
+                            175,
+                            176,
+                            174,
+                            173,
+                            176,
+                            174,
                         ],
                          backgroundColor: [
-                            '#64b5f6',
-                            '#2286c3',
-                            '#64b5f6',
-                            '#2286c3',
-                            '#64b5f6',
-                            '#2286c3',
-                            '#64b5f6'
+                            '#64b5f6',    
                         ]
                     }],
-                    options: {
-                        responsive: true, 
-                        maintainAspectRatio: true,
-                            title: {
-                                display: false, 
-                            },
-                            legend: {
-                                display: false,
-                                position: 'bottom',
-                            },
-                        }
+                    options: {}
                     } 
                 }
             };
@@ -60,12 +44,7 @@
                     <Line justify="center" //item xs={24} 
 	                    data={this.state.chartData}
 
-	                      options={{
-                            legend: {
-                                display: false
-                            }
-                            
-                         }}
+	                  
                     />
             
             </div>
