@@ -21,6 +21,17 @@ module.exports = {
         })
     },
 
+    updateWeight: function(req, res) {
+        db.Day
+        .findOne({_id: req.body.id})
+        .then(dbDay => {
+            dbDay.weight = req.body.weight
+            dbDay.save()
+            return res.json(db.Day)
+        })
+        .catch(err => res.status(422).json(err))
+    },
+
     //Update Water for the day
     addWater: function(req, res) {
         db.Day

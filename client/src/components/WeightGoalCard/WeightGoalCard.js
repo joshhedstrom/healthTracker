@@ -44,27 +44,6 @@ const styles = theme => ({
 });
 
 class WeightGoalsComponent extends React.Component {
-  state = {
-    weight: 168,
-    lastWeight: 168,
-    weightHistoryData: []
-  };
-
-  componentDidMount() {
-    //Axios get request to get weight data from backend
-    //this.setState({weightHistoryData: response})
-    //Fill chart.js
-  }
-
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value
-    });
-  };
-
-  onSubmit = event => {
-    //Axios post to backend with data
-  };
 
   render() {
     const { classes } = this.props;
@@ -79,9 +58,7 @@ class WeightGoalsComponent extends React.Component {
               </Typography>
 
               <Paper className={classes.progressColorWeight}>
-                <Typography align="center">
-                  Current Weight: {this.state.lastWeight + ' lbs'}{' '}
-                </Typography>
+                <Typography align="center">Current Weight: {this.props.weight + "lbs"} </Typography>
               </Paper>
 
               <form
@@ -95,14 +72,15 @@ class WeightGoalsComponent extends React.Component {
                   id="addWeight"
                   label="Enter Weight"
                   fullWidth
-                  value={this.state.weight}
-                  onChange={this.handleChange('weight')}
+                  // value={this.props.weight}
+                  onChange={this.props.handleChange}
                   type="number"
                   className={classes.textField}
                   margin="normal"
+                  placeholder={this.props.weight}
                 />
               </form>
-              <Button onClick={this.onSubmit.bind()} variant="contained" className={classes.buttonStyle}>
+              <Button onClick={this.props.handleClick} variant="contained" className={classes.buttonStyle}>
                 Submit
               </Button>
             </Paper>
@@ -112,7 +90,7 @@ class WeightGoalsComponent extends React.Component {
               <Typography variant="title" align="center">
                 History (Last 7 Days)
               </Typography>
-              <ChartsLine />
+              <ChartsLine quantities={this.props.quantities} dates={this.props.dates}/>
             </Paper>
           </Grid>
         </Grid>
