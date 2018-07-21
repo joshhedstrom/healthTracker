@@ -37,6 +37,7 @@ function Login(props) {
         <Typography variant="headline" component="h3">
           Log In
         </Typography>
+        <h4>{props.message}</h4>
         <TextField
           id="username"
           label="Username (required)"

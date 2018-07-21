@@ -54,6 +54,7 @@ class Signup extends Component {
           passwordAction={this.onChange.bind()}
           passwordConfirmAction={this.onChange.bind()}
           submitAction={this.onSubmit.bind()}
+          message={this.state.message}
         />
       </div>
     );

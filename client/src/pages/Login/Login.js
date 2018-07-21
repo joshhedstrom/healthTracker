@@ -9,11 +9,11 @@ class Login extends Component {
       username: '',
       password: '',
       message: ''
-    };
+    }
   }
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
-  };
+  }
 
   onSubmit = e => {
     e.preventDefault();
@@ -22,7 +22,7 @@ class Login extends Component {
       username: this.state.username,
       password: this.state.password,
       message: this.state.message
-    };
+    }
 
     axios
       .post('/auth/login', userDetails)
@@ -36,11 +36,11 @@ class Login extends Component {
         console.log(error);
         if (error.response.status === 401) {
           this.setState({
-            message: 'Login failed. Username or password not match'
-          });
+            message: "Oops...we didn't recognize that username or password"
+          })
         }
-      });
-  };
+      })
+  }
   render() {
     return (
       <div>
@@ -48,6 +48,7 @@ class Login extends Component {
           usernameAction={this.onChange.bind()}
           passwordAction={this.onChange.bind()}
           submitAction={this.onSubmit.bind()}
+          message={this.state.message}
         />
       </div>
     );
