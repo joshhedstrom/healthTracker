@@ -14,7 +14,8 @@ const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
+    paddingBottom: theme.spacing.unit * 2,
+    margin: "4%"
   },
   margin: {
     margin: theme.spacing.unit
@@ -29,7 +30,7 @@ class Signup extends React.Component {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography variant="headline" component="h3">
+          <Typography variant="headline" component="h3" align="center">
             Create Account
           </Typography>
           <h4>{this.props.message}</h4>
