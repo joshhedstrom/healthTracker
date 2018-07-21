@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SignupComponent from '../../components/SignupComponent';
 
-
-
 class Signup extends Component {
   constructor() {
     super();
@@ -15,14 +13,12 @@ class Signup extends Component {
       password: '',
       passwordConfirmation: '',
       message: '',
-      open: false,
+      open: false
     };
   }
 
   handleClickOpen = () => {
-    this.setState({ open: true }, 
-      console.log("hande click triggered")
-      );
+    this.setState({ open: true });
   };
 
   handleClose = () => {
@@ -45,17 +41,11 @@ class Signup extends Component {
         password: this.state.password
       };
 
-      axios
-        .post('/auth/register', userDetails)
-        .then(result => {
-          this.setState({ message: 'Welcome to your new account!' });
-          this.props.history.push('/login');
-        });
+      axios.post('/auth/register', userDetails).then(result => {
+        this.props.history.push('/login');
+      });
     } else {
-      console.log("is else working??")
-      this.handleClickOpen()
-
-
+      this.handleClickOpen();
     }
   };
 
@@ -70,13 +60,8 @@ class Signup extends Component {
           passwordAction={this.onChange.bind()}
           passwordConfirmAction={this.onChange.bind()}
           submitAction={this.onSubmit.bind()}
-          message={this.state.message}
-
           open={this.state.handleClickOpen}
-
-
         />
-
       </div>
     );
   }
