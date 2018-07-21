@@ -7,9 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import ChartsLine from './../ChartsLine';
-import Style from "./weightGoal.css"
-
-
+import './weightGoal.css';
 
 const styles = theme => ({
   root: {
@@ -20,11 +18,10 @@ const styles = theme => ({
   },
   textField: {
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    
+    marginRight: theme.spacing.unit
   },
   container: {
-    width: "97%",
+    width: '97%'
   },
   expansionPanelStyle: {
     margin: 11
@@ -34,13 +31,12 @@ const styles = theme => ({
   },
   progressColorWeight: {
     backgroundColor: '#4d66f08a',
-    marginLeft: "15%",
+    marginLeft: '15%',
     marginRight: '15%',
-    marginBottom: "28px",
-    marginTop: "19px",
-    padding: "4px",
+    marginBottom: '28px',
+    marginTop: '19px',
+    padding: '4px'
   }
- 
 });
 
 class WeightGoalsComponent extends React.Component {
@@ -77,31 +73,36 @@ class WeightGoalsComponent extends React.Component {
               <Typography align="center" variant="display1">
                 Weight Tracker
               </Typography>
-              
 
               <Paper className={classes.progressColorWeight}>
-                <Typography align="center">Current Weight: {this.state.lastWeight + ' lbs'} </Typography>
+                <Typography align="center">
+                  Current Weight: {this.state.lastWeight + ' lbs'}{' '}
+                </Typography>
               </Paper>
 
-              <form className={classes.container} noValidate autoComplete="off" align="center">
-                <TextField className={classes.center}
+              <form
+                className={classes.container}
+                noValidate
+                autoComplete="off"
+                align="center"
+              >
+                <TextField
+                  className={classes.center}
                   id="addWeight"
                   label="Enter Weight"
                   fullWidth
-
                   value={this.state.weight}
                   onChange={this.handleChange('weight')}
                   type="number"
                   className={classes.textField}
                   margin="normal"
-                  placeholder={this.state.lastWeight}
                 />
               </form>
               <Button onClick={this.onSubmit.bind()} variant="contained">
                 Submit
               </Button>
             </Paper>
-            </Grid>
+          </Grid>
           <Grid item xs={12} sm={6}>
             <Paper className={classes.root} elevation={1}>
               <Typography variant="title" align="center">
