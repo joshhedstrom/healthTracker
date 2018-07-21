@@ -8,13 +8,10 @@ div.MuiFormGroup-root-232{
 @media (min-width: 600px) {
 
     h2#formTitle.MuiTypography-root-80.MuiTypography-title-86.MuiTypography-alignCenter-93 {
-    font-size: 1.2rem;
-    padding-bottom: 8%;
-}
+        font-size: 1.2rem;
+        padding-bottom: 8%;
+    }
  
-
-
-
 }
 
 
@@ -31,8 +28,8 @@ button.MuiButton-contained-111 {
     margin-top: 26px;
 }
 
-span.MuiCheckbox-colorPrimary-238.MuiCheckbox-checked-236 {
-    color: #10953bb8;
+span.MuiCheckbox-colorPrimary-240.MuiCheckbox-checked-238 {
+    color: #6cb272;
 }
 
 div#progress.MuiPaper-root-13.MuiPaper-elevation2-17.MuiPaper-rounded-14 {
