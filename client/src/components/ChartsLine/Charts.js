@@ -6,48 +6,67 @@
 
  class Chart extends Component {
 
-        constructor(props) {
-            super(props);
-            this.state = {
-                chartData:{
+    renderChart(props) {
 
-                    // labels: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ],
-                    labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
-            
-                    datasets:[{
-            
-                        // label: '# of mins Excercised each day this week/Food/Water',
-                        strokeColor: "rgba(100, 190, 154, 0)",
-                        fillColor:  "teal",
-                        data: [
-                            180,
-                            175,
-                            176,
-                            174,
-                            173,
-                            176,
-                            174,
-                        ],
-                         backgroundColor: [
-                            '#64b5f6',    
-                        ]
-                    }],
-                    options: {}
-                    } 
+        let chartData = {
+          
+            labels: props.dates,
+    
+            datasets:[{
+    
+                // label: '# of mins Excercised each day this week/Food/Water',
+                strokeColor: "rgba(100, 190, 154, 1)",
+                data: props.quantities,
+                backgroundColor: [
+                    '#ef5e92',
+                    '#ff92c4',
+                    '#ef5e92',
+                    '#ff92c4',
+                    '#ef5e92',
+                    '#ff92c4',
+                    '#ef5e92'
+                ]
+            }],
+            options: {
+                responsive: true, 
+                maintainAspectRatio: true,
+                    title: {
+                        display: false, 
+                    },
+                    legend: {
+                        display: false,
+                        position: 'bottom',
+                    },
                 }
-            };
+            }
+            return (
+                <div className="Chart-container">
+                    <Line justify="center"
+                    redraw={true}
+                        data={chartData}
+                        options={{
+                            legend: {
+                                display: true
+                            },
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                              
+                            }
+                        }}
+                    />
+            
+            </div>
+            ) 
+    }
         
       
       render() {
         return (
-            <div className="Chart-container">
-                    <Line justify="center" //item xs={24} 
-	                    data={this.state.chartData}
-
-	                  
-                    />
-            
-            </div>
+            this.renderChart(this.props)
         )
     }
 }

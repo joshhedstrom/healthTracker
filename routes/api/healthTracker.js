@@ -75,6 +75,19 @@ router.post('/newWater', passport.authenticate('jwt', { session: false}), (req, 
  }
 );
 
+// Updates user's weight for a given date
+router.post('/updateWeight', passport.authenticate('jwt', { session: false}), (req, res) => {
+  const token = getToken(req.headers);
+  if (token) {
+    console.log("Weight is being updated");
+    db.Day.updateWeight(req, res)
+  } else {
+    return res.status(403).send({ success: false, msg: 'Unauthorized.' });
+  }
+ }
+);
+
+
 // Gets all the days for a given userId
 router.get('/getDays/:userId', passport.authenticate('jwt', { session: false }), (req, res) => {
   const token = getToken(req.headers);
