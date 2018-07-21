@@ -27,6 +27,7 @@ function Signup(props) {
         <Typography variant="headline" component="h3">
           Create Account
         </Typography>
+        <h4>{props.message}</h4>
         <Grid container spacing={24}>
           <Grid item xs={12} sm={6}>
             <TextField
