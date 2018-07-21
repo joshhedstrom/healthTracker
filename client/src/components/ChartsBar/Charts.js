@@ -6,16 +6,17 @@
 
  class Chart extends Component {
     
-    renderChart() {
+    renderChart(props) {
+
         let chartData = {
           
-            labels: this.props.dates,
+            labels: props.dates,
     
             datasets:[{
     
                 // label: '# of mins Excercised each day this week/Food/Water',
                 strokeColor: "rgba(100, 190, 154, 1)",
-                data: this.props.quantities,
+                data: props.quantities,
                 backgroundColor: [
                     '#ef5e92',
                     '#ff92c4',
@@ -40,7 +41,8 @@
             }
             return (
                 <div className="Chart-container">
-                    <Bar justify="center" //item xs={24} 
+                    <Bar justify="center"
+                    redraw={true}
                         data={chartData}
                         options={{
                             legend: {
@@ -64,7 +66,7 @@
       
     render() {
         return (
-            this.renderChart()
+            this.renderChart(this.props)
         )
     }
 }
