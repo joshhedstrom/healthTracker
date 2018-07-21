@@ -8,7 +8,8 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      message: ''
+      message: '',
+      open: false,
     }
   }
   onChange = e => {
@@ -43,7 +44,8 @@ class Login extends Component {
       .catch(error => {
         console.log(error);
         if (error.response.status === 401) {
-          
+          console.log("handle click open")
+            this.handleClickOpen()
         }
       })
   }
@@ -55,6 +57,8 @@ class Login extends Component {
           passwordAction={this.onChange.bind()}
           submitAction={this.onSubmit.bind()}
           message={this.state.message}
+          open={this.state.open}
+          onClose={this.handleClose}
         />
       </div>
     );
