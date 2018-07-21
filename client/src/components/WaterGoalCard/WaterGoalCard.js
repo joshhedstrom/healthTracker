@@ -39,10 +39,10 @@ class WaterGoalCard extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <Grid container spacing={4}>
+        <Grid container spacing={0}>
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1}>
-              <Grid container spacing={24}>
+              <Grid container spacing={8}>
                 <Grid item xs={12}>
                   <Typography variant="display1">Water Goal</Typography>
                   <Typography>
