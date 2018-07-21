@@ -7,6 +7,7 @@ const daySchema = new Schema({
     exercises: [{ type: Schema.Types.ObjectId, ref: "Exercise" }],
     nutrition: { type: Number, default: 0 },
     water: { type: Number, default: 0 },
+    weight: {type: Number}
 }); 
 
 const Day = mongoose.model("Day", daySchema);

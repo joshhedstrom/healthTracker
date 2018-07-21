@@ -54,7 +54,7 @@ class DashBoard extends Component {
           nutritionPoints: res.data.days[0].nutrition,
           exerciseMins: this.totalExerciseMinutes(res.data.days[0].exercises),
           currentDayId: res.data.days[0].id,
-          currentWeight: res.data.weight
+          currentWeight: res.data.days[0].weight
         })
       } else {
         this.setState({
@@ -65,6 +65,7 @@ class DashBoard extends Component {
 
         axios.post("/api/healthtracker/newDay", {
           userId: this.state.userId,
+          weight: this.state.currentWeight,
           date: moment().format("MM.DD.YYYY")
         }).then(res => {
           this.setState({currentDayId: res.data._id})
