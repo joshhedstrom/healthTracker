@@ -15,7 +15,8 @@ class NutritionGoal extends Component {
     skipBreakfast: false,
     noSugar: false,
     noAlcohol: false,
-    redirect: false
+    redirect: false,
+    isChecked: false
   }
 
   renderRedirect = () => {
@@ -32,11 +33,25 @@ class NutritionGoal extends Component {
     //axios call to update database
   }
 
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.checked
+  handleChange = name => (event, isChecked) => {
+   this.setState({
+    //  [name]: event.target.checked
     })
-  }
+    this.updateProgress(event.target.value, isChecked);
+     }
+
+  updateProgress = (value, isChecked) => {
+    console.log("value: " + value);
+    console.log("this.state.progress: "+this.state.progress);
+    console.log(this)
+    if (isChecked) {
+      this.setState({progress: this.state.progress +1})
+    }  else  {
+      this.setState({progress: this.state.progress - 1})
+
+    }
+}
+
 
   render() {
     return (
