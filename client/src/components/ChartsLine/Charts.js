@@ -62,8 +62,7 @@
             </div>
             ) 
     }
-        
-      
+          
       render() {
         return (
             this.renderChart(this.props)
