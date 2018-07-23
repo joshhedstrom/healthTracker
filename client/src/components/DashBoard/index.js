@@ -13,12 +13,10 @@ import TableRow from '@material-ui/core/TableRow';
 import Tooltip from '@material-ui/core/Tooltip';
 import Avatar from '@material-ui/core/Avatar';
 import FontAwesome from "react-fontawesome"
-
-
-
-
-
 import ChartsPie from './../ChartsPie';
+
+
+
 
 const styles = {
   cardUser: {
@@ -119,7 +117,7 @@ class Dashboard extends React.Component {
         </Typography>
         <Card className={classes.cardUser}>
           <CardContent>
-            <Grid container spacing={4}>
+            <Grid container spacing={0}>
               <Grid item xs={12} sm={6}>
                 <ChartsPie
                   waterChart={this.props.water}
@@ -136,6 +134,11 @@ class Dashboard extends React.Component {
                 >
                   Charlie Johnson
                 </Typography>
+
+                <Typography>
+                  All your daily health tracking information is displayed below. To quickly track your progress, click on the icons to access the specific goal pages
+                </Typography>
+
                 <Table>
                   <TableBody>
                     <TableRow>
