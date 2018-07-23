@@ -1,30 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import style from './index.css';
-import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Tooltip from '@material-ui/core/Tooltip';
 import Avatar from '@material-ui/core/Avatar';
 import FontAwesome from "react-fontawesome"
-
-
-
-
-
 import ChartsPie from './../ChartsPie';
+
+
+
 
 const styles = {
   cardUser: {
@@ -79,24 +71,31 @@ const styles = {
     backgroundColor: '#4d66f08a'
   },
   waterAvatar: {
-     backgroundColor: '#63c5e4',
-     width: "61px",
-    height: "61px"
+    backgroundColor: '#63c5e4',
+    width: "46px",
+    height: "46px",
+    margin: "5%"
   },
   NutritionAvatar: {
-     backgroundColor: '#10953bb8',
-     width: "61px",
-    height: "61px"
+    backgroundColor: '#10953bb8',
+    width: "46px",
+    height: "46px",
+    margin: "5%"
+
   },
   exerciseAvatar: {
-     backgroundColor: '#ea6192b5',
-     width: "61px",
-    height: "61px"
+    backgroundColor: '#ea6192b5',
+    width: "46px",
+    height: "46px",
+    margin: "5%"
+
   },
   weightAvatar: {
-     backgroundColor: '#4d66f08a',
-     width: "61px",
-    height: "61px"
+    backgroundColor: '#4d66f08a',
+    width: "46px",
+    height: "46px",
+    margin: "5%"
+
   },
   tableCellStyle: {
     padding: 0
@@ -118,7 +117,7 @@ class Dashboard extends React.Component {
         </Typography>
         <Card className={classes.cardUser}>
           <CardContent>
-            <Grid container spacing={4}>
+            <Grid container spacing={0}>
               <Grid item xs={12} sm={6}>
                 <ChartsPie
                   waterChart={this.props.water}
@@ -135,76 +134,89 @@ class Dashboard extends React.Component {
                 >
                   Charlie Johnson
                 </Typography>
+
+                <Typography>
+                  All your daily health tracking information is displayed below. To quickly track your progress, click on the icons to access the specific goal pages
+                </Typography>
+
                 <Table>
                   <TableBody>
                     <TableRow>
                       <TableCell className={classes.tableCellStyle}>Water (Cups)</TableCell>
                       <TableCell className={classes.tableCellStyle}>{this.props.water}</TableCell>
                       <TableCell className={classes.tableCellStyle}>
-                        <Avatar className={classes.waterAvatar}>
-                          <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
-                            <FontAwesome
-                            className='fas fa-tint'
-                            name='rocket'
-                            size='2x'
-                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                            />
-                          </a>
-                        </Avatar>
+                        <Tooltip title="Go to Water Page" placement="right">
+                          <Avatar className={classes.waterAvatar}>
+                            <a style={{ textDecoration: 'none', color: 'white' }} href="/water">
+                              <FontAwesome
+                              className='fas fa-tint'
+                              name='rocket'
+                              size='lg'
+                              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                              />
+                            </a>
+                          </Avatar>
+                        </Tooltip>
                       </TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className={classes.tableCellStyle}>Nutrition (Points)</TableCell>
                       <TableCell className={classes.tableCellStyle}>{this.props.nutrition}</TableCell>
                       <TableCell className={classes.tableCellStyle}>
-                        <Avatar className={classes.NutritionAvatar}>
-                          <a
-                              style={{ textDecoration: 'none', color: 'white' }}
-                              href="/nutrition"
-                            >
-                            <FontAwesome
-                            className='fas fa-utensils'
-                            size='2x'
-                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                            />
-                          </a>
-                        </Avatar>
+                        <Tooltip title="Go to Nutrition Page" placement="right">
+                          <Avatar className={classes.NutritionAvatar}>
+                            <a
+                                style={{ textDecoration: 'none', color: 'white' }}
+                                href="/nutrition"
+                              >
+                              <FontAwesome
+                              className='fas fa-utensils'
+                              size='lg'
+                              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                              />
+                            </a>
+                          </Avatar>
+                        </Tooltip>
                       </TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className={classes.tableCellStyle}>Exercise (Duration)</TableCell>
                       <TableCell className={classes.tableCellStyle}>{this.props.exercise}</TableCell>
                       <TableCell className={classes.tableCellStyle}>
-                        <Avatar className={classes.exerciseAvatar}>
-                         <a
-                            style={{ textDecoration: 'none', color: 'white' }}
-                            href="/exercise"
-                          >
-                          <FontAwesome
-                          className='fas fa-dumbbell'
-                          size='2x'
-                          style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                          />
-                        </a>
-                      </Avatar>
+                        <Tooltip title="Go to Exercise Page" placement="right">
+                          <Avatar className={classes.exerciseAvatar}>
+                           <a
+                              style={{ textDecoration: 'none', color: 'white' }}
+                              href="/exercise"
+                            >
+                            <FontAwesome
+                            className='fas fa-dumbbell'
+                            size='lg'
+                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                            />
+                          </a>
+                        </Avatar>
+                      </Tooltip>
                       </TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className={classes.tableCellStyle}>Weight (LBS)</TableCell>
                       <TableCell className={classes.tableCellStyle}>{this.props.weight}</TableCell>
                       <TableCell className={classes.tableCellStyle}>
-                        <Avatar className={classes.weightAvatar}>
-                          <a
-                              style={{ textDecoration: 'none', color: 'white' }}
-                              href="/weight"
-                            >
-                            <FontAwesome
-                            className='fas fa-weight'
-                            size='2x'
-                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                            />
-                          </a>
-                        </Avatar>
+                        <Tooltip title="Go to Weight Page" placement="right">
+                          <Avatar className={classes.weightAvatar}>
+                            <a
+                                style={{ textDecoration: 'none', color: 'white' }}
+                                href="/weight"
+                              >
+                              <FontAwesome
+                              className='fas fa-weight'
+                              size='lg'
+                              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                              />
+                            </a>
+                          </Avatar>
+                        </Tooltip>
                       </TableCell>
                     </TableRow>
                   </TableBody>

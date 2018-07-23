@@ -18,7 +18,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    textAlign: 'center',
+
     margin: '5%',
     marginTop: '4%'
   },
@@ -36,7 +36,7 @@ class Login extends React.Component {
     return (
       <div>
         <Paper className={classes.root} elevation={1} justify="center">
-          <Typography variant="headline" component="h3">
+          <Typography variant="headline" component="h3" align="center">
             Log In
           </Typography>
           <h4>{this.props.message}</h4>
