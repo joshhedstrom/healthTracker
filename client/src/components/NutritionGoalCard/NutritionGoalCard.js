@@ -11,13 +11,12 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import './index.css';
 
-
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: "4% 5% 0% 5%"
+    margin: '4% 5% 0% 5%'
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -31,7 +30,6 @@ const styles = theme => ({
   expansionPanelStyle: {
     margin: 11
   }
- 
 });
 
 class NutritionGoalCard extends React.Component {
@@ -70,12 +68,9 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('fruitAndVegs')}
-                            // value="fruitAndVegs"
                             value="0"
                             onChange={this.props.handleChange(this.value)}
                             color="primary"
-                           
                           />
                         }
                         label="Had 5-9 Servings of Fruits and Vegetables"
@@ -85,8 +80,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('healthyFat')}
-                            // value="healthyFat"
                             value="0"
                             onChange={this.props.handleChange(this.value)}
                             color="primary"
@@ -99,8 +92,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('proteinBreakfast')}
-                            // value="proteinBreakfast"
                             onChange={this.props.handleChange(this.value)}
                             value="0"
                             color="primary"
@@ -113,8 +104,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('newFruit')}
-                            // value="newFruit"
                             onChange={this.props.handleChange(this.value)}
                             value="0"
                             color="primary"
@@ -127,8 +116,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('newReceipe')}
-                            // value="newReceipe"
                             onChange={this.props.handleChange(this.value)}
                             value="0"
                             color="primary"
@@ -141,8 +128,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('fastFood')}
-                            // value="fastFood"
                             onChange={this.props.handleChange(this.value)}
                             value="0"
                             color="primary"
@@ -155,8 +140,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                          //   onChange={this.props.handleChange('noMeat')}
-                            // value="noMeat"
                             value="0"
                             onChange={this.props.handleChange(this.value)}
                             color="primary"
@@ -169,8 +152,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('skipBreakfast')}
-                            // value="skipBreakfast"
                             onChange={this.props.handleChange(this.value)}
                             value="0"
                             color="primary"
@@ -183,22 +164,6 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('skipBreakfast')}
-                            // value="skipBreakfast"
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Didn't skip breakfast"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            // onChange={this.props.handleChange('noSugar')}
-                            // value="noSugar"
                             onChange={this.props.handleChange(this.value)}
                             value="0"
                             color="primary"
@@ -211,12 +176,9 @@ class NutritionGoalCard extends React.Component {
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // onChange={this.props.handleChange('noAlcohol')}
-                            // value="noAlcohol"
                             onChange={this.props.handleChange(this.value)}
                             value="0"
                             color="primary"
-
                           />
                         }
                         label="Refrained from alcohol"
