@@ -1,6 +1,6 @@
 # healthTracker
 
-This simple health application was designed to help you track your personal health, fitness, and nutrition goals. Once you've created your account, you can easily log your weight, water consumption, nutrition goals and fitness activities. You're on your way to a healthier you!
+We designed this simple health application to help you track your personal health, fitness, and nutrition goals. Once you've created your account, you can easily log your weight, water consumption, nutrition goals and fitness activities. You're on your way to a healthier you!
 
 ## Usage
 
@@ -18,7 +18,7 @@ First, clone this repository to your local machine, and then install the depende
 npm install
 ```
 
-In a seperate terminal start Mongo:
+In a separate terminal start Mongo:
 
 ```
 mongod
