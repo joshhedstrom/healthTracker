@@ -12,6 +12,15 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(routes);
 
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
+// Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reacthealthtracker");
 
 app.use(morgan('dev'))
