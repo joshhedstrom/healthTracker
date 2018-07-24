@@ -29,7 +29,8 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11
-  }
+  },
+ 
 });
 
 class NutritionGoalCard extends React.Component {

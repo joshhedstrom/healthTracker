@@ -41,7 +41,7 @@ const styles = theme => ({
     marginTop: "4%"
   },
   info: {
-    marginTop: "3% 8% 0% 8%"
+    margin: "3% 8% 0% 8%"
   }
 });
 
