@@ -32,6 +32,9 @@ const styles = theme => ({
     marginBottom: '28px',
     marginTop: '19px',
     padding: '1%'
+  },
+  info: {
+    margin: "3% 8% 0% 8%"
   }
 })
 
@@ -47,7 +50,7 @@ class WaterGoalCard extends React.Component {
               <Grid container spacing={8}>
                 <Grid item xs={12}>
                   <Typography variant="display1">Water Goal</Typography>
-                  <Typography>
+                  <Typography className={classes.info}>
                     Drink at least 8 glasses of 8 fluid ounces each day.
                   </Typography>
                   <br />
