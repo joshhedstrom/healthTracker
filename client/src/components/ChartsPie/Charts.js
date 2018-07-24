@@ -3,7 +3,6 @@
  import './Charts.css';
 
 
-
  class Chart extends Component {
         
       renderChart() {
