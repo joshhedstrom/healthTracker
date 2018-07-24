@@ -92,7 +92,7 @@ class WeightGoalsComponent extends React.Component {
           <Grid item xs={12} sm={6}>
             <Paper className={classes.root} elevation={1} id="weightCardGraph">
               <Typography variant="title" align="center">
-                History (Last 7 Days)
+                History (Last 30 Days)
               </Typography>
               <ChartsLine quantities={this.props.quantities} dates={this.props.dates}/>
             </Paper>
