@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ChartsBar from './../ChartsBar';
 import Grid from '@material-ui/core/Grid';
+import style from './index.css';
+
 
 const styles = theme => ({
   root: {
@@ -29,7 +31,7 @@ const styles = theme => ({
     marginRight: '19%',
     marginBottom: '28px',
     marginTop: '19px',
-    padding: '#6cb272'
+    padding: '1%'
   }
 })
 
