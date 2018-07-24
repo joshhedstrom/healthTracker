@@ -36,15 +36,15 @@ class NutritionGoalCard extends React.Component {
   render() {
     const { classes } = this.props;
     const questions = [
-      ['fruitAndVegs', 'Had 5-9 Servings of Fruits and Vegetables'],
-      ['healthyFat', 'Consumed at least 26 grams of healthy fat each day'],
+      ['fruitAndVegs', 'Had 5-9 Servings of fruits and vegetables'],
+      ['healthyFat', 'Consumed at least 26 grams of healthy fat'],
       ['proteinBreakfast', 'Eat at least 15 grams of protein for breakfast'],
-      ['newFruit', 'Tried a new Fruit or Vegetables'],
+      ['newFruit', 'Tried a new fruit or vegetable'],
       ['newReceipe', 'Experimented with a new healthy receipe'],
-      ['fastFood', 'Avoided Fast Food'],
+      ['fastFood', 'Avoided fast food'],
       ['noMeat', 'Refrained from eating meat'],
       ['skipBreakfast', "Didn't skip breakfast"],
-      ['noSugar', 'Avoided Sugar'],
+      ['noSugar', 'Avoided sugar'],
       ['noAlcohol', 'Refrained from alcohol']
     ];
     return (
@@ -56,22 +56,22 @@ class NutritionGoalCard extends React.Component {
                 Nutrition Goal
               </Typography>
               <Typography align="center">
-                Each goal below counts as 1+ points. Try to see if you can meet
-                all of these goals!
+                Each goal below counts as +1 point. See if you can meet
+                all your goals!
               </Typography>
               <Paper id="progress">
                 <Typography align="center" variant="body2">
                   Current Progress: {this.props.progress}
                 </Typography>
               </Paper>
-              <Typography
+              {/* <Typography
                 id="formTitle"
                 variant="title"
                 align="center"
                 className={classes.formHeader}
               >
                 Select All Goals You Achieved Today
-              </Typography>
+              </Typography> */}
               <Grid container spacing={8}>
                 <List>
                   {questions.map(question => (
