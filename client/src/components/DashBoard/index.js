@@ -132,7 +132,7 @@ class Dashboard extends React.Component {
                   component="h2"
                   align="center"
                 >
-                  Charlie Johnson
+                {this.props.firstName} {this.props.lastName}
                 </Typography>
 
                 <Typography>
