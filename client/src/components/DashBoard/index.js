@@ -14,6 +14,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Avatar from '@material-ui/core/Avatar';
 import FontAwesome from "react-fontawesome"
 import ChartsPie from './../ChartsPie';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -138,6 +139,7 @@ class Dashboard extends React.Component {
                 <Typography>
                   All your daily health tracking information is displayed below. To quickly track your progress, click on the icons to access the specific goal pages
                 </Typography>
+                
 
                 <Table>
                   <TableBody>

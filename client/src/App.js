@@ -8,6 +8,7 @@ import WaterPage from './pages/WaterPage';
 import NutritionPage from './pages/NutritionPage';
 import ExercisePage from './pages/ExercisePage';
 import WeightPage from './pages/WeightPage';
+import MoreInfoPage from './pages/MoreInfoPage';
 
 import './App.css';
 
@@ -23,6 +24,7 @@ const App = () => (
         <Route exact path="/nutrition" component={NutritionPage} />
         <Route exact path="/exercise" component={ExercisePage} />
         <Route exact path="/weight" component={WeightPage} />
+        <Route exact path="/Info" component={MoreInfoPage} />
       </Switch>
     </div>
   </Router>
