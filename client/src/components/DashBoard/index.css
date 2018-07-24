@@ -22,4 +22,12 @@ div.SimpleMediaCard-cardUser-126 {
 }
 
 
+@media (min-width: 600px) {
+	h2.Dashboard-nameTitle-150 {
+    margin-top: 0%;
+}
+
+}
+
+
 
