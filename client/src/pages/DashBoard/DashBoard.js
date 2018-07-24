@@ -56,7 +56,7 @@ class DashBoard extends Component {
           lastName: res.data.lastName,
           waterIntake: res.data.days[0].water,
           nutritionPoints: res.data.days[0].nutrition,
-          exerciseMins: this.totalExerciseMinutes(res.data.days[0].exercises),
+          exerciseMins: res.data.days[0].totalActivity,
           currentDayId: res.data.days[0].id,
           currentWeight: res.data.days[0].weight
         });

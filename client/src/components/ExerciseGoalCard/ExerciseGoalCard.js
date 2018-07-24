@@ -113,8 +113,8 @@ class ExerciseGoalCard extends React.Component {
               </Typography>
 
               <Paper className={classes.progressColor}>
-                <Typography align="center" variant="body2">
-                  Current Progress: {this.props.history} ??
+                <Typography align="center">
+                  Current Progress: {this.props.totalActivity}
                 </Typography>
               </Paper>
 
@@ -129,7 +129,7 @@ class ExerciseGoalCard extends React.Component {
                       <InputLabel htmlFor="workout-simple">Workouts</InputLabel>
                       <Select
                         value={this.props.activity}
-                        onChange={this.props.handleChange}
+                        onChange={this.props.handleExerciseChange}
                         inputProps={{ name: 'activity', id: 'workout-simple' }}
                       >
                         <MenuItem value="">
@@ -163,7 +163,7 @@ class ExerciseGoalCard extends React.Component {
                     noValidate
                     autoComplete="off"
                   >
-                    <TextField
+                    {/* <TextField
                       id="addHours"
                       label="Hours"
                       value={this.props.hours}
@@ -173,7 +173,7 @@ class ExerciseGoalCard extends React.Component {
                       margin="normal"
                       name="hours"
                       fullWidth
-                    />
+                    /> */}
                   </form>
                 </Grid>
                 <Grid item xs={6}>
@@ -186,17 +186,18 @@ class ExerciseGoalCard extends React.Component {
                       id="addMinutes"
                       label="Minutes"
                       value={this.props.minutes}
-                      onChange={this.props.handleChange}
+                      onChange={this.props.handleDurationChange}
                       type="number"
                       className={classes.textField}
                       margin="normal"
                       name="minutes"
                       fullWidth
+                      
                     />
                   </form>
                 </Grid>
                 <Grid className={classes.submit} item xs={12}>
-                  <Button onClick={this.props.handleSubmit} variant="contained">
+                  <Button onClick={this.props.addExercise} variant="contained">
                     Submit
                   </Button>
                 </Grid>
