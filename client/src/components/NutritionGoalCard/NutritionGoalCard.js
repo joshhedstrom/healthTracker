@@ -29,7 +29,8 @@ const styles = theme => ({
   },
   expansionPanelStyle: {
     margin: 11
-  }
+  },
+ 
 });
 
 class NutritionGoalCard extends React.Component {
@@ -49,7 +50,7 @@ class NutritionGoalCard extends React.Component {
                 all of these goals!
               </Typography>
               <Paper id="progress">
-                <Typography align="center">
+                <Typography align="center" variant="body2">
                   Current Progress: {this.props.progress}
                 </Typography>
               </Paper>
@@ -193,7 +194,7 @@ class NutritionGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.root} elevation={1} id="graphPaper">
               <Typography variant="title" align="center">
                 History (Last 7 Days)
               </Typography>
