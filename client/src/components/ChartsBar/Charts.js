@@ -14,7 +14,7 @@
     
             datasets:[{
     
-                // label: '# of mins Excercised each day this week/Food/Water',
+                label: 'Cups A day',
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: props.quantities,
                 backgroundColor: [
