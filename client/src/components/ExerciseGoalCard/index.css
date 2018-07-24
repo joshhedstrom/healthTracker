@@ -1,10 +1,29 @@
-@media (min-width: 600px) {
+@media (min-width: 960px) {
 
-  
+	div#exerciseCard.ExerciseGoalCard-root-128 {
+	    margin: 5% 4% -1% 0%; 
+	}
 
-	    div#exerciseCard.ExerciseGoalCard-root-128 {
-		    margin: 5% 4% -1% 0%;
-		  
-		}
- 
+	div.ExerciseGoalCard-progressColor-140 {
+    padding: 2%;
+    margin-left: 31%;
+    margin-right: 31%;
+    margin-bottom: 28px;
+	}
+
+}
+
+@media (min-width: 600px {
+
+	div#exerciseCard.ExerciseGoalCard-root-128 {
+	    margin: 5% 4% -1% 0%; 
+	}
+
+	div.ExerciseGoalCard-progressColor-140 {
+    padding: 2%;
+    margin-left: 31%;
+    margin-right: 31%;
+    margin-bottom: 28px;
+	}
+
 }
