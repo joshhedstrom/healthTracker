@@ -16,7 +16,8 @@ const styles = theme => ({
     textAlign: 'center',
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: "3% 3% -1% 3%"
+    margin: "3% 3% 3% 3%",
+
   },
   container: {
     display: 'flex',
