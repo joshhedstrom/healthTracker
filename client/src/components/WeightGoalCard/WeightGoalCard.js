@@ -77,7 +77,7 @@ class WeightGoalsComponent extends React.Component {
                   type="number"
                   className={classes.textField}
                   margin="normal"
-                  placeholder={this.props.weight}
+                  value={this.props.updatedWeight}
                 />
               </form>
               <Button onClick={this.props.handleClick} variant="contained" className={classes.buttonStyle}>
