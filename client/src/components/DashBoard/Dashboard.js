@@ -47,7 +47,8 @@ const styles = {
     minWith: 0
   },
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    marginBottom: "5%"
   },
   gridContainer: {
     marginTop: 2
@@ -71,28 +72,39 @@ const styles = {
     backgroundColor: '#63c5e4',
     width: '46px',
     height: '46px',
-    margin: '5%'
+    margin: '5%',
+    marginLeft: "17%"
   },
   NutritionAvatar: {
     backgroundColor: '#10953bb8',
     width: '46px',
     height: '46px',
-    margin: '5%'
+    margin: '5%',
+    marginLeft: "17%"
   },
   exerciseAvatar: {
     backgroundColor: '#ea6192b5',
     width: '46px',
     height: '46px',
-    margin: '5%'
+    margin: '5%',
+    marginLeft: "17%"
   },
   weightAvatar: {
     backgroundColor: '#4d66f08a',
     width: '46px',
     height: '46px',
-    margin: '5%'
+    margin: '5%',
+    marginLeft: "17%"
   },
   tableCellStyle: {
     padding: 0
+  },
+  info: {
+    marginBottom: "4%",
+    marginTop: "7%"
+  },
+  nameTitle: {
+    marginTop: "8%"
   }
 };
 
@@ -101,11 +113,11 @@ class Dashboard extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <Typography className={classes.root} variant="display3" align="center">
-          DashBoard
-        </Typography>
         <Card className={classes.cardUser}>
           <CardContent>
+            <Typography className={classes.root} variant="display3" align="center">
+              DashBoard
+            </Typography>
             <Grid container spacing={0}>
               <Grid item xs={12} sm={6}>
                 <ChartsPie
@@ -120,10 +132,11 @@ class Dashboard extends React.Component {
                   variant="headline"
                   component="h2"
                   align="center"
+                  className={classes.nameTitle}
                 >
                   {this.props.firstName} {this.props.lastName}
                 </Typography>
-                <Typography>
+                <Typography className={classes.info}>
                   All your daily health tracking information is displayed below.
                   To quickly track your progress, click on the icons to access
                   the specific goal pages
@@ -131,10 +144,10 @@ class Dashboard extends React.Component {
                 <Table>
                   <TableBody>
                     <TableRow>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         Water (Cups)
                       </TableCell>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         {this.props.water}
                       </TableCell>
                       <TableCell className={classes.tableCellStyle}>
@@ -158,10 +171,10 @@ class Dashboard extends React.Component {
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         Nutrition (Points)
                       </TableCell>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         {this.props.nutrition}
                       </TableCell>
                       <TableCell className={classes.tableCellStyle}>
@@ -184,14 +197,14 @@ class Dashboard extends React.Component {
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         Exercise (Duration)
                       </TableCell>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         {this.props.exercise}
                       </TableCell>
                       <TableCell className={classes.tableCellStyle}>
-                        <Tooltip title="Go to Exercise Page" placement="right">
+                        <Tooltip title="Go to Exercise Page" placement="right" variant="body2">
                           <Avatar className={classes.exerciseAvatar}>
                             <a
                               style={{ textDecoration: 'none', color: 'white' }}
@@ -210,10 +223,10 @@ class Dashboard extends React.Component {
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         Weight (LBS)
                       </TableCell>
-                      <TableCell className={classes.tableCellStyle}>
+                      <TableCell className={classes.tableCellStyle} variant="body2">
                         {this.props.weight}
                       </TableCell>
                       <TableCell className={classes.tableCellStyle}>
