@@ -1,20 +1,22 @@
  import React, { Component } from 'react';
  import { Bar, Line, Pie } from 'react-chartjs-2';
+ import { defaults } from 'react-chartjs-2';
+//  import merge from 'lodash';
  import './Charts.css';
 
-
+ defaults.global.legend.display = false;
 
  class Chart extends Component {
     
     renderChart(props) {
 
         let chartData = {
-          
+            
             labels: props.dates,
     
             datasets:[{
-    
-                // label: '# of mins Excercised each day this week/Food/Water',
+               // {props.label}
+                label: 'Props Label',
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: props.quantities,
                 backgroundColor: [
@@ -30,13 +32,18 @@
             options: {
                 responsive: true, 
                 maintainAspectRatio: true,
-                    title: {
+                title: {
                         display: false, 
                     },
-                    legend: {
-                        display: false,
-                        position: 'bottom',
-                    },
+                scales: {
+                    yAxes: [{
+                     ticks: {
+                        beginAtZero: true
+                            }
+                        }]
+                      
+                    }
+                
                 }
             }
             return (
@@ -45,17 +52,7 @@
                     redraw={true}
                         data={chartData}
                         options={{
-                            legend: {
-                                display: true
-                            },
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                              
-                            }
+                           
                         }}
                     />
             

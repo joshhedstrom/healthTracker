@@ -56,7 +56,7 @@ const styles = theme => ({
     padding: 0
   },
   header: {
-    marginBottom: 28
+    marginBottom: "-4%"
   },
   formRoot: {
     display: 'flex',
@@ -79,6 +79,14 @@ const styles = theme => ({
     marginBottom: '28px',
     marginTop: '19px',
     padding: '4px'
+  },
+  info: {
+    margin: "3% 2% 0% 2%"
+  },
+  graphPaper: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    margin: "5% 4% 16% 4%"
   }
 });
 
@@ -97,6 +105,11 @@ class ExerciseGoalCard extends React.Component {
                 align="center"
               >
                 Exercise Tracker
+              </Typography>
+              <Typography className={classes.info} align="center">
+                Select a workout below and choose the duration of the activity.
+                Each activity will be tracked in minutes. Your daily workouts are displayed
+                below along with a historic graph of the last 7 days. 
               </Typography>
 
               <Paper className={classes.progressColor}>
@@ -193,7 +206,7 @@ class ExerciseGoalCard extends React.Component {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1} id="exerciseCard">
-              <Typography variant="display1" className={classes.heading}>
+              <Typography variant="display1" className={classes.heading} align="center">
                 Today
               </Typography>
 
@@ -226,8 +239,8 @@ class ExerciseGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
-              <Typography className={classes.heading}>History</Typography>
+            <Paper className={classes.graphPaper} elevation={1}>
+              <Typography className={classes.heading} variant="title" align="center">History (Last 7 Days)</Typography>
               <ChartsBar />
             </Paper>
           </Grid>

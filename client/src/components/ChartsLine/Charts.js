@@ -37,6 +37,14 @@
                         display: false,
                         position: 'bottom',
                     },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                      
+                    }
                 }
             }
             return (
@@ -44,19 +52,6 @@
                     <Line justify="center"
                     redraw={true}
                         data={chartData}
-                        options={{
-                            legend: {
-                                display: true
-                            },
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                              
-                            }
-                        }}
                     />
             
             </div>

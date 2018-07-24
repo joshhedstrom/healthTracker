@@ -31,16 +31,18 @@ const styles = theme => ({
   },
   progressColorWeight: {
     backgroundColor: '#4d66f08a',
-    marginLeft: '15%',
-    marginRight: '15%',
+    marginLeft: '24%',
+    marginRight: '24%',
     marginBottom: "28px",
     marginTop: "19px",
-    padding: "4px",
+    padding: "4%",
   },
   buttonStyle: {
     marginTop: "4%"
-
   },
+  info: {
+    margin: "3% 8% 0% 8%"
+  }
 });
 
 class WeightGoalsComponent extends React.Component {
@@ -56,9 +58,11 @@ class WeightGoalsComponent extends React.Component {
               <Typography align="center" variant="display1">
                 Weight Tracker
               </Typography>
-
+              <Typography className={classes.info}>
+                Enter your current weigth below. Track as often as needed
+              </Typography>
               <Paper className={classes.progressColorWeight}>
-                <Typography align="center">Current Weight: {this.props.weight + "lbs"} </Typography>
+                <Typography align="center" variant="body2">Current Weight: {this.props.weight + "lbs"} </Typography>
               </Paper>
 
               <form
@@ -77,7 +81,7 @@ class WeightGoalsComponent extends React.Component {
                   type="number"
                   className={classes.textField}
                   margin="normal"
-                  placeholder={this.props.weight}
+                  value={this.props.updatedWeight}
                 />
               </form>
               <Button onClick={this.props.handleClick} variant="contained" className={classes.buttonStyle}>

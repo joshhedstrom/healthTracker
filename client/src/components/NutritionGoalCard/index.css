@@ -20,8 +20,6 @@ div.MuiFormGroup-root-232{
 }
 
 
-
-
 h3.MuiTypography-subheading-85 {
 
     margin-top: 6%;
@@ -43,10 +41,8 @@ div#progress.MuiPaper-root-13.MuiPaper-elevation2-17.MuiPaper-rounded-14 {
     background-color: #10953bb8;
     margin-bottom: 28px;
     margin-top: 19px;
-    padding: 4px;
+    padding: 2%;
 }
-
-
 
 
 p.MuiTypography-root-78.MuiTypography-body1-87.MuiTypography-alignCenter-91 {
@@ -58,6 +54,16 @@ h2#formTitle.MuiTypography-root-78.MuiTypography-title-84.MuiTypography-alignCen
 	font-size: 1.2rem;
 	padding-bottom: 4%;
 }
+
+p.MuiTypography-root-80.MuiTypography-body1-89.MuiTypography-alignCenter-93 {
+    padding: 3% 8% 0% 8%
+}
+
+div#graphPaper.MuiPaper-root-13.MuiPaper-elevation1-16.MuiPaper-rounded-14.NutritionGoalCard-root-128 {
+    margin-bottom: 16%
+}
+
+
 
 
 
