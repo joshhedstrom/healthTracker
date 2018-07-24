@@ -35,7 +35,16 @@ const styles = theme => ({
 class NutritionGoalCard extends React.Component {
   render() {
     const { classes } = this.props;
-
+    const questions = [['fruitAndVegs',"Had 5-9 Servings of Fruits and Vegetables"],
+                       ['healthyFat',"Consumed at least 26 grams of healthy fat each day"],
+                       ['proteinBreakfast',"Eat at least 15 grams of protein for breakfast"],
+                       ["newFruit","Tried a new Fruit or Vegetables"],
+                       ["newReceipe","Experimented with a new healthy receipe"],
+                       ["fastFood","Avoided Fast Food"],
+                       ["noMeat","Refrained from eating meat"],
+                       ["skipBreakfast","Didn't skip breakfast"],
+                       ["noSugar","Avoided Sugar"],
+                       ["noAlcohol","Refrained from alcohol"]]
     return (
       <div>
         <Grid container spacing={0}>
@@ -60,130 +69,136 @@ class NutritionGoalCard extends React.Component {
                   align="center"
                   className={classes.formHeader}
                 >
-                  Select All Goals You Achieved Today
+                 Select All Goals You Achieved Today
                 </Typography>
                 <Grid container spacing={8}>
                   <FormGroup>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            value="0"
-                            onChange={this.props.handleChange(this.value)}
-                            color="primary"
+                    {questions.map(question => 
+                       <Grid item xs={12} sm={6}>
+                       <FormControlLabel
+                         control={
+                           <Checkbox
+                             value={question[0]}
+                             checked={this.props.toggled[question[0]]}
+                             onChange={this.props.handleChange(question[0])}
+                             
+                             color="primary"
                           />
-                        }
-                        label="Had 5-9 Servings of Fruits and Vegetables"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            value="0"
-                            onChange={this.props.handleChange(this.value)}
-                            color="primary"
-                          />
-                        }
-                        label="Consumed at least 26 grams of healthy fat each day"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Eat at least 15 grams of protein for breakfast"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Tried a new Fruit or Vegetables"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Experimented with a new healthy receipe"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Avoided Fast Food"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            value="0"
-                            onChange={this.props.handleChange(this.value)}
-                            color="primary"
-                          />
-                        }
-                        label="Refrained from eating meat"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Didn't skip breakfast"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Avoided Sugar"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Refrained from alcohol"
-                      />
-                    </Grid>
+                         }
+                           label={question[1]}
+                           />
+                           </Grid>
+                    )}
+                    {
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         value="0"
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Consumed at least 26 grams of healthy fat each day"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         value="0"
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Eat at least 15 grams of protein for breakfast"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         value="0"
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Tried a new Fruit or Vegetables"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         value="0"
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Experimented with a new healthy receipe"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         value="0"
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Avoided Fast Food"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         value="0"
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Refrained from eating meat"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         value="0"
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Didn't skip breakfast"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         value="0"
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Avoided Sugar"
+                    //   />
+                    // </Grid>
+                    // <Grid item xs={12} sm={6}>
+                    //   <FormControlLabel
+                    //     control={
+                    //       <Checkbox
+                    //         onChange={this.props.handleChange(this.value)}
+                    //         value="0"
+                    //         color="primary"
+                    //       />
+                    //     }
+                    //     label="Refrained from alcohol"
+                    //   />
+                    // </Grid>
+                    }
                   </FormGroup>
                   <Button onClick={this.props.handleSubmit} variant="contained">
                     Submit
