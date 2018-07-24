@@ -52,7 +52,7 @@ class WaterGoalCard extends React.Component {
                   </Typography>
                   <br />
                   <Paper className={classes.progressColorWater}>
-                    <Typography align="center">
+                    <Typography align="center" variant="body2">
                       Current Progress: {this.props.glasses}
                     </Typography>
                   </Paper>

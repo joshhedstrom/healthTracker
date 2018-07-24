@@ -100,7 +100,7 @@ class ExerciseGoalCard extends React.Component {
               </Typography>
 
               <Paper className={classes.progressColor}>
-                <Typography align="center">
+                <Typography align="center" variant="body2">
                   Current Progress: {this.props.history} ??
                 </Typography>
               </Paper>

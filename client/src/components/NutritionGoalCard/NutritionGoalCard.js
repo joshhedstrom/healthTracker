@@ -49,7 +49,7 @@ class NutritionGoalCard extends React.Component {
                 all of these goals!
               </Typography>
               <Paper id="progress">
-                <Typography align="center">
+                <Typography align="center" variant="body2">
                   Current Progress: {this.props.progress}
                 </Typography>
               </Paper>
