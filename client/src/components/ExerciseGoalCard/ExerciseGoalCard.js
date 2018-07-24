@@ -91,6 +91,19 @@ const styles = theme => ({
 });
 
 class ExerciseGoalCard extends React.Component {
+  renderTableRows(arr) {
+    return (
+      arr.map((element) => {
+        return (
+          <TableRow>
+            <TableCell>{element.exercise}</TableCell>
+            <TableCell>{element.duration} Minutes</TableCell>
+          </TableRow>
+        )
+      })
+    )
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -114,7 +127,7 @@ class ExerciseGoalCard extends React.Component {
 
               <Paper className={classes.progressColor}>
                 <Typography align="center">
-                  Current Progress: {this.props.totalActivity}
+                  Current Progress: {this.props.totalActivity} Active Minutes
                 </Typography>
               </Paper>
 
@@ -163,17 +176,6 @@ class ExerciseGoalCard extends React.Component {
                     noValidate
                     autoComplete="off"
                   >
-                    {/* <TextField
-                      id="addHours"
-                      label="Hours"
-                      value={this.props.hours}
-                      onChange={this.props.handleChange}
-                      type="number"
-                      className={classes.textField}
-                      margin="normal"
-                      name="hours"
-                      fullWidth
-                    /> */}
                   </form>
                 </Grid>
                 <Grid item xs={6}>
@@ -192,7 +194,6 @@ class ExerciseGoalCard extends React.Component {
                       margin="normal"
                       name="minutes"
                       fullWidth
-                      
                     />
                   </form>
                 </Grid>
@@ -218,22 +219,7 @@ class ExerciseGoalCard extends React.Component {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  <TableRow>
-                    <TableCell>Walking</TableCell>
-                    <TableCell>30 Minutes</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Yoga (Points)</TableCell>
-                    <TableCell>1 Hour</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Running</TableCell>
-                    <TableCell>24 Minutes</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Strength Training</TableCell>
-                    <TableCell>1 Hour</TableCell>
-                  </TableRow>
+                  {this.renderTableRows(this.props.todaysActivities)}
                 </TableBody>
               </Table>
             </Paper>
@@ -241,7 +227,7 @@ class ExerciseGoalCard extends React.Component {
           <Grid item xs={12} md={6}>
             <Paper className={classes.graphPaper} elevation={1}>
               <Typography className={classes.heading} variant="title" align="center">History (Last 7 Days)</Typography>
-              <ChartsBar />
+              <ChartsBar quantities={this.props.quantities} dates={this.props.dates}/>
             </Paper>
           </Grid>
         </Grid>
