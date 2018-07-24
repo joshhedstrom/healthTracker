@@ -82,6 +82,11 @@ const styles = theme => ({
   },
   info: {
     margin: "3% 2% 0% 2%"
+  },
+  graphPaper: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    margin: "5% 4% 16% 4%"
   }
 });
 
@@ -233,7 +238,7 @@ class ExerciseGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.graphPaper} elevation={1}>
               <Typography className={classes.heading} variant="title" align="center">History (Last 7 Days)</Typography>
               <ChartsBar />
             </Paper>

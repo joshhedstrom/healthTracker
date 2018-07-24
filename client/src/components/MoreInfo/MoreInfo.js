@@ -16,7 +16,8 @@ const styles = {
     marginTop: "10%"
   },
   header: {
-    marginTop: "11%"
+    margin: "11% 0% 0% 0%",
+    fontSize: "195%"
   },
   typeSpace: {
     padding: "2% 1% 5% 1%"
