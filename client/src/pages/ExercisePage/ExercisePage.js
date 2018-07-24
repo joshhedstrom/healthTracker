@@ -91,6 +91,7 @@ class ExerciseGoal extends Component {
           addExercise={this.addExercise.bind(this)}
           handleExerciseChange={this.handleExerciseChange.bind(this)}
           handleDurationChange={this.handleDurationChange.bind(this)}
+          activity={this.state.newExercise}
         />
       </div>
     );

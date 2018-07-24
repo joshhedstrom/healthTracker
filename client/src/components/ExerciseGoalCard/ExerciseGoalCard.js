@@ -163,20 +163,9 @@ class ExerciseGoalCard extends React.Component {
                     noValidate
                     autoComplete="off"
                   >
-                    {/* <TextField
-                      id="addHours"
-                      label="Hours"
-                      value={this.props.hours}
-                      onChange={this.props.handleChange}
-                      type="number"
-                      className={classes.textField}
-                      margin="normal"
-                      name="hours"
-                      fullWidth
-                    /> */}
                   </form>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <form
                     className={classes.container}
                     noValidate
