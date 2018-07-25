@@ -1,5 +1,5 @@
  import React, { Component } from 'react';
- import { Bar, Line, Pie } from 'react-chartjs-2';
+ import { Pie } from 'react-chartjs-2';
  import './Charts.css';
 
 
