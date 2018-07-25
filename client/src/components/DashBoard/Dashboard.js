@@ -19,7 +19,8 @@ const styles = {
   cardUser: {
     marginLeft: 30,
     marginRight: 30,
-    marginTop: 30
+    marginTop: 30,
+    marginBottom: "25%"
   },
   media: {
     height: 0,
