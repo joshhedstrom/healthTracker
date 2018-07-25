@@ -25,11 +25,11 @@ class Signup extends Component {
     this.setState({ open: false });
   };
 
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  onSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault();
 
     if (this.state.password === this.state.passwordConfirmation) {
@@ -53,13 +53,8 @@ class Signup extends Component {
     return (
       <div>
         <SignupComponent
-          firstNameAction={this.onChange.bind()}
-          lastNameAction={this.onChange.bind()}
-          usernameAction={this.onChange.bind()}
-          weightAction={this.onChange.bind()}
-          passwordAction={this.onChange.bind()}
-          passwordConfirmAction={this.onChange.bind()}
-          submitAction={this.onSubmit.bind()}
+          handleChange={this.handleChange.bind()}
+          handleSubmit={this.handleSubmit}
           open={this.state.handleClickOpen}
         />
       </div>

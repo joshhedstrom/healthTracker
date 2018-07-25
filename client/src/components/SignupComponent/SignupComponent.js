@@ -31,66 +31,64 @@ class Signup extends React.Component {
           <Grid container spacing={24}>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="firstName"
+                name="firstName"
                 label="First Name (required)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
-                onChange={this.props.firstNameAction}
+                onChange={this.props.handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="lastName"
+                name="lastName"
                 label="Last Name (required)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
-                onChange={this.props.lastNameAction}
+                onChange={this.props.handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="username"
+                name="username"
                 label="Username (required)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
-                onChange={this.props.usernameAction}
+                onChange={this.props.handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="weight"
+                name="weight"
                 label="Weight (optional)"
                 className={classes.textField}
                 margin="normal"
                 fullWidth
-                onChange={this.props.weightAction}
+                onChange={this.props.handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="password"
+                name="password"
                 label="Password"
                 className={classes.textField}
                 type="password"
-                autoComplete="current-password"
                 margin="normal"
                 fullWidth
-                onChange={this.props.passwordAction}
+                onChange={this.props.handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="passwordConfirmation"
+                name="passwordConfirmation"
                 label="Confirm Password"
                 className={classes.textField}
                 type="password"
-                autoComplete="current-password"
                 margin="normal"
                 fullWidth
-                onChange={this.props.passwordConfirmAction}
+                onChange={this.props.handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -99,7 +97,7 @@ class Signup extends React.Component {
                 variant="contained"
                 color="primary"
                 className={classes.button}
-                onClick={this.props.submitAction}
+                onClick={this.props.handleSubmit}
               >
                 Submit
               </Button>
