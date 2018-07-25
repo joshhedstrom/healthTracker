@@ -16,8 +16,8 @@ const styles = {
     marginTop: "10%"
   },
   header: {
-    margin: "11% 0% 0% 0%",
-    fontSize: "195%"
+    margin: "2% 2% 8% 2%",
+    fontSize: "261%"
   },
   typeSpace: {
     padding: "2% 1% 5% 1%"
@@ -32,12 +32,14 @@ class Info extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-       <Typography variant="display1" align="center" className={classes.header}>
+      
+
+        <Paper className={classes.root} align="center">
+          <Typography variant="display1" align="center" className={classes.header}>
           How to Use HealthTracker
         </Typography>
 
-        <Paper className={classes.root}>
-          <Typography variant="body2" className={classes.typeSpace}>
+          <Typography variant="body2" className={classes.typeSpace} align="center">
             HealthTracker is a simple health application to keep track of your nutrition goals, water consumption,
             exercise, and weight. 
           </Typography>

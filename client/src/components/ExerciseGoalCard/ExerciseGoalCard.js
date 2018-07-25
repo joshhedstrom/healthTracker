@@ -125,11 +125,12 @@ class ExerciseGoalCard extends React.Component {
                 below along with a historic graph of the last 7 days. 
               </Typography>
 
-              <Paper className={classes.progressColor}>
-                <Typography align="center">
-                  Current Progress: {this.props.totalActivity} Active Minutes
+
+                <Typography align="center" variant="body2">
+                  Current Progress: {this.props.totalActivity} mins
                 </Typography>
-              </Paper>
+
+            
 
               <Grid container spacing={16}>
                 <Grid item xs={12}>
@@ -203,8 +204,11 @@ class ExerciseGoalCard extends React.Component {
                   </Button>
                 </Grid>
               </Grid>
-            </Paper>
+             </Paper>
           </Grid>
+
+
+
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1} id="exerciseCard">
               <Typography variant="display1" className={classes.heading} align="center">
