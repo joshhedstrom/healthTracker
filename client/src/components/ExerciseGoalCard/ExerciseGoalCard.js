@@ -150,14 +150,14 @@ class ExerciseGoalCard extends React.Component {
                         <MenuItem value="">
                           <em>None</em>
                         </MenuItem>
-                        <MenuItem value={'walking'}>Walking</MenuItem>
-                        <MenuItem value={'jogging'}>Jogging</MenuItem>
-                        <MenuItem value={'running'}>Running</MenuItem>
-                        <MenuItem value={'swimming'}>Swimming</MenuItem>
-                        <MenuItem value={'cycling'}>Cycling</MenuItem>
-                        <MenuItem value={'yoga'}>Yoga</MenuItem>
-                        <MenuItem value={'hiit'}>HIIT</MenuItem>
-                        <MenuItem value={'strengthTraining'}>
+                        <MenuItem value={'Walking'}>Walking</MenuItem>
+                        <MenuItem value={'Jogging'}>Jogging</MenuItem>
+                        <MenuItem value={'Running'}>Running</MenuItem>
+                        <MenuItem value={'Wwimming'}>Swimming</MenuItem>
+                        <MenuItem value={'Cycling'}>Cycling</MenuItem>
+                        <MenuItem value={'Yoga'}>Yoga</MenuItem>
+                        <MenuItem value={'HIIT'}>HIIT</MenuItem>
+                        <MenuItem value={'Strength Training'}>
                           Strength Training
                         </MenuItem>
                         <MenuItem value={'stairStepper'}>
