@@ -48,8 +48,14 @@
         }
             return (
                 <div className="Chart-container">
-                    <Bar justify="center" data={chartData} options={options}/>
-                </div>
+
+                    <Bar justify="center"
+                        redraw={true}
+                        data={chartData}
+                    />
+            
+            </div>
+
             ) 
     }
       
