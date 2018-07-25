@@ -12,7 +12,7 @@ import style from './index.css';
 const styles = {
   root: {
     margin: "5%",
-    padding: "4%",
+    padding: "1% 5% 4% 6%",
     marginTop: "10%"
   },
   header: {
