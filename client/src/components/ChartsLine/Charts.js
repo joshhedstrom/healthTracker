@@ -18,7 +18,7 @@
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: props.quantities,
                 backgroundColor: [
-                    '#ef5e92'
+                    '#4d66f08a'
                 ]
             }]
   
