@@ -72,7 +72,7 @@ class WeightGoalsComponent extends React.Component {
                 align="center"
               >
                 <TextField
-                  className={classes.center}
+                  
                   id="addWeight"
                   label="Enter Weight"
                   fullWidth
