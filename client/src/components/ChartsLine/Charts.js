@@ -18,43 +18,34 @@
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: props.quantities,
                 backgroundColor: [
-                    '#ef5e92',
-                    '#ff92c4',
-                    '#ef5e92',
-                    '#ff92c4',
-                    '#ef5e92',
-                    '#ff92c4',
                     '#ef5e92'
                 ]
-            }],
-            options: {
-                responsive: true, 
-                maintainAspectRatio: true,
-                    title: {
-                        display: false, 
-                    },
-                    legend: {
-                        display: false,
-                        position: 'bottom',
-                    },
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                      
-                    }
+            }]
+  
+        }
+
+        let options = {
+            responsive: true, 
+            maintainAspectRatio: true,
+                title: {
+                    display: false, 
+                },
+                legend: {
+                    display: false,
+                    position: 'bottom',
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]  
                 }
-            }
+        }
             return (
                 <div className="Chart-container">
-                    <Line justify="center"
-                    redraw={true}
-                        data={chartData}
-                    />
-            
-            </div>
+                    <Line justify="center" data={chartData} options={options}/>
+                </div>
             ) 
     }
           

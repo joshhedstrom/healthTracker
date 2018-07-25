@@ -11,7 +11,9 @@ class ExerciseGoal extends Component {
     newExercise: "",
     newDuration: 0,
     dailyTotal: 0,
-    todaysActivity: []
+    todaysActivity: [],
+    quantities: [],
+    dates: []
   };
 
   componentDidMount() {
@@ -59,7 +61,12 @@ class ExerciseGoal extends Component {
   }
 
   addExercise() {
-    this.setState({dailyTotal: this.state.dailyTotal + this.state.newDuration}, () => {
+    let newActivities = this.state.todaysActivity
+    newActivities.push({exercise: this.state.newExercise, duration: this.state.newDuration})
+    this.setState({
+      dailyTotal: this.state.dailyTotal + this.state.newDuration,
+      todaysActivity: newActivities
+    }, () => {
 
       axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
       axios.post('/api/healthTracker/newExercise', {
@@ -87,10 +94,14 @@ class ExerciseGoal extends Component {
       <div>
         {this.renderRedirect()}
         <ExerciseGoalCard
+          dates={this.state.dates}
+          quantities={this.state.quantities}
           totalActivity={this.state.dailyTotal}
+          todaysActivities={this.state.todaysActivity}
           addExercise={this.addExercise.bind(this)}
           handleExerciseChange={this.handleExerciseChange.bind(this)}
           handleDurationChange={this.handleDurationChange.bind(this)}
+          activity={this.state.newExercise}
         />
       </div>
     );
