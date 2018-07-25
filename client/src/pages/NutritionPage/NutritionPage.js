@@ -106,7 +106,7 @@ class NutritionGoal extends Component {
       );
       axios
         .post('/api/healthTracker/updateNutrition', {
-          nutrition: this.state.nutrition,
+          nutrition: this.state.progress,
           id: this.state.currentDayId
         })
         .then(data => data)
