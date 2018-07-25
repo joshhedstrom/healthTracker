@@ -49,11 +49,8 @@
             return (
                 <div className="Chart-container">
                     <Bar justify="center"
-                    redraw={true}
+                        redraw={true}
                         data={chartData}
-                        options={{
-                           
-                        }}
                     />
             
             </div>
