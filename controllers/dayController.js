@@ -47,8 +47,12 @@ module.exports = {
     //Update Nutrition for the day
     updateNutrition: function(req,res) {
         db.Day
-        .findOneAndUpdate({ _id: req.params.id }, {nutrition: req.body.nutrition})
-        .then(dbModel => res.json(dbModel))
+        .findOne({_id: req.body.id})
+        .then(dbDay => {
+            dbDay.nutrition = req.body.nutrition
+            dbDay.save()
+            return res.json(db.Day)
+        })
         .catch(err => res.status(422).json(err));
     },
 

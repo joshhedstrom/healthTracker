@@ -7,6 +7,7 @@ class NutritionGoal extends Component {
   state = {
     progress: 0,
     currentDayId: '',
+    nutrition: 0,
     updatedNutrition: 0,
     quantities: [],
     dates: [],
@@ -69,6 +70,8 @@ class NutritionGoal extends Component {
 
       this.setState({
         // progress: data[0] && data[0].nutrition ? data[0].nutrition : 'No progress yet...',
+        weight: data[0].nutrition,
+        updatedNutrition: data[0].nutrition,
         currentDayId: data[0]._id,
         quantities: nutritionQuantities,
         dates: datesArr
@@ -90,9 +93,29 @@ class NutritionGoal extends Component {
     );
   };
 
+  //axios call to update database
   handleSubmit = () => {
-    //axios call to update database
-  };
+    let arr = this.state.quantities;
+
+    arr.splice(-1,1)
+    arr.push(this.state.updatedNutrition);
+
+    this.setState({ nutrition: this.state.updatedNutrition }, () => {
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem(
+        'jwtToken'
+      );
+      axios
+        .post('/api/healthTracker/updateNutrition', {
+          nutrition: this.state.nutrition,
+          id: this.state.currentDayId
+        })
+        .then(data => data)
+        .catch(err => {
+          console.log(err);
+        });
+    });
+    console.log("updated nutrition data")
+  }
 
   handleChange = name => (event, isChecked) => {
     this.handleCheckboxChange(event);
