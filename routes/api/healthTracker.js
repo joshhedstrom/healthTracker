@@ -88,10 +88,10 @@ router.post('/newWater', passport.authenticate('jwt', { session: false}), (req, 
 )
 ;
 // Updates nutrition to the given day.
-router.post('/newWater', passport.authenticate('jwt', { session: false}), (req, res) => {
+router.post('/updateNutrition', passport.authenticate('jwt', { session: false}), (req, res) => {
   const token = getToken(req.headers);
   if (token) {
-    console.log('Water is being added');
+    console.log('Nutrition is being added');
     db.Day.updateNutrition(req, res);
   } else {
     return res.status(403).send({ success: false, msg: 'Unauthorized.' });
