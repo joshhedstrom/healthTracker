@@ -188,7 +188,7 @@ class ExerciseGoalCard extends React.Component {
                   >
                     <TextField
                       id="addMinutes"
-                      label="Minutes"
+                      label="Enter Minutes"
                       value={this.props.minutes}
                       onChange={this.props.handleDurationChange}
                       type="number"

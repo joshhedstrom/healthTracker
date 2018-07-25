@@ -11,11 +11,13 @@ div.MuiFormGroup-root-232{
         font-size: 1.2rem;
         padding-bottom: 8%;
     }
-
-
     div.NutritionGoalCard-root-128 {
-            margin: 3% 0% 0% 4%;
+            margin: 3% 0% 8% 4%;
     } 
+    div#graphPaper.MuiPaper-root-13.MuiPaper-elevation1-16.MuiPaper-rounded-14.NutritionGoalCard-root-128 {
+    margin-bottom: 16%;
+    margin-right: 4%;
+}
  
 }
 
