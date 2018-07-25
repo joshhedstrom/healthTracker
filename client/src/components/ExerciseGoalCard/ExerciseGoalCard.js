@@ -16,7 +16,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import style from './index.css';
+import './index.css';
 
 
 import ChartsBar from './../ChartsBar';
@@ -56,7 +56,7 @@ const styles = theme => ({
     padding: 0
   },
   header: {
-    marginBottom: 28
+    marginBottom: "-4%"
   },
   formRoot: {
     display: 'flex',
@@ -79,10 +79,31 @@ const styles = theme => ({
     marginBottom: '28px',
     marginTop: '19px',
     padding: '4px'
+  },
+  info: {
+    margin: "3% 2% 0% 2%"
+  },
+  graphPaper: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    margin: "5% 4% 16% 4%"
   }
 });
 
 class ExerciseGoalCard extends React.Component {
+  renderTableRows(arr) {
+    return (
+      arr.map((element) => {
+        return (
+          <TableRow>
+            <TableCell>{element.exercise}</TableCell>
+            <TableCell>{element.duration} Minutes</TableCell>
+          </TableRow>
+        )
+      })
+    )
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -98,10 +119,15 @@ class ExerciseGoalCard extends React.Component {
               >
                 Exercise Tracker
               </Typography>
+              <Typography className={classes.info} align="center">
+                Select a workout below and choose the duration of the activity.
+                Each activity will be tracked in minutes. Your daily workouts are displayed
+                below along with a historic graph of the last 7 days. 
+              </Typography>
 
               <Paper className={classes.progressColor}>
                 <Typography align="center">
-                  Current Progress: {this.props.history} ??
+                  Current Progress: {this.props.totalActivity} Active Minutes
                 </Typography>
               </Paper>
 
@@ -116,7 +142,7 @@ class ExerciseGoalCard extends React.Component {
                       <InputLabel htmlFor="workout-simple">Workouts</InputLabel>
                       <Select
                         value={this.props.activity}
-                        onChange={this.props.handleChange}
+                        onChange={this.props.handleExerciseChange}
                         inputProps={{ name: 'activity', id: 'workout-simple' }}
                       >
                         <MenuItem value="">
@@ -150,20 +176,9 @@ class ExerciseGoalCard extends React.Component {
                     noValidate
                     autoComplete="off"
                   >
-                    <TextField
-                      id="addHours"
-                      label="Hours"
-                      value={this.props.hours}
-                      onChange={this.props.handleChange}
-                      type="number"
-                      className={classes.textField}
-                      margin="normal"
-                      name="hours"
-                      fullWidth
-                    />
                   </form>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <form
                     className={classes.container}
                     noValidate
@@ -173,7 +188,7 @@ class ExerciseGoalCard extends React.Component {
                       id="addMinutes"
                       label="Minutes"
                       value={this.props.minutes}
-                      onChange={this.props.handleChange}
+                      onChange={this.props.handleDurationChange}
                       type="number"
                       className={classes.textField}
                       margin="normal"
@@ -183,7 +198,7 @@ class ExerciseGoalCard extends React.Component {
                   </form>
                 </Grid>
                 <Grid className={classes.submit} item xs={12}>
-                  <Button onClick={this.props.handleSubmit} variant="contained">
+                  <Button onClick={this.props.addExercise} variant="contained">
                     Submit
                   </Button>
                 </Grid>
@@ -192,7 +207,7 @@ class ExerciseGoalCard extends React.Component {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1} id="exerciseCard">
-              <Typography variant="display1" className={classes.heading}>
+              <Typography variant="display1" className={classes.heading} align="center">
                 Today
               </Typography>
 
@@ -204,30 +219,15 @@ class ExerciseGoalCard extends React.Component {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  <TableRow>
-                    <TableCell>Walking</TableCell>
-                    <TableCell>30 Minutes</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Yoga (Points)</TableCell>
-                    <TableCell>1 Hour</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Running</TableCell>
-                    <TableCell>24 Minutes</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Strength Training</TableCell>
-                    <TableCell>1 Hour</TableCell>
-                  </TableRow>
+                  {this.renderTableRows(this.props.todaysActivities)}
                 </TableBody>
               </Table>
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
-              <Typography className={classes.heading}>History</Typography>
-              <ChartsBar />
+            <Paper className={classes.graphPaper} elevation={1}>
+              <Typography className={classes.heading} variant="title" align="center">History (Last 7 Days)</Typography>
+              <ChartsBar quantities={this.props.quantities} dates={this.props.dates}/>
             </Paper>
           </Grid>
         </Grid>

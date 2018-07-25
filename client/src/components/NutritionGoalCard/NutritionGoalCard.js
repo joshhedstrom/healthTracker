@@ -4,12 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import './index.css';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 const styles = theme => ({
   root: {
@@ -35,7 +35,18 @@ const styles = theme => ({
 class NutritionGoalCard extends React.Component {
   render() {
     const { classes } = this.props;
-
+    const questions = [
+      ['fruitAndVegs', 'Had 5-9 Servings of fruits and vegetables'],
+      ['healthyFat', 'Consumed at least 26 grams of healthy fat'],
+      ['proteinBreakfast', 'Eat at least 15 grams of protein for breakfast'],
+      ['newFruit', 'Tried a new fruit or vegetable'],
+      ['newReceipe', 'Experimented with a new healthy receipe'],
+      ['fastFood', 'Avoided fast food'],
+      ['noMeat', 'Refrained from eating meat'],
+      ['skipBreakfast', "Didn't skip breakfast"],
+      ['noSugar', 'Avoided sugar'],
+      ['noAlcohol', 'Refrained from alcohol']
+    ];
     return (
       <div>
         <Grid container spacing={0}>
@@ -45,155 +56,53 @@ class NutritionGoalCard extends React.Component {
                 Nutrition Goal
               </Typography>
               <Typography align="center">
-                Each goal below counts as 1+ points. Try to see if you can meet
-                all of these goals!
+                Each goal below counts as +1 point. See if you can meet
+                all your goals!
               </Typography>
               <Paper id="progress">
-                <Typography align="center">
+                <Typography align="center" variant="body2">
                   Current Progress: {this.props.progress}
                 </Typography>
               </Paper>
-              <FormControl component="fieldset">
-                <Typography
-                  id="formTitle"
-                  variant="title"
-                  align="center"
-                  className={classes.formHeader}
-                >
-                  Select All Goals You Achieved Today
-                </Typography>
-                <Grid container spacing={8}>
-                  <FormGroup>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            value="0"
-                            onChange={this.props.handleChange(this.value)}
-                            color="primary"
-                          />
-                        }
-                        label="Had 5-9 Servings of Fruits and Vegetables"
-                      />
+              {/* <Typography
+                id="formTitle"
+                variant="title"
+                align="center"
+                className={classes.formHeader}
+              >
+                Select All Goals You Achieved Today
+              </Typography> */}
+              <Grid container spacing={8}>
+                <List>
+                  {questions.map(question => (
+                    <Grid item xs={12}>
+                      <ListItem
+                        key={question}
+                        dense
+                        button
+                        className={classes.listItem}
+                      >
+                        <Checkbox
+                          value={question[0]}
+                          checked={this.props.toggled[question[0]]}
+                          onChange={this.props.handleChange(question[0])}
+                          color="primary"
+                          disableRipple
+                          tabIndex={-1}
+                        />
+                        <ListItemText primary={question[1]} />
+                      </ListItem>
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            value="0"
-                            onChange={this.props.handleChange(this.value)}
-                            color="primary"
-                          />
-                        }
-                        label="Consumed at least 26 grams of healthy fat each day"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Eat at least 15 grams of protein for breakfast"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Tried a new Fruit or Vegetables"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Experimented with a new healthy receipe"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Avoided Fast Food"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            value="0"
-                            onChange={this.props.handleChange(this.value)}
-                            color="primary"
-                          />
-                        }
-                        label="Refrained from eating meat"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Didn't skip breakfast"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Avoided Sugar"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            onChange={this.props.handleChange(this.value)}
-                            value="0"
-                            color="primary"
-                          />
-                        }
-                        label="Refrained from alcohol"
-                      />
-                    </Grid>
-                  </FormGroup>
-                  <Button onClick={this.props.handleSubmit} variant="contained">
-                    Submit
-                  </Button>
-                </Grid>
-              </FormControl>
+                  ))}
+                </List>
+              </Grid>
+                <Button onClick={this.props.handleSubmit} variant="contained">
+                  Submit
+                </Button>
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.root} elevation={1} id="graphPaper">
               <Typography variant="title" align="center">
                 History (Last 7 Days)
               </Typography>

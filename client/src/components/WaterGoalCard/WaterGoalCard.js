@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ChartsBar from './../ChartsBar';
 import Grid from '@material-ui/core/Grid';
+import './index.css';
+
 
 const styles = theme => ({
   root: {
@@ -14,7 +16,8 @@ const styles = theme => ({
     textAlign: 'center',
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: "3% 3% -1% 3%"
+    margin: "3% 3% 3% 3%",
+
   },
   container: {
     display: 'flex',
@@ -29,7 +32,10 @@ const styles = theme => ({
     marginRight: '19%',
     marginBottom: '28px',
     marginTop: '19px',
-    padding: '#6cb272'
+    padding: '1%'
+  },
+  info: {
+    margin: "3% 8% 0% 8%"
   }
 })
 
@@ -45,12 +51,12 @@ class WaterGoalCard extends React.Component {
               <Grid container spacing={8}>
                 <Grid item xs={12}>
                   <Typography variant="display1">Water Goal</Typography>
-                  <Typography>
+                  <Typography className={classes.info}>
                     Drink at least 8 glasses of 8 fluid ounces each day.
                   </Typography>
                   <br />
                   <Paper className={classes.progressColorWater}>
-                    <Typography align="center">
+                    <Typography align="center" variant="body2">
                       Current Progress: {this.props.glasses}
                     </Typography>
                   </Paper>
@@ -111,7 +117,7 @@ class WaterGoalCard extends React.Component {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper className={classes.root} elevation={1}>
-              <Typography className={classes.heading}>History</Typography>
+              <Typography className={classes.heading} variant="title" align="center">History (Last 7 Days)</Typography>
               <ChartsBar quantities={this.props.quantities} dates={this.props.dates} />
             </Paper>
           </Grid>

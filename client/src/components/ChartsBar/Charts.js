@@ -29,34 +29,35 @@
                     '#ef5e92'
                 ]
             }],
-            options: {
-                responsive: true, 
-                maintainAspectRatio: true,
-                title: {
-                        display: false, 
-                    },
-                scales: {
-                    yAxes: [{
-                     ticks: {
+        }
+
+        let options = {
+            responsive: true, 
+            maintainAspectRatio: true,
+            title: {
+                display: false, 
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
                         beginAtZero: true
-                            }
-                        }]
-                      
                     }
-                
-                }
-            }
+                }]
+                    
+            }     
+        }
             return (
                 <div className="Chart-container">
+
                     <Bar justify="center"
                         redraw={true}
                         data={chartData}
                     />
             
             </div>
+
             ) 
     }
-        
       
     render() {
         return (
