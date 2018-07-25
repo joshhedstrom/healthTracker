@@ -31,8 +31,8 @@ const styles = theme => ({
   },
   progressColorWeight: {
     backgroundColor: '#4d66f08a',
-    marginLeft: '24%',
-    marginRight: '24%',
+    marginLeft: '20%',
+    marginRight: '20%',
     marginBottom: "28px",
     marginTop: "19px",
     padding: "4%",

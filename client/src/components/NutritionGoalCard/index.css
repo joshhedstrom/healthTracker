@@ -11,11 +11,13 @@ div.MuiFormGroup-root-232{
         font-size: 1.2rem;
         padding-bottom: 8%;
     }
-
-
     div.NutritionGoalCard-root-128 {
-            margin: 3% 0% 0% 4%;
+            margin: 3% 0% 8% 4%;
     } 
+    div#graphPaper.MuiPaper-root-13.MuiPaper-elevation1-16.MuiPaper-rounded-14.NutritionGoalCard-root-128 {
+    margin-bottom: 16%;
+    margin-right: 4%;
+}
  
 }
 
@@ -31,7 +33,7 @@ button.MuiButton-contained-111 {
     margin-top: 26px;
 }
 
-span.MuiCheckbox-colorPrimary-240.MuiCheckbox-checked-238 {
+span.MuiCheckbox-colorPrimary-245.MuiCheckbox-checked-243 {
     color: #6cb272;
 }
 

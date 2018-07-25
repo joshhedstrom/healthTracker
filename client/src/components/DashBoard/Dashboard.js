@@ -17,9 +17,10 @@ import ChartsPie from './../ChartsPie';
 
 const styles = {
   cardUser: {
-    marginLeft: 30,
-    marginRight: 30,
-    marginTop: 30
+    marginLeft: "5%",
+    marginRight: "5%",
+    marginTop:  "5%",
+    marginBottom: "25%"
   },
   media: {
     height: 0,
@@ -83,7 +84,7 @@ const styles = {
     marginLeft: "17%"
   },
   exerciseAvatar: {
-    backgroundColor: '#ea6192b5',
+    backgroundColor: '#825eb9b5',
     width: '46px',
     height: '46px',
     margin: '5%',
@@ -138,8 +139,7 @@ class Dashboard extends React.Component {
                 </Typography>
                 <Typography className={classes.info}>
                   All your daily health tracking information is displayed below.
-                  To quickly track your progress, click on the icons to access
-                  the specific goal pages
+                  Click on the icons to access the goal pages
                 </Typography>
                 <Table>
                   <TableBody>

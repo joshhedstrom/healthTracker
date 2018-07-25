@@ -73,7 +73,7 @@ const styles = theme => ({
     textAlign: 'center'
   },
   progressColor: {
-    backgroundColor: '#ea6192b5',
+    backgroundColor: '#825eb9b5',
     marginLeft: '19%',
     marginRight: '19%',
     marginBottom: '28px',
@@ -125,10 +125,11 @@ class ExerciseGoalCard extends React.Component {
                 below along with a historic graph of the last 7 days. 
               </Typography>
 
-
+              <Paper className={classes.progressColor}>
                 <Typography align="center" variant="body2">
                   Current Progress: {this.props.totalActivity} mins
                 </Typography>
+              </Paper>
 
             
 
@@ -149,14 +150,14 @@ class ExerciseGoalCard extends React.Component {
                         <MenuItem value="">
                           <em>None</em>
                         </MenuItem>
-                        <MenuItem value={'walking'}>Walking</MenuItem>
-                        <MenuItem value={'jogging'}>Jogging</MenuItem>
-                        <MenuItem value={'running'}>Running</MenuItem>
-                        <MenuItem value={'swimming'}>Swimming</MenuItem>
-                        <MenuItem value={'cycling'}>Cycling</MenuItem>
-                        <MenuItem value={'yoga'}>Yoga</MenuItem>
-                        <MenuItem value={'hiit'}>HIIT</MenuItem>
-                        <MenuItem value={'strengthTraining'}>
+                        <MenuItem value={'Walking'}>Walking</MenuItem>
+                        <MenuItem value={'Jogging'}>Jogging</MenuItem>
+                        <MenuItem value={'Running'}>Running</MenuItem>
+                        <MenuItem value={'Wwimming'}>Swimming</MenuItem>
+                        <MenuItem value={'Cycling'}>Cycling</MenuItem>
+                        <MenuItem value={'Yoga'}>Yoga</MenuItem>
+                        <MenuItem value={'HIIT'}>HIIT</MenuItem>
+                        <MenuItem value={'Strength Training'}>
                           Strength Training
                         </MenuItem>
                         <MenuItem value={'stairStepper'}>
@@ -187,7 +188,7 @@ class ExerciseGoalCard extends React.Component {
                   >
                     <TextField
                       id="addMinutes"
-                      label="Minutes"
+                      label="Enter Minutes"
                       value={this.props.minutes}
                       onChange={this.props.handleDurationChange}
                       type="number"
