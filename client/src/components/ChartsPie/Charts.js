@@ -22,7 +22,7 @@
                 ],
                  backgroundColor: [
                     '#63c5e4',
-                    '#ea6192b5',
+                    '#825eb9b5',
                     '#10953bb8',
                     'red',
                     '#63c5e4',

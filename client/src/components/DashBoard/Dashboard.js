@@ -84,7 +84,7 @@ const styles = {
     marginLeft: "17%"
   },
   exerciseAvatar: {
-    backgroundColor: '#ea6192b5',
+    backgroundColor: '#825eb9b5',
     width: '46px',
     height: '46px',
     margin: '5%',
