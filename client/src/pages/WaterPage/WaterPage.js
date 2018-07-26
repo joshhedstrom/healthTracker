@@ -75,13 +75,6 @@ class WaterGoal extends Component {
     this.setState({ updatedWater: parseInt(e.target.value) });
   }
 
-  handleFieldChange = e => {
-    let value = this.state.updatedWater;
-    let total = value + parseInt(e.target.value)
-    console.log(total)
-
-  }
-
   handleClick() {
     if(!this.state.updatedWater){
       return
@@ -91,11 +84,12 @@ class WaterGoal extends Component {
       
       arr.splice(-1,1)
       arr.push(this.state.updatedWater)
+      let value = this.state.glasses + this.state.updatedWater
       
-      this.setState({glasses: this.state.updatedWater}, () => {
+      this.setState({glasses: value}, () => {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         axios.post('/api/healthTracker/newWater', {
-          water: this.state.updatedWater,
+          water: this.state.glasses,
           id: this.state.currentDayId
         })
         .then(data => data)
@@ -117,7 +111,6 @@ class WaterGoal extends Component {
           glasses={this.state.glasses}
           quantities={this.state.quantities}
           dates={this.state.dates}
-          handleFieldChange={this.handleFieldChange}
          />
       </div>
     );
