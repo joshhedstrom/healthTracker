@@ -17,7 +17,13 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     margin: "4% 4% 3% 4%",
-
+  },
+  rootGraph: {
+   ...theme.mixins.gutters(),
+    textAlign: 'center',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    margin: "4% 4% 3% 4%",
   },
   container: {
     display: 'flex',
@@ -116,7 +122,7 @@ class WaterGoalCard extends React.Component {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper className={classes.root} elevation={1}>
+            <Paper className={classes.rootGraph} elevation={1}>
               <Typography className={classes.heading} variant="title" align="center">History (Last 7 Days)</Typography>
               <ChartsBar quantities={this.props.quantities} dates={this.props.dates} />
             </Paper>
