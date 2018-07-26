@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DashBoardComponent from '../../components/DashBoard';
-
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
@@ -43,7 +42,6 @@ class DashBoard extends Component {
 
     axios.get(url).then(res => {
       let user = res.data;
-      console.log(user)
       let mostRecentDate = moment()
         .add(-1, 'days')
         .format('MM.DD.YYYY');
@@ -76,7 +74,6 @@ class DashBoard extends Component {
             date: moment().format('MM.DD.YYYY')
           })
           .then(res => {
-            console.log(res)
             this.setState({ currentDayId: res.data._id });
           });
       }
@@ -90,7 +87,6 @@ class DashBoard extends Component {
   };
 
   render() {
-    {console.log(this.state)}
     return (
       <div>
         {this.renderRedirect()}
