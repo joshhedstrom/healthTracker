@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NutritionGoalCard from '../../components/NutritionGoalCard';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import moment from "moment"
 
 class NutritionGoal extends Component {
   state = {
@@ -65,11 +66,10 @@ class NutritionGoal extends Component {
 
       for (let i = data.length - 1; i > -1; i--) {
         nutritionQuantities.push(data[i].nutrition);
-        // datesArr.push(moment(data[i].date).format("MM/DD/YYYY"))
+        datesArr.push(moment(data[i].date).format("MM/DD/YYYY"))
       }
 
       this.setState({
-        // progress: data[0] && data[0].nutrition ? data[0].nutrition : 'No progress yet...',
         weight: data[0].nutrition,
         updatedNutrition: data[0].nutrition,
         currentDayId: data[0]._id,
@@ -144,6 +144,8 @@ class NutritionGoal extends Component {
       <div>
         {this.renderRedirect()}
         <NutritionGoalCard
+          quantities={this.state.quantities}
+          dates={this.state.dates}
           handleChange={this.handleChange.bind()}
           progress={this.state.progress}
           handleSubmit={this.handleSubmit}

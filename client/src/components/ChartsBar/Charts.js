@@ -1,7 +1,6 @@
  import React, { Component } from 'react';
  import { Bar } from 'react-chartjs-2';
  import { defaults } from 'react-chartjs-2';
-//  import merge from 'lodash';
  import './Charts.css';
 
  defaults.global.legend.display = false;
@@ -15,7 +14,6 @@
             labels: props.dates,
     
             datasets:[{
-               // {props.label}
                 label: '',
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: props.quantities,
@@ -51,6 +49,7 @@
 
                     <Bar justify="center"
                         data={chartData}
+                        options={options}
                     />
             
             </div>
