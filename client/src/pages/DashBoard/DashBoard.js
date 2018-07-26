@@ -15,7 +15,8 @@ class DashBoard extends Component {
     waterIntake: 0,
     nutritionPoints: 0,
     exerciseMins: 0,
-    currentWeight: 0
+    currentWeight: 0,
+    currentDate: ''
   };
 
   totalExerciseMinutes(arr) {
@@ -75,6 +76,7 @@ class DashBoard extends Component {
             date: moment().format('MM.DD.YYYY')
           })
           .then(res => {
+            console.log(res)
             this.setState({ currentDayId: res.data._id });
           });
       }
