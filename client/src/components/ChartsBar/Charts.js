@@ -25,7 +25,7 @@
                     '#7984c0',
                     '#3f50ae',
                     '#7984c0'
-                ]
+                ],
             }],
         }
 
@@ -42,7 +42,7 @@
                     }
                 }]
                     
-            }     
+            }  
         }
             return (
                 <div className="Chart-container">

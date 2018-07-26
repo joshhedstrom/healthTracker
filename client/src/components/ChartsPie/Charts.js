@@ -38,7 +38,8 @@
                         display: false,
                         position: 'bottom',
                     },
-                }
+                },
+                segmentShowStroke: true   
             }
             return (
                 <div className="Chart-container">
