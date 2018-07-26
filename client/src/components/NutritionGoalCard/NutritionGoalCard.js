@@ -10,6 +10,7 @@ import './index.css';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ChartsBar from './../ChartsBar';
 
 const styles = theme => ({
   root: {
@@ -106,7 +107,7 @@ class NutritionGoalCard extends React.Component {
               <Typography variant="title" align="center">
                 History (Last 7 Days)
               </Typography>
-              <Typography>Graph goes here </Typography>
+              <ChartsBar quantities={this.props.quantities} dates={this.props.dates} />
             </Paper>
           </Grid>
         </Grid>
