@@ -39,18 +39,9 @@ class NutritionGoal extends Component {
 
   componentDidMount() {
     let savedDate = localStorage.getItem('date')
-    if (moment().format("MM/DD/YYYY") != savedDate ) {
+    if (moment().format("MM/DD/YYYY") !== savedDate ) {
       localStorage.setItem('toggled', JSON.stringify(this.state.toggled))
     }
-    // let toggled = JSON.parse(localStorage.getItem('toggled'))
-    // if (toggled.date != localStorage.gsavedDate
-    //   localStorage.clear()
-    //   localStorage.setItem('jwtToken', this.state.token);
-    //   localStorage.setItem('userId', thidate
-      
-    // }
-    //axios call to check current progress
-    // Sets the url to query
     this.setState(
       {
         toggled: localStorage.getItem('toggled')
@@ -84,8 +75,6 @@ class NutritionGoal extends Component {
       }
 
       this.setState({
-        // progress: data[0] && data[0].nutrition ? data[0].nutrition : 'No progress yet...',
-        // progress: data[0].nutrition,
         updatedNutrition: data[0].nutrition,
         currentDayId: data[0]._id,
         quantities: nutritionQuantities,
