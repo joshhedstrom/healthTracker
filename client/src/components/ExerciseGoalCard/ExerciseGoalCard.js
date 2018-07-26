@@ -153,7 +153,7 @@ class ExerciseGoalCard extends React.Component {
                         <MenuItem value={'Walking'}>Walking</MenuItem>
                         <MenuItem value={'Jogging'}>Jogging</MenuItem>
                         <MenuItem value={'Running'}>Running</MenuItem>
-                        <MenuItem value={'Wwimming'}>Swimming</MenuItem>
+                        <MenuItem value={'Swimming'}>Swimming</MenuItem>
                         <MenuItem value={'Cycling'}>Cycling</MenuItem>
                         <MenuItem value={'Yoga'}>Yoga</MenuItem>
                         <MenuItem value={'HIIT'}>HIIT</MenuItem>

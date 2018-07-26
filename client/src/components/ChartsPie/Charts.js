@@ -9,7 +9,7 @@
           let chartData = {
 
             // labels: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ],
-            labels: ['Water', 'Excer.', 'Nutr.'],
+            labels: ['Water', 'Exercise', 'Nutrition'],
     
             datasets:[{
     
@@ -22,10 +22,11 @@
                 ],
                  backgroundColor: [
                     '#63c5e4',
-                    '#825eb9b5',
-                    '#10953bb8'
+                    'rgba(130, 94, 185, 0.7098039215686275)',
+                    'rgba(16, 149, 59, 0.7215686274509804)',
+
                     
-                ]
+                ],
             }],
             options: {
                 responsive: true, 

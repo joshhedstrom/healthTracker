@@ -16,7 +16,7 @@
     
             datasets:[{
                // {props.label}
-                label: 'Props Label',
+                label: '',
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: props.quantities,
                 backgroundColor: [
