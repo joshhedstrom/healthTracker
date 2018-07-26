@@ -52,8 +52,8 @@ class DashBoard extends Component {
 
       if (mostRecentDate === todaysDate) {
         this.setState({
-          firstName: res.data.firstName,
-          lastName: res.data.lastName,
+          firstName: user.firstName,
+          lastName: user.lastName,
           waterIntake: res.data.days[0].water,
           nutritionPoints: res.data.days[0].nutrition,
           exerciseMins: res.data.days[0].totalActivity,
