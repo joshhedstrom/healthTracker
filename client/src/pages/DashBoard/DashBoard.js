@@ -64,8 +64,8 @@ class DashBoard extends Component {
         });
       } else {
         this.setState({
-          firstName: res.data.name,
-          lastName: res.data.name,
+          firstName: res.data.firstName,
+          lastName: res.data.lastName,
           currentWeight: res.data.weight
         });
 
