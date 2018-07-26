@@ -27,7 +27,8 @@
                     '#7984c0',
                     '#3f50ae',
                     '#7984c0'
-                ]
+                ],
+                hoverBackgroundColor: 'rgba(255, 0, 0, 0.4)'
             }],
         }
 
@@ -44,7 +45,7 @@
                     }
                 }]
                     
-            }     
+            }  
         }
             return (
                 <div className="Chart-container">

@@ -27,6 +27,7 @@
 
                     
                 ],
+                hoverBackgroundColor: 'rgba(255, 0, 0, 0.4)'
             }],
             options: {
                 responsive: true, 
@@ -38,7 +39,8 @@
                         display: false,
                         position: 'bottom',
                     },
-                }
+                },
+                segmentShowStroke: true   
             }
             return (
                 <div className="Chart-container">
