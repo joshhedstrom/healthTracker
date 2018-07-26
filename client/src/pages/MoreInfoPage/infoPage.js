@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MoreInfo from '../../components/MoreInfo';
-import { Redirect } from 'react-router-dom';
 
 class MoreInfoPage extends Component {
 

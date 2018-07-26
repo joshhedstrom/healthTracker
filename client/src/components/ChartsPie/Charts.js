@@ -1,5 +1,5 @@
  import React, { Component } from 'react';
- import { Bar, Line, Pie } from 'react-chartjs-2';
+ import { Pie } from 'react-chartjs-2';
  import './Charts.css';
 
 
@@ -23,10 +23,8 @@
                  backgroundColor: [
                     '#63c5e4',
                     '#825eb9b5',
-                    '#10953bb8',
-                    'red',
-                    '#63c5e4',
-                    'pink'
+                    '#10953bb8'
+                    
                 ]
             }],
             options: {
