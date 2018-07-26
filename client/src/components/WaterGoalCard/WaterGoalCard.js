@@ -106,7 +106,7 @@ class WaterGoalCard extends React.Component {
                       fullWidth
                       type="number"
                       margin="normal"
-                      onChange={this.props.handleChange}
+                      onChange={this.props.handleFieldChange}
                     />
                   </form>
                 </Grid>
