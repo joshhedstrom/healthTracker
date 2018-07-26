@@ -27,7 +27,6 @@
 
                     
                 ],
-                hoverBackgroundColor: 'rgba(255, 0, 0, 0.4)'
             }],
             options: {
                 responsive: true, 
