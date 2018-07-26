@@ -50,7 +50,6 @@
                 <div className="Chart-container">
 
                     <Bar justify="center"
-                        redraw={true}
                         data={chartData}
                     />
             
