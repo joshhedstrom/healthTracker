@@ -15,6 +15,7 @@ import Avatar from '@material-ui/core/Avatar';
 import FontAwesome from 'react-fontawesome';
 import ChartsPie from './../ChartsPie';
 
+
 const styles = {
   cardUser: {
     marginLeft: "5%",
