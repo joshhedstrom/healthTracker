@@ -65,14 +65,6 @@ class NutritionGoalCard extends React.Component {
                   Current Progress: {this.props.progress}
                 </Typography>
               </Paper>
-              {/* <Typography
-                id="formTitle"
-                variant="title"
-                align="center"
-                className={classes.formHeader}
-              >
-                Select All Goals You Achieved Today
-              </Typography> */}
               <Grid container spacing={8}>
                 <List>
                   {questions.map(question => (
@@ -107,7 +99,7 @@ class NutritionGoalCard extends React.Component {
               <Typography variant="title" align="center">
                 History (Last 7 Days)
               </Typography>
-              <ChartsBar quantities={this.props.quantities} dates={this.props.dates} />
+              <ChartsBar quantities={this.props.quantities} dates={this.props.dates}/>
             </Paper>
           </Grid>
         </Grid>
