@@ -87,6 +87,7 @@ class DashBoard extends Component {
   };
 
   render() {
+    {console.log(this.state)}
     return (
       <div>
         {this.renderRedirect()}
