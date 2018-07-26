@@ -72,7 +72,7 @@ class WaterGoal extends Component {
   }
 
   handleChange(e) {
-    this.setState({ updatedWater: e.target.value });
+    this.setState({ updatedWater: parseInt(e.target.value) });
   }
 
   handleClick() {
