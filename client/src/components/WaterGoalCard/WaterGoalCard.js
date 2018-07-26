@@ -102,7 +102,7 @@ class WaterGoalCard extends React.Component {
                   >
                     <TextField
                       id="addGlasses"
-                      label="Enter Total Water for Today"
+                      label="Enter Water"
                       fullWidth
                       type="number"
                       margin="normal"
