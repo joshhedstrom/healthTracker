@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import NutritionGoalCard from '../../components/NutritionGoalCard';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import moment from 'moment';
 
 class NutritionGoal extends Component {
   state = {
+    token: localStorage.getItem('jwtToken'),
+    userId: localStorage.getItem('userId'),
     progress: 0,
     currentDayId: '',
     nutrition: 0,
     updatedNutrition: 0,
     quantities: [],
     dates: [],
+    date: moment().format("MM/DD/YYYY"),
     toggled: {
       healthyFat: false,
       proteinBreakfast: false,
@@ -34,6 +38,17 @@ class NutritionGoal extends Component {
   };
 
   componentDidMount() {
+    let savedDate = localStorage.getItem('date')
+    if (moment().format("MM/DD/YYYY") != savedDate ) {
+      localStorage.setItem('toggled', JSON.stringify(this.state.toggled))
+    }
+    // let toggled = JSON.parse(localStorage.getItem('toggled'))
+    // if (toggled.date != localStorage.gsavedDate
+    //   localStorage.clear()
+    //   localStorage.setItem('jwtToken', this.state.token);
+    //   localStorage.setItem('userId', thidate
+      
+    // }
     //axios call to check current progress
     // Sets the url to query
     this.setState(
@@ -70,7 +85,7 @@ class NutritionGoal extends Component {
 
       this.setState({
         // progress: data[0] && data[0].nutrition ? data[0].nutrition : 'No progress yet...',
-        weight: data[0].nutrition,
+        // progress: data[0].nutrition,
         updatedNutrition: data[0].nutrition,
         currentDayId: data[0]._id,
         quantities: nutritionQuantities,
@@ -89,6 +104,7 @@ class NutritionGoal extends Component {
       },
       () => {
         localStorage.setItem('toggled', JSON.stringify(this.state.toggled));
+        localStorage.setItem('date', moment().format("MM/DD/YYYY") )
       }
     );
   };
@@ -115,6 +131,7 @@ class NutritionGoal extends Component {
         });
     });
     console.log("updated nutrition data")
+    console.log(this.state)
   }
 
   handleChange = name => (event, isChecked) => {
