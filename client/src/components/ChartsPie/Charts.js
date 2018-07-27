@@ -8,12 +8,9 @@
       renderChart() {
           let chartData = {
 
-            // labels: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ],
             labels: ['Water', 'Exercise', 'Nutrition'],
     
             datasets:[{
-    
-                // label: '# of mins Excercised each day this week/Food/Water',
                 strokeColor: "rgba(100, 190, 154, 1)",
                 data: [
                     this.props.waterChart,
