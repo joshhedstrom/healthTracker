@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.4.1",
     "@material-ui/icons": "^1.1.1",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "chart.js": "^2.7.3",
     "chartjs": "^0.3.24",
     "jss": "^9.8.7",
